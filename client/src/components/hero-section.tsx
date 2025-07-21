@@ -19,7 +19,7 @@ export default function HeroSection() {
               <div className="w-full h-full bg-[hsl(222,84%,15%)] rounded-full flex items-center justify-center">
                 <img 
                   src={covidLogo} 
-                  alt="Corvidae Logo" 
+                  alt="Corvidai Logo" 
                   className="w-20 h-20 object-contain"
                 />
               </div>
@@ -27,7 +27,7 @@ export default function HeroSection() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">Corvidae</span>
+            <span className="gradient-text">Corvidai</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">

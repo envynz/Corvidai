@@ -1,8 +1,8 @@
-# Corvidae Portfolio Application
+# Corvidai Portfolio Application
 
 ## Overview
 
-This is a full-stack portfolio website for "Corvidae," featuring a React frontend with Express.js backend. The application showcases a personal/company portfolio with sections for about, services, blog integration via RSS feed parsing, and contact functionality. It uses a modern tech stack with TypeScript, shadcn/ui components, Tailwind CSS, and Drizzle ORM for database operations.
+This is a full-stack portfolio website for "Corvidai," featuring a React frontend with Express.js backend. The application showcases a personal/company portfolio with sections for about, services, blog integration via RSS feed parsing, and contact functionality. It uses a modern tech stack with TypeScript, shadcn/ui components, Tailwind CSS, and Drizzle ORM for database operations.
 
 ## User Preferences
 
@@ -48,7 +48,7 @@ Preferred communication style: Simple, everyday language.
 4. **Storage Layer**: Abstracted storage interface with in-memory implementation for development
 
 ### UI System
-- **Design System**: Custom color palette with Corvidae brand colors (navy, cyan, blue, magenta, orange)
+- **Design System**: Custom color palette with Corvidai brand colors (navy, cyan, blue, magenta, orange)
 - **Theme**: Dark theme implementation with CSS custom properties
 - **Responsive Design**: Mobile-first approach with responsive breakpoints
 - **Animations**: Custom CSS animations for interactive elements

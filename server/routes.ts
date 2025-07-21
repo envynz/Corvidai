@@ -69,7 +69,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Sync Substack feed endpoint
   app.post("/api/sync-substack", async (req, res) => {
     try {
-      const substackUrl = process.env.SUBSTACK_RSS_URL || 'https://corvidae.substack.com/feed';
+      const substackUrl = process.env.SUBSTACK_RSS_URL || 'https://corvidai.substack.com/feed';
       const feedItems = await parseRSSFeed(substackUrl);
       
       let syncedCount = 0;

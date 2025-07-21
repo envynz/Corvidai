@@ -51,9 +51,9 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      subtitle: "hello@corvidae.com",
+      subtitle: "hello@corvidai.com",
       action: "Send Message",
-      link: "mailto:hello@corvidae.com"
+      link: "mailto:hello@corvidai.com"
     },
     {
       icon: Linkedin,
@@ -65,7 +65,7 @@ export default function ContactSection() {
     {
       icon: Twitter,
       title: "Twitter",
-      subtitle: "@corvidae_ai",
+      subtitle: "@corvidai_ai",
       action: "Follow",
       link: "#"
     },

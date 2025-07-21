@@ -3,7 +3,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-[hsl(215,25%,27%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold gradient-text mb-4">About Corvidae</h2>
+          <h2 className="text-4xl font-bold gradient-text mb-4">About Corvidai</h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Discover the story behind the intelligence and innovation that drives our mission.
           </p>
@@ -13,7 +13,7 @@ export default function AboutSection() {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-[hsl(197,87%,43%)]">The Intelligence of Corvids</h3>
             <p className="text-slate-300 leading-relaxed">
-              Like the remarkable corvid family - ravens, crows, and magpies - known for their exceptional intelligence and problem-solving abilities, Corvidae represents the fusion of natural intelligence with cutting-edge technology.
+              Like the remarkable corvid family - ravens, crows, and magpies - known for their exceptional intelligence and problem-solving abilities, Corvidai represents the fusion of natural intelligence with cutting-edge AI technology.
             </p>
             <p className="text-slate-300 leading-relaxed">
               Our approach combines analytical thinking, creative solutions, and adaptive strategies to tackle complex challenges in the digital landscape. We believe in the power of intelligent design and innovative problem-solving.
