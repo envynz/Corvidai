@@ -1,0 +1,58 @@
+import { Button } from "@/components/ui/button";
+import covidLogo from "@assets/corvidai_1753068680605.png";
+
+export default function HeroSection() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center hero-gradient pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="animate-fadeInUp">
+          {/* Main logo display */}
+          <div className="mb-8 flex justify-center">
+            <div className="w-32 h-32 bg-gradient-to-br from-[hsl(197,87%,43%)] via-[hsl(217,91%,60%)] to-[hsl(327,73%,56%)] rounded-full p-1 animate-glow">
+              <div className="w-full h-full bg-[hsl(222,84%,15%)] rounded-full flex items-center justify-center">
+                <img 
+                  src={covidLogo} 
+                  alt="Corvidae Logo" 
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="gradient-text">Corvidae</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Intelligent solutions that soar above the ordinary. We harness the power of innovation to deliver exceptional results.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="gradient-border">
+              <Button 
+                onClick={() => scrollToSection("about")}
+                className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
+              >
+                Explore My Work
+              </Button>
+            </div>
+            <Button 
+              onClick={() => scrollToSection("contact")}
+              variant="outline"
+              className="border-[hsl(197,87%,43%)] text-[hsl(197,87%,43%)] px-8 py-3 rounded-xl hover:bg-[hsl(197,87%,43%)] hover:text-[hsl(222,84%,15%)] transition-all duration-300 font-medium"
+            >
+              Get In Touch
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
