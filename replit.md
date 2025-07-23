@@ -96,3 +96,12 @@ Preferred communication style: Simple, everyday language.
 - **Path Aliases**: TypeScript path mapping for clean imports
 - **Module Resolution**: ESM-first approach with bundler module resolution
 - **Asset Management**: Vite handles asset optimization and bundling
+
+## Recent Changes
+
+### January 23, 2025
+- **Blog Integration Complete**: Successfully integrated AliTheAIGuy Substack feed (https://alitheaiguy.substack.com/)
+- **RSS Parser Enhanced**: Fixed CDATA handling and improved parsing reliability  
+- **Company Rebranding**: Updated all references from "Corvidae" to "Corvidai" to emphasize AI focus
+- **Blog Display**: Now showing latest 10 posts in responsive grid layout with proper titles and excerpts
+- **Auto-Sync**: Blog section automatically syncs latest posts on page load
