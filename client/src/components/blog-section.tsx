@@ -85,9 +85,13 @@ export default function BlogSection() {
             {blogPosts.slice(0, 10).map((post) => (
               <article key={post.id} className="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://substackcdn.com/image/fetch/$s_!e3-q!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png" 
-                  alt="Technology workspace" 
+                  src={post.imageUrl || "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png"} 
+                  alt={post.title} 
                   className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    // Fallback to default image if the post image fails to load
+                    e.currentTarget.src = "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png";
+                  }}
                 />
                 
                 <div className="p-6">

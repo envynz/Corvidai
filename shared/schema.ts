@@ -16,6 +16,7 @@ export const blogPosts = pgTable("blog_posts", {
   publishedAt: timestamp("published_at").notNull(),
   link: text("link").notNull(),
   guid: text("guid").notNull().unique(),
+  imageUrl: text("image_url"),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({

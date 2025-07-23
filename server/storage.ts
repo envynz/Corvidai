@@ -1,4 +1,7 @@
 import { users, blogPosts, type User, type InsertUser, type BlogPost, type InsertBlogPost } from "@shared/schema";
+import { drizzle } from "drizzle-orm/neon-http";
+import { neon } from "@neondatabase/serverless";
+import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -69,4 +72,59 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+class DbStorage implements IStorage {
+  private db;
+
+  constructor() {
+    if (!process.env.DATABASE_URL) {
+      throw new Error("DATABASE_URL is required");
+    }
+    const sql = neon(process.env.DATABASE_URL);
+    this.db = drizzle(sql);
+  }
+
+  async getUser(id: number): Promise<User | undefined> {
+    const result = await this.db.select().from(users).where(eq(users.id, id)).limit(1);
+    return result[0];
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const result = await this.db.select().from(users).where(eq(users.username, username)).limit(1);
+    return result[0];
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const result = await this.db.insert(users).values(insertUser).returning();
+    return result[0];
+  }
+
+  async getBlogPosts(limit = 10): Promise<BlogPost[]> {
+    return await this.db
+      .select()
+      .from(blogPosts)
+      .orderBy(desc(blogPosts.publishedAt))
+      .limit(limit);
+  }
+
+  async createBlogPost(insertPost: InsertBlogPost): Promise<BlogPost> {
+    const result = await this.db.insert(blogPosts).values(insertPost).returning();
+    return result[0];
+  }
+
+  async getBlogPostByGuid(guid: string): Promise<BlogPost | undefined> {
+    const result = await this.db.select().from(blogPosts).where(eq(blogPosts.guid, guid)).limit(1);
+    return result[0];
+  }
+
+  async updateBlogPost(id: number, updateData: Partial<InsertBlogPost>): Promise<BlogPost> {
+    const result = await this.db
+      .update(blogPosts)
+      .set(updateData)
+      .where(eq(blogPosts.id, id))
+      .returning();
+    return result[0];
+  }
+}
+
+// Use database storage in production, memory storage in test
+export const storage = process.env.NODE_ENV === 'test' ? new MemStorage() : new DbStorage();

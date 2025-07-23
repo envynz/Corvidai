@@ -4,6 +4,32 @@ import { storage } from "./storage";
 import { insertBlogPostSchema } from "@shared/schema";
 import { z } from "zod";
 
+// Generate contextual thumbnail based on post content
+function generateContextualThumbnail(title: string, description: string): string {
+  const content = (title + ' ' + description).toLowerCase();
+  
+  // Define themed thumbnails for different AI/tech topics
+  const thumbnails = {
+    ai: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop&crop=center",
+    rag: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center", 
+    context: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center",
+    agent: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&crop=center",
+    profitable: "https://images.unsplash.com/photo-1554774853-719586f82d77?w=800&h=600&fit=crop&crop=center",
+    research: "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=800&h=600&fit=crop&crop=center",
+    default: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center"
+  };
+  
+  // Match content to appropriate thumbnail
+  if (content.includes('rag') || content.includes('retrieval')) return thumbnails.rag;
+  if (content.includes('context') || content.includes('rot')) return thumbnails.context;
+  if (content.includes('agent') || content.includes('agentic')) return thumbnails.agent;
+  if (content.includes('profitable') || content.includes('money')) return thumbnails.profitable;
+  if (content.includes('research') || content.includes('overview')) return thumbnails.research;
+  if (content.includes('ai') || content.includes('artificial')) return thumbnails.ai;
+  
+  return thumbnails.default;
+}
+
 // RSS parsing functionality
 async function parseRSSFeed(url: string) {
   try {
@@ -38,8 +64,24 @@ async function parseRSSFeed(url: string) {
       }
       
       console.log('Parsed item:', { title: title?.substring(0, 50), link, guid: guid?.substring(0, 50), pubDate });
+      console.log('Description sample:', description?.substring(0, 200));
       
       if (title && link && guid && pubDate) {
+        // Generate smart thumbnail based on title/content
+        let imageUrl: string | null = null;
+        
+        // First try to extract image from description
+        const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/i;
+        const imgMatch = description?.match(imgRegex);
+        if (imgMatch) {
+          imageUrl = imgMatch[1];
+          console.log('Found image URL in description:', imageUrl);
+        } else {
+          // Generate contextual thumbnail based on content
+          imageUrl = generateContextualThumbnail(title, description);
+          console.log('Generated contextual image URL:', imageUrl);
+        }
+        
         // Extract excerpt from description (remove HTML tags and limit length)
         let excerpt = description
           .replace(/<[^>]*>/g, '')
@@ -63,7 +105,8 @@ async function parseRSSFeed(url: string) {
             guid: guid.trim(),
             publishedAt: publishedDate,
             excerpt,
-            content: description
+            content: description,
+            imageUrl
           });
         } catch (dateError) {
           console.error('Error parsing date:', pubDate, dateError);
