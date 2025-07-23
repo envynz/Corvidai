@@ -4,6 +4,62 @@ import { storage } from "./storage";
 import { insertBlogPostSchema } from "@shared/schema";
 import { z } from "zod";
 
+// Extract featured image from individual Substack post
+async function extractFeaturedImageFromPost(postUrl: string): Promise<string | null> {
+  try {
+    console.log('Fetching post page:', postUrl);
+    const response = await fetch(postUrl);
+    
+    if (!response.ok) {
+      console.error(`Failed to fetch post page: ${response.status}`);
+      return null;
+    }
+    
+    const html = await response.text();
+    
+    // Look for various image patterns in Substack posts
+    const imagePatterns = [
+      // Open Graph image - handle the way Substack formats it
+      /property=["']og:image["']\s+content=["']([^"']+)["']/i,
+      // Twitter card image  
+      /name=["']twitter:image["']\s+content=["']([^"']+)["']/i,
+      // Alternative og:image format
+      /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
+      // First large image in the post content
+      /<img[^>]+src=["']([^"']*substackcdn[^"']+)["'][^>]*>/i,
+      // Any Substack CDN image
+      /<img[^>]+src=["']([^"']*substack[^"']+\.(jpg|jpeg|png|webp)[^"']*)["'][^>]*>/i
+    ];
+    
+    for (const pattern of imagePatterns) {
+      const match = html.match(pattern);
+      if (match && match[1]) {
+        let imageUrl = match[1];
+        
+        // Clean up Substack CDN URLs but keep essential parameters
+        if (imageUrl.includes('substackcdn.com')) {
+          // Keep Substack CDN URLs as-is since they need their parameters
+          console.log('Found featured image:', imageUrl);
+          return imageUrl;
+        } else {
+          // For other URLs, remove query parameters
+          imageUrl = imageUrl.split('?')[0];
+          if (imageUrl.match(/\.(jpg|jpeg|png|webp)$/i)) {
+            console.log('Found featured image:', imageUrl);
+            return imageUrl;
+          }
+        }
+      }
+    }
+    
+    console.log('No featured image found in post');
+    return null;
+  } catch (error) {
+    console.error('Error extracting featured image:', error);
+    return null;
+  }
+}
+
 // Generate contextual thumbnail based on post content
 function generateContextualThumbnail(title: string, description: string): string {
   const content = (title + ' ' + description).toLowerCase();
@@ -67,7 +123,7 @@ async function parseRSSFeed(url: string) {
       console.log('Description sample:', description?.substring(0, 200));
       
       if (title && link && guid && pubDate) {
-        // Generate smart thumbnail based on title/content
+        // Extract actual featured image from the blog post
         let imageUrl: string | null = null;
         
         // First try to extract image from description
@@ -77,9 +133,14 @@ async function parseRSSFeed(url: string) {
           imageUrl = imgMatch[1];
           console.log('Found image URL in description:', imageUrl);
         } else {
-          // Generate contextual thumbnail based on content
-          imageUrl = generateContextualThumbnail(title, description);
-          console.log('Generated contextual image URL:', imageUrl);
+          // Try to fetch the actual featured image from the blog post page
+          try {
+            imageUrl = await extractFeaturedImageFromPost(link);
+            console.log('Extracted featured image from post:', imageUrl);
+          } catch (error) {
+            console.log('Failed to extract featured image, using contextual thumbnail');
+            imageUrl = generateContextualThumbnail(title, description);
+          }
         }
         
         // Extract excerpt from description (remove HTML tags and limit length)
