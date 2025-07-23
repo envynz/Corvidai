@@ -42,10 +42,11 @@ Preferred communication style: Simple, everyday language.
 7. **Footer**: Site navigation and social links
 
 ### Backend Services
-1. **RSS Parser**: Custom RSS feed parser for Substack integration
-2. **Blog Post Management**: CRUD operations for blog posts
+1. **RSS Parser**: Custom RSS feed parser for Substack integration with real image extraction
+2. **Blog Post Management**: CRUD operations for blog posts with featured image storage
 3. **User Management**: Basic user authentication system
-4. **Storage Layer**: Abstracted storage interface with in-memory implementation for development
+4. **Storage Layer**: PostgreSQL database with Drizzle ORM for persistent data storage
+5. **Image Extraction Service**: Fetches actual featured images from individual Substack posts using Open Graph meta tags
 
 ### UI System
 - **Design System**: Custom color palette with Corvidai brand colors (navy, cyan, blue, magenta, orange)
@@ -56,10 +57,19 @@ Preferred communication style: Simple, everyday language.
 ## Data Flow
 
 1. **Blog Content**: RSS feeds are parsed from external sources (Substack) and stored in the database
-2. **User Interaction**: Form submissions are handled via React Query mutations
-3. **Data Persistence**: Drizzle ORM manages database operations with PostgreSQL
-4. **State Management**: TanStack Query handles caching, background updates, and optimistic updates
-5. **Real-time Updates**: Blog posts are automatically synced when the blog section loads
+2. **Image Extraction**: For each blog post, the system fetches the individual post page and extracts the og:image meta tag for authentic featured images
+3. **User Interaction**: Form submissions are handled via React Query mutations
+4. **Data Persistence**: Drizzle ORM manages database operations with PostgreSQL, including imageUrl storage
+5. **State Management**: TanStack Query handles caching, background updates, and optimistic updates
+6. **Real-time Updates**: Blog posts are automatically synced when the blog section loads, including image extraction for new posts
+
+### Thumbnail Extraction Process
+1. **RSS Parsing**: Parse RSS feed from AliTheAIGuy Substack (https://alitheaiguy.substack.com/)
+2. **Individual Post Fetching**: For each blog post, fetch the full HTML content from the post URL
+3. **Open Graph Extraction**: Extract og:image meta tag content containing the featured image URL
+4. **Substack CDN Handling**: Preserve Substack CDN URLs with their parameters for optimal image loading
+5. **Database Storage**: Store authentic image URLs in the imageUrl field of the blog_posts table
+6. **Frontend Display**: Blog section displays actual featured images from Substack posts
 
 ## External Dependencies
 
@@ -105,3 +115,6 @@ Preferred communication style: Simple, everyday language.
 - **Company Rebranding**: Updated all references from "Corvidae" to "Corvidai" to emphasize AI focus
 - **Blog Display**: Now showing latest 10 posts in responsive grid layout with proper titles and excerpts
 - **Auto-Sync**: Blog section automatically syncs latest posts on page load
+- **Real Thumbnail Extraction**: Implemented extraction of actual featured images from individual Substack posts using Open Graph meta tags
+- **Database Schema Updated**: Added imageUrl field to blog_posts table to store authentic Substack CDN image URLs
+- **Future-Proof Blog Sync**: All future blog posts automatically extract real thumbnails and update on page load
