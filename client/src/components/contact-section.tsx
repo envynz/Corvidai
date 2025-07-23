@@ -74,7 +74,7 @@ export default function ContactSection() {
       title: "Substack",
       subtitle: "Intelligence Insights",
       action: "Subscribe",
-      link: import.meta.env.VITE_SUBSTACK_URL || "https://corvidai.substack.com"
+      link: import.meta.env.VITE_SUBSTACK_URL || "https://alitheaiguy.substack.com"
     }
   ];
 

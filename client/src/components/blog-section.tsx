@@ -81,8 +81,8 @@ export default function BlogSection() {
             </div>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {blogPosts.slice(0, 10).map((post) => (
               <article key={post.id} className="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
                 <img 
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
@@ -124,7 +124,7 @@ export default function BlogSection() {
           <div className="text-center mt-12">
             <div className="gradient-border inline-block">
               <Button 
-                onClick={() => window.open(import.meta.env.VITE_SUBSTACK_URL || 'https://corvidai.substack.com', '_blank')}
+                onClick={() => window.open(import.meta.env.VITE_SUBSTACK_URL || 'https://alitheaiguy.substack.com', '_blank')}
                 className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
               >
                 View All Posts

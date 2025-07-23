@@ -7,12 +7,20 @@ import { z } from "zod";
 // RSS parsing functionality
 async function parseRSSFeed(url: string) {
   try {
+    console.log('Fetching RSS feed from:', url);
     const response = await fetch(url);
+    
+    if (!response.ok) {
+      console.error(`RSS feed request failed with status: ${response.status}`);
+      return [];
+    }
+    
     const text = await response.text();
+    console.log('RSS feed length:', text.length);
     
     // Simple RSS parser for Substack feeds
     const items: any[] = [];
-    const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+    const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
     let match;
     
     while ((match = itemRegex.exec(text)) !== null) {
@@ -20,28 +28,52 @@ async function parseRSSFeed(url: string) {
       
       const title = extractTag(itemContent, 'title');
       const link = extractTag(itemContent, 'link');
-      const guid = extractTag(itemContent, 'guid');
+      let guid = extractTag(itemContent, 'guid');
       const pubDate = extractTag(itemContent, 'pubDate');
       const description = extractTag(itemContent, 'description');
       
+      // Use link as guid if guid is not available
+      if (!guid && link) {
+        guid = link;
+      }
+      
+      console.log('Parsed item:', { title: title?.substring(0, 50), link, guid: guid?.substring(0, 50), pubDate });
+      
       if (title && link && guid && pubDate) {
         // Extract excerpt from description (remove HTML tags and limit length)
-        const excerpt = description
+        let excerpt = description
           .replace(/<[^>]*>/g, '')
-          .substring(0, 200)
-          .trim() + '...';
+          .replace(/&[^;]+;/g, '')
+          .trim();
         
-        items.push({
-          title: title.trim(),
-          link: link.trim(),
-          guid: guid.trim(),
-          publishedAt: new Date(pubDate),
-          excerpt,
-          content: description
-        });
+        if (excerpt.length > 200) {
+          excerpt = excerpt.substring(0, 200) + '...';
+        }
+        
+        try {
+          const publishedDate = new Date(pubDate);
+          if (isNaN(publishedDate.getTime())) {
+            console.error('Invalid date:', pubDate);
+            continue;
+          }
+          
+          items.push({
+            title: title.trim(),
+            link: link.trim(),
+            guid: guid.trim(),
+            publishedAt: publishedDate,
+            excerpt,
+            content: description
+          });
+        } catch (dateError) {
+          console.error('Error parsing date:', pubDate, dateError);
+        }
+      } else {
+        console.log('Missing required fields:', { title: !!title, link: !!link, guid: !!guid, pubDate: !!pubDate });
       }
     }
     
+    console.log('Total items parsed:', items.length);
     return items;
   } catch (error) {
     console.error('Error parsing RSS feed:', error);
@@ -52,14 +84,20 @@ async function parseRSSFeed(url: string) {
 function extractTag(content: string, tag: string): string {
   const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, 'i');
   const match = content.match(regex);
-  return match ? match[1] : '';
+  if (match) {
+    let result = match[1];
+    // Remove CDATA wrapping if present
+    result = result.replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, '$1');
+    return result.trim();
+  }
+  return '';
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Blog posts endpoint
   app.get("/api/blog-posts", async (req, res) => {
     try {
-      const posts = await storage.getBlogPosts(6);
+      const posts = await storage.getBlogPosts(10);
       res.json(posts);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch blog posts" });
@@ -69,7 +107,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Sync Substack feed endpoint
   app.post("/api/sync-substack", async (req, res) => {
     try {
-      const substackUrl = process.env.SUBSTACK_RSS_URL || 'https://corvidai.substack.com/feed';
+      const substackUrl = process.env.SUBSTACK_RSS_URL || 'https://alitheaiguy.substack.com/feed';
       const feedItems = await parseRSSFeed(substackUrl);
       
       let syncedCount = 0;
