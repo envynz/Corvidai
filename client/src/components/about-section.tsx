@@ -1,4 +1,4 @@
-import fine from "@assets/fine.PNG";
+import fine from "@assets/fine.png";
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-[hsl(215,25%,27%)]">
