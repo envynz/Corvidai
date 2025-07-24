@@ -1,3 +1,4 @@
+import fine from "@assets/fine.PNG";
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-[hsl(215,25%,27%)]">
@@ -37,7 +38,7 @@ export default function AboutSection() {
           
           <div className="glass-effect rounded-2xl p-8">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+              src={fine} 
               alt="Professional headshot" 
               className="rounded-xl w-full h-64 object-cover mb-6"
             />
