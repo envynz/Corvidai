@@ -43,7 +43,7 @@ export default function AboutSection() {
               className="rounded-xl w-full h-64 object-cover mb-6"
             />
             
-            <h4 className="text-xl font-semibold text-[hsl(197,87%,43%)] mb-2">Founder & Visionary</h4>
+            <h4 className="text-xl font-semibold text-[hsl(197,87%,43%)] mb-2 text-center">Ali Alsaffaf - Founder</h4>
             <p className="text-slate-400 mb-4">Technology Strategist & Innovation Leader</p>
             <p className="text-slate-300 text-sm leading-relaxed">
               "Intelligence isn't just about processing information—it's about connecting ideas, adapting to challenges, and creating solutions that make a meaningful impact."
