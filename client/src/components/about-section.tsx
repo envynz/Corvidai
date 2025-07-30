@@ -45,7 +45,7 @@ export default function AboutSection() {
             
             <h4 className="text-xl font-semibold text-[hsl(197,87%,43%)] mb-2 text-center">Ali Alsaffaf - Founder</h4>
             <p className="text-slate-400 mb-4 text-center">AI Technology Strategist & Innovation Leader</p>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm leading-relaxed text-center">
               "Intelligence isn't just about processing information—it's about connecting ideas, adapting to challenges, and creating solutions that make a meaningful impact."
             </p>
           </div>
