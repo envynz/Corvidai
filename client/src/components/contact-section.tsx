@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Mail, Linkedin, Twitter, FileText } from "lucide-react";
+import { Mail, Linkedin, FileText } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -60,14 +60,7 @@ export default function ContactSection() {
       title: "LinkedIn",
       subtitle: "Professional Network",
       action: "Connect",
-      link: "#"
-    },
-    {
-      icon: Twitter,
-      title: "Twitter",
-      subtitle: "@corvidai_ai",
-      action: "Follow",
-      link: "#"
+      link: "https://www.linkedin.com/in/alialsaffaf/"
     },
     {
       icon: FileText,
