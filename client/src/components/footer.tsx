@@ -1,5 +1,5 @@
 import covidLogo from "@assets/corvidai_1753068680605.png";
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -57,12 +57,6 @@ export default function Footer() {
               className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
             >
               <Linkedin size={20} />
-            </a>
-            <a 
-              href="#" 
-              className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
-            >
-              <Twitter size={20} />
             </a>
             <a 
               href="mailto:hello@corvidai.com" 
