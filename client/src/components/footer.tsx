@@ -51,7 +51,9 @@ export default function Footer() {
           
           <div className="flex space-x-4">
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/alialsaffaf/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
             >
               <Linkedin size={20} />
