@@ -81,7 +81,7 @@ export default function ContactSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             const gradients = [
