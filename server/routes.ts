@@ -3,6 +3,61 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertBlogPostSchema } from "@shared/schema";
 import { z } from "zod";
+import nodemailer from "nodemailer";
+
+// Create email transporter
+function createEmailTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+}
+
+// Send contact form email
+async function sendContactEmail(name: string, email: string, message: string) {
+  console.log('Setting up email transporter...');
+  console.log('SMTP Config:', {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    user: process.env.SMTP_USER ? 'configured' : 'missing'
+  });
+  
+  const transporter = createEmailTransporter();
+  
+  const mailOptions = {
+    from: process.env.SMTP_USER,
+    to: 'hello@corvidai.io',
+    subject: `New Contact Form Message from ${name}`,
+    html: `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, '<br>')}</p>
+      <hr>
+      <p><em>This message was sent from the Corvidai website contact form.</em></p>
+    `,
+    text: `
+New Contact Form Submission
+
+Name: ${name}
+Email: ${email}
+Message: ${message}
+
+This message was sent from the Corvidai website contact form.
+    `
+  };
+
+  console.log('Sending email to hello@corvidai.io...');
+  const result = await transporter.sendMail(mailOptions);
+  console.log('Email sent successfully:', result.messageId);
+  return result;
+}
 
 // Extract featured image from individual Substack post
 async function extractFeaturedImageFromPost(postUrl: string): Promise<string | null> {
@@ -252,11 +307,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Name, email, and message are required" });
       }
       
-      // In a real implementation, you would send an email here
+      // Send email notification
       console.log('Contact form submission:', { name, email, message });
+      
+      try {
+        await sendContactEmail(name, email, message);
+        console.log('Email sent successfully to hello@corvidai.io');
+      } catch (emailError) {
+        console.error('Failed to send email:', emailError);
+        return res.status(500).json({ message: "Failed to send email notification" });
+      }
       
       res.json({ message: "Message sent successfully" });
     } catch (error) {
+      console.error('Contact form error:', error);
       res.status(500).json({ message: "Failed to send message" });
     }
   });
