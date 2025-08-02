@@ -7,15 +7,28 @@ import nodemailer from "nodemailer";
 
 // Create email transporter
 function createEmailTransporter() {
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+  const config = {
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
+    secure: false, // Use STARTTLS instead of SSL
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
+    tls: {
+      rejectUnauthorized: false
+    }
+  };
+  
+  console.log('Creating transporter with config:', {
+    host: config.host,
+    port: config.port,
+    secure: config.secure,
+    user: config.auth.user ? 'configured' : 'missing',
+    pass: config.auth.pass ? 'configured' : 'missing'
   });
+  
+  return nodemailer.createTransport(config);
 }
 
 // Send contact form email
@@ -24,8 +37,14 @@ async function sendContactEmail(name: string, email: string, message: string) {
   console.log('SMTP Config:', {
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
-    user: process.env.SMTP_USER ? 'configured' : 'missing'
+    user: process.env.SMTP_USER ? 'configured' : 'missing',
+    pass: process.env.SMTP_PASS ? 'configured' : 'missing'
   });
+  
+  // Verify all required environment variables
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    throw new Error('Missing required SMTP environment variables');
+  }
   
   const transporter = createEmailTransporter();
   
