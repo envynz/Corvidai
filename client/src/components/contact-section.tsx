@@ -152,24 +152,16 @@ export default function ContactSection() {
                   />
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex justify-center">
                   <div className="gradient-border">
                     <Button 
                       type="submit"
                       disabled={contactMutation.isPending}
-                      className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium w-full sm:w-auto"
+                      className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
                     >
                       {contactMutation.isPending ? "Sending..." : "Send Message"}
                     </Button>
                   </div>
-                  <Button 
-                    type="button"
-                    variant="outline"
-                    onClick={() => window.open('https://calendly.com/corvidae', '_blank')}
-                    className="border-[hsl(197,87%,43%)] text-[hsl(197,87%,43%)] px-8 py-3 rounded-xl hover:bg-[hsl(197,87%,43%)] hover:text-[hsl(222,84%,15%)] transition-all duration-300 font-medium"
-                  >
-                    Schedule a Call
-                  </Button>
                 </div>
               </form>
             </CardContent>
