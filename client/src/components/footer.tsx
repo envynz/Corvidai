@@ -16,10 +16,10 @@ export default function Footer() {
           <div className="flex items-center space-x-3 mb-6 md:mb-0">
             <img 
               src={covidLogo} 
-              alt="Corvidai Logo" 
+              alt="Corvid.ai Logo" 
               className="w-8 h-8 rounded-lg"
             />
-            <span className="text-xl font-bold gradient-text">Corvidai</span>
+            <span className="text-xl font-bold gradient-text">Corvid.ai</span>
           </div>
           
           <div className="flex space-x-6 mb-6 md:mb-0">

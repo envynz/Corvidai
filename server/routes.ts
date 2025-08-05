@@ -50,7 +50,7 @@ async function sendContactEmail(name: string, email: string, message: string) {
   
   const mailOptions = {
     from: process.env.SMTP_USER,
-    to: 'hello@corvidai.io',
+    to: 'hello@corvid.ai',
     subject: `New Contact Form Message from ${name}`,
     html: `
       <h2>New Contact Form Submission</h2>
@@ -59,7 +59,7 @@ async function sendContactEmail(name: string, email: string, message: string) {
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
       <hr>
-      <p><em>This message was sent from the Corvidai website contact form.</em></p>
+      <p><em>This message was sent from the Corvid.ai website contact form.</em></p>
     `,
     text: `
 New Contact Form Submission
@@ -68,11 +68,11 @@ Name: ${name}
 Email: ${email}
 Message: ${message}
 
-This message was sent from the Corvidai website contact form.
+This message was sent from the Corvid.ai website contact form.
     `
   };
 
-  console.log('Sending email to hello@corvidai.io...');
+  console.log('Sending email to hello@corvid.ai...');
   const result = await transporter.sendMail(mailOptions);
   console.log('Email sent successfully:', result.messageId);
   return result;
@@ -331,7 +331,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       try {
         await sendContactEmail(name, email, message);
-        console.log('Email sent successfully to hello@corvidai.io');
+        console.log('Email sent successfully to hello@corvid.ai');
       } catch (emailError) {
         console.error('Failed to send email:', emailError);
         return res.status(500).json({ message: "Failed to send email notification" });

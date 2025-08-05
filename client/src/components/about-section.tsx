@@ -4,7 +4,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-[hsl(215,25%,27%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold gradient-text mb-4">About Corvidai</h2>
+          <h2 className="text-4xl font-bold gradient-text mb-4">About Corvid.ai</h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Discover the story behind the intelligence and innovation that drives our mission.
           </p>
