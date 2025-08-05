@@ -51,9 +51,9 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      subtitle: "hello@corvidai.com",
+      subtitle: "hello@corvidai.io",
       action: "Send Message",
-      link: "mailto:hello@corvidai.com"
+      link: "mailto:hello@corvidai.io"
     },
     {
       icon: Linkedin,

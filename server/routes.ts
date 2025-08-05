@@ -59,7 +59,7 @@ async function sendContactEmail(name: string, email: string, message: string) {
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
       <hr>
-      <p><em>This message was sent from the Corvidai website contact form.</em></p>
+      <p><em>This message was sent from the Corvid.ai website contact form.</em></p>
     `,
     text: `
 New Contact Form Submission
@@ -68,7 +68,7 @@ Name: ${name}
 Email: ${email}
 Message: ${message}
 
-This message was sent from the Corvidai website contact form.
+This message was sent from the Corvid.ai website contact form.
     `
   };
 

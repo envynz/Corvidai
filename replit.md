@@ -1,8 +1,8 @@
-# Corvidai Portfolio Application
+# Corvid.ai Portfolio Application
 
 ## Overview
 
-This is a full-stack portfolio website for "Corvidai," featuring a React frontend with Express.js backend. The application showcases a personal/company portfolio with sections for about, services, blog integration via RSS feed parsing, and contact functionality. It uses a modern tech stack with TypeScript, shadcn/ui components, Tailwind CSS, and Drizzle ORM for database operations.
+This is a full-stack portfolio website for "Corvid.ai," featuring a React frontend with Express.js backend. The application showcases a personal/company portfolio with sections for about, services, blog integration via RSS feed parsing, and contact functionality. It uses a modern tech stack with TypeScript, shadcn/ui components, Tailwind CSS, and Drizzle ORM for database operations.
 
 ## User Preferences
 
@@ -49,7 +49,7 @@ Preferred communication style: Simple, everyday language.
 5. **Image Extraction Service**: Fetches actual featured images from individual Substack posts using Open Graph meta tags
 
 ### UI System
-- **Design System**: Custom color palette with Corvidai brand colors (navy, cyan, blue, magenta, orange)
+- **Design System**: Custom color palette with Corvid.ai brand colors (navy, cyan, blue, magenta, orange)
 - **Theme**: Dark theme implementation with CSS custom properties
 - **Responsive Design**: Mobile-first approach with responsive breakpoints
 - **Animations**: Custom CSS animations for interactive elements
@@ -110,6 +110,7 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 ### January 24, 2025
+- **Brand Update**: Updated all "Corvidai" references to "Corvid.ai" throughout the website while keeping email addresses as corvidai.io
 - **Email Functionality Implemented**: Successfully configured Gmail SMTP for contact form submissions
 - **Gmail App Password Setup**: Resolved authentication issues by using proper Gmail app passwords and correcting SMTP configuration
 - **Contact Form Testing**: Verified email delivery to hello@corvidai.io with proper error handling and success confirmation
@@ -121,7 +122,7 @@ Preferred communication style: Simple, everyday language.
 ### January 23, 2025
 - **Blog Integration Complete**: Successfully integrated AliTheAIGuy Substack feed (https://alitheaiguy.substack.com/)
 - **RSS Parser Enhanced**: Fixed CDATA handling and improved parsing reliability  
-- **Company Rebranding**: Updated all references from "Corvidae" to "Corvidai" to emphasize AI focus
+- **Company Rebranding**: Updated all references from "Corvidae" to "Corvid.ai" to emphasize AI focus
 - **Blog Display**: Now showing latest 10 posts in responsive grid layout with proper titles and excerpts
 - **Auto-Sync**: Blog section automatically syncs latest posts on page load
 - **Real Thumbnail Extraction**: Implemented extraction of actual featured images from individual Substack posts using Open Graph meta tags

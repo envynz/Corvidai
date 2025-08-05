@@ -16,10 +16,10 @@ export default function Footer() {
           <div className="flex items-center space-x-3 mb-6 md:mb-0">
             <img 
               src={covidLogo} 
-              alt="Corvidai Logo" 
+              alt="Corvid.ai Logo" 
               className="w-8 h-8 rounded-lg"
             />
-            <span className="text-xl font-bold gradient-text">Corvidai</span>
+            <span className="text-xl font-bold gradient-text">Corvid.ai</span>
           </div>
           
           <div className="flex space-x-6 mb-6 md:mb-0">
@@ -69,7 +69,7 @@ export default function Footer() {
         
         <div className="border-t border-slate-600 mt-8 pt-8 text-center">
           <p className="text-slate-400 text-sm">
-            © 2024 Corvidai. Intelligence that soars above the ordinary.
+            © 2024 Corvid.ai. Intelligence that soars above the ordinary.
           </p>
         </div>
       </div>
