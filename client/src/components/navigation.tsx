@@ -32,10 +32,10 @@ export default function Navigation() {
           <div className="flex items-center space-x-3">
             <img 
               src={covidLogo} 
-              alt="Corvid.ai Logo" 
+              alt="Corvidai Logo" 
               className="w-8 h-8 rounded-lg"
             />
-            <span className="text-xl font-bold gradient-text">Corvid.ai</span>
+            <span className="text-xl font-bold gradient-text">Corvidai</span>
           </div>
           
           {/* Desktop Navigation */}
