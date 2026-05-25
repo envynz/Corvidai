@@ -16,8 +16,8 @@ const HOW_IT_WORKS = [
   {
     step: "02",
     icon: <Zap className="w-6 h-6" />,
-    title: "Zara answers instantly",
-    body: "Your AI receptionist picks up, greets the caller with your business name, and handles the conversation naturally — collecting their name, number, and what they need.",
+    title: "Digital Receptionist answers instantly",
+    body: "Your Digital receptionist picks up, greets the caller with your business name, and handles the conversation naturally — collecting their name, number, and what they need.",
   },
   {
     step: "03",
@@ -29,18 +29,18 @@ const HOW_IT_WORKS = [
     step: "04",
     icon: <CheckCircle className="w-6 h-6" />,
     title: "Customer gets a follow-up SMS",
-    body: "Zara sends your customer a text confirming you'll be in touch, keeping them warm while you finish the job.",
+    body: "Digital receptionist sends your customer a text confirming you'll be in touch, keeping them warm while you finish the job.",
   },
 ];
 
 const FAQS = [
   {
     q: "Will my customers know they're talking to an AI?",
-    a: "That's up to you. We can configure Zara to be upfront if asked, or keep it ambiguous. Either way, customers consistently report the experience feels natural and professional.",
+    a: "That's up to you. We can configure your Digital receptionist to be upfront if asked, or keep it ambiguous. Either way, customers consistently report the experience feels natural and professional.",
   },
   {
     q: "Do I need to change my phone number or setup?",
-    a: "No. Your number stays exactly the same. We use your carrier's existing divert-on-no-answer feature to route missed calls to Zara. Customers dial your number as usual.",
+    a: "No. Your number stays exactly the same. We use your carrier's existing divert-on-no-answer feature to route missed calls to the Digital receptionist. Customers dial your number as usual.",
   },
   {
     q: "What trades does this work for?",
@@ -55,8 +55,8 @@ const FAQS = [
     a: "No contract, no lock-in. Pay month to month. If it's not working for you, cancel anytime — no questions asked.",
   },
   {
-    q: "What if a customer has a complex question Zara can't answer?",
-    a: "Zara is trained to stay in her lane. If a question is outside scope, she'll let the customer know you'll call them back personally — then notify you immediately.",
+    q: "What if a customer has a complex question the Digital receptionist can't answer?",
+    a: "The Digital receptionist is trained to stay in her lane. If a question is outside scope, she'll let the customer know you'll call them back personally — then notify you immediately.",
   },
 ];
 
@@ -64,7 +64,7 @@ const TESTIMONIALS = [
   {
     name: "Mike T.",
     trade: "Electrician, Auckland",
-    quote: "I used to lose jobs because I couldn't answer while on site. Now Zara handles it and I get a text straight away. Paid for itself in the first week.",
+    quote: "I used to lose jobs because I couldn't answer while on site. Now my Digital receptionist handles it and I get a text straight away. Paid for itself in the first week.",
     initials: "MT",
   },
   {
@@ -82,7 +82,7 @@ const TESTIMONIALS = [
 ];
 
 const FEATURES = [
-  "24/7 AI receptionist (Zara)",
+  "24/7 Digital receptionist",
   "Missed call detection via carrier divert",
   "SMS lead notifications to you",
   "Customer follow-up SMS",
@@ -259,7 +259,7 @@ export default function AIReceptionistPage() {
           </h1>
 
           <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-            Zara answers your missed calls 24/7, collects the customer's details, and texts you a summary — so you never lose another lead while you're on the tools.
+            Digital receptionist answers your missed calls 24/7, collects the customer's details, and texts you a summary — so you never lose another lead while you're on the tools.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
