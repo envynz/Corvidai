@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Phone, MessageSquare, Clock, CheckCircle, ChevronDown, Menu, X, ArrowRight, Zap, Shield, Star } from "lucide-react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import DemoWidget from './DemoWidget';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
