@@ -34,13 +34,6 @@ const HOW_IT_WORKS = [
   },
 ];
 
-{/* Live Demo Widget */}
-<section className="py-20 px-6">
-  <div className="max-w-xl mx-auto">
-    <DemoWidget />
-  </div>
-</section>
-
 const FAQS = [
   {
     q: "Will my customers know they're talking to an AI?",
@@ -329,6 +322,19 @@ export default function AIReceptionistPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── LIVE DEMO ── */}
+      <section className="py-20 px-4">
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-[hsl(197,87%,43%)] text-xs font-semibold uppercase tracking-widest mb-3">Try It Now</p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              Hear it <span className="gradient-text">for yourself</span>
+            </h2>
+          </div>
+          <DemoWidget />
         </div>
       </section>
 

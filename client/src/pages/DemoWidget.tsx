@@ -1,7 +1,9 @@
-function DemoWidget() {
-  const [phone, setPhone] = React.useState('');
-  const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [error, setError] = React.useState('');
+import { useState } from "react";
+
+export default function DemoWidget() {
+  const [phone, setPhone] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
 
   const isValidNZMobile = (digits: string) => /^[2][0-9]{7,9}$/.test(digits);
 
@@ -41,7 +43,7 @@ function DemoWidget() {
         <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] flex items-center justify-center mx-auto mb-4 text-2xl">
           📱
         </div>
-        <h3 className="font-syne text-xl font-bold text-white mb-2">Check your phone!</h3>
+        <h3 className="text-xl font-bold text-white mb-2">Check your phone!</h3>
         <p className="text-white/50 text-sm leading-relaxed">
           Zara is texting <span className="text-[hsl(197,87%,43%)] font-medium">+64 {phone}</span> right now.
           Reply to continue the demo conversation.
@@ -52,22 +54,20 @@ function DemoWidget() {
 
   return (
     <div className="gradient-border rounded-2xl p-10">
-      {/* Live indicator */}
       <div className="flex items-center gap-2 mb-4">
         <span className="w-2 h-2 rounded-full bg-[hsl(197,87%,43%)] animate-pulse" />
-        <span className="font-syne text-xs font-bold tracking-widest uppercase text-[hsl(197,87%,43%)]">Live Demo</span>
+        <span className="text-xs font-bold tracking-widest uppercase text-[hsl(197,87%,43%)]">Live Demo</span>
       </div>
 
-      <h2 className="font-syne text-2xl font-extrabold text-white mb-2">
+      <h2 className="text-2xl font-extrabold text-white mb-2">
         See it <span className="gradient-text">in action</span>
       </h2>
       <p className="text-white/50 text-sm leading-relaxed mb-6">
         Enter your NZ mobile and Zara will text you within 60 seconds — exactly as your customers would experience it.
       </p>
 
-      {/* Preview bubble */}
       <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 flex items-start gap-3">
-        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] flex items-center justify-center text-white font-bold text-xs flex-shrink-0 font-syne">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
           Z
         </div>
         <div>
@@ -78,7 +78,6 @@ function DemoWidget() {
         </div>
       </div>
 
-      {/* Input */}
       <div className="flex gap-2 mb-3">
         <div className="flex flex-1 border border-white/10 rounded-xl overflow-hidden bg-white/5 focus-within:border-[hsl(197,87%,43%)] focus-within:bg-[hsl(197,87%,43%)]/5 transition-all">
           <div className="flex items-center px-3 text-white/40 text-sm font-medium border-r border-white/10 bg-white/5 select-none">
@@ -98,7 +97,7 @@ function DemoWidget() {
         <button
           onClick={handleSubmit}
           disabled={status === 'loading'}
-          className="bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] text-white font-bold text-sm px-5 py-3.5 rounded-xl font-syne disabled:opacity-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[hsl(197,87%,43%)]/30 transition-all"
+          className="bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] text-white font-bold text-sm px-5 py-3.5 rounded-xl disabled:opacity-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[hsl(197,87%,43%)]/30 transition-all"
         >
           {status === 'loading' ? '...' : 'Try it'}
         </button>
