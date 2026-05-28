@@ -33,6 +33,13 @@ const HOW_IT_WORKS = [
   },
 ];
 
+{/* Live Demo Widget */}
+<section className="py-20 px-6">
+  <div className="max-w-xl mx-auto">
+    <DemoWidget />
+  </div>
+</section>
+
 const FAQS = [
   {
     q: "Will my customers know they're talking to an AI?",
