@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import covidLogo from "@assets/corvidai_1753068680605.png";
 
 export default function HeroSection() {
@@ -17,33 +18,44 @@ export default function HeroSection() {
           <div className="mb-8 flex justify-center">
             <div className="w-32 h-32 bg-gradient-to-br from-[hsl(197,87%,43%)] via-[hsl(217,91%,60%)] to-[hsl(327,73%,56%)] rounded-full p-1 animate-glow">
               <div className="w-full h-full bg-[hsl(222,84%,15%)] rounded-full flex items-center justify-center">
-                <img 
-                  src={covidLogo} 
-                  alt="Corvid.ai Logo" 
+                <img
+                  src={covidLogo}
+                  alt="Corvid.ai Logo"
                   className="w-20 h-20 object-contain"
                 />
               </div>
             </div>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="gradient-text">Corvid.ai</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             Intelligent solutions that soar above the ordinary. We harness the power of innovation to deliver exceptional results.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* Primary CTA — Digital Receptionist */}
+            <Link href="/receptionist">
+              <a className="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-semibold text-[hsl(222,84%,15%)] bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[hsl(197,87%,43%)]/25 animate-glow">
+                Try a Live Demo
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              </a>
+            </Link>
+
+            {/* Secondary CTA — Explore */}
             <div className="gradient-border">
-              <Button 
+              <Button
                 onClick={() => scrollToSection("about")}
                 className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
               >
                 Explore My Work
               </Button>
             </div>
-            <Button 
+
+            {/* Tertiary CTA — Contact */}
+            <Button
               onClick={() => scrollToSection("contact")}
               variant="outline"
               className="border-[hsl(197,87%,43%)] text-[hsl(197,87%,43%)] px-8 py-3 rounded-xl hover:bg-[hsl(197,87%,43%)] hover:text-[hsl(222,84%,15%)] transition-all duration-300 font-medium"
