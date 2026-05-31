@@ -68,14 +68,21 @@ export default function Navigation() {
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 glass-effect rounded-xl border border-[hsl(215,27.9%,16.9%)] overflow-hidden shadow-xl">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 glass-effect rounded-xl border border-[hsl(215,27.9%,16.9%)] overflow-hidden shadow-xl">
                   <Link
                     href="/receptionist"
                     onClick={() => setServicesOpen(false)}
                     className="flex items-center gap-2 px-4 py-3 text-sm text-slate-200 hover:text-[hsl(197,87%,43%)] hover:bg-[hsl(197,87%,43%)]/10 transition-colors duration-200"
                   >
-                    Digital Receptionist
+                    📞 Digital Receptionist
                   </Link>
+                  <div className="border-t border-[hsl(215,27.9%,16.9%)]" />
+                  <button
+                    onClick={() => handleNavClick("contact")}
+                    className="flex items-center gap-2 px-4 py-3 text-sm text-slate-200 hover:text-[hsl(197,87%,43%)] hover:bg-[hsl(197,87%,43%)]/10 transition-colors duration-200 w-full text-left"
+                  >
+                    🧠 AI Consulting
+                  </button>
                 </div>
               )}
             </div>
@@ -112,14 +119,20 @@ export default function Navigation() {
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
                 </button>
                 {servicesOpen && (
-                  <div className="mt-2 ml-4 border-l border-[hsl(197,87%,43%)]/30 pl-4">
+                  <div className="mt-2 ml-4 border-l border-[hsl(197,87%,43%)]/30 pl-4 flex flex-col gap-2">
                     <Link
                       href="/receptionist"
                       onClick={() => { setServicesOpen(false); setIsOpen(false); }}
                       className="block text-sm text-slate-300 hover:text-[hsl(197,87%,43%)] transition-colors duration-200 py-1"
                     >
-                      Digital Receptionist
+                      📞 Digital Receptionist
                     </Link>
+                    <button
+                      onClick={() => handleNavClick("contact")}
+                      className="block text-sm text-slate-300 hover:text-[hsl(197,87%,43%)] transition-colors duration-200 py-1 text-left"
+                    >
+                      🧠 AI Consulting
+                    </button>
                   </div>
                 )}
               </div>

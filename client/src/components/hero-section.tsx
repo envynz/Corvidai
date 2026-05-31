@@ -31,8 +31,12 @@ export default function HeroSection() {
             <span className="gradient-text">Corvid.ai</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Intelligent solutions that soar above the ordinary. We harness the power of innovation to deliver exceptional results.
+          <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+            Built on intelligence. Designed for the people who build New Zealand.
+          </p>
+
+          <p className="text-base md:text-lg text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            AI-powered tools that work in the background — so you can focus on the work that matters.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -44,13 +48,13 @@ export default function HeroSection() {
               </a>
             </Link>
 
-            {/* Secondary CTA — Explore */}
+            {/* Secondary CTA — Services */}
             <div className="gradient-border">
               <Button
-                onClick={() => scrollToSection("about")}
+                onClick={() => scrollToSection("services")}
                 className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
               >
-                Explore My Work
+                Our Services
               </Button>
             </div>
 
