@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Phone, MessageSquare, Clock, CheckCircle, ChevronDown, Menu, X, ArrowRight, Zap, Shield, Star } from "lucide-react";
+import { Phone, MessageSquare, Clock, CheckCircle, ChevronDown, Menu, X, ArrowRight, Zap, Shield } from "lucide-react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import DemoWidget from './DemoWidget';
@@ -58,27 +58,6 @@ const FAQS = [
   {
     q: "What if a customer has a complex question the Digital receptionist can't answer?",
     a: "The Digital receptionist is trained to stay in her lane. If a question is outside scope, she'll let the customer know you'll call them back personally — then notify you immediately.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    name: "Mike T.",
-    trade: "Electrician, Auckland",
-    quote: "I used to lose jobs because I couldn't answer while on site. Now my Digital receptionist handles it and I get a text straight away. Paid for itself in the first week.",
-    initials: "MT",
-  },
-  {
-    name: "Sarah K.",
-    trade: "Plumber, Hamilton",
-    quote: "Honestly I was sceptical but the setup was dead easy and customers love it. Had a few say 'your receptionist was so helpful'. Didn't have the heart to tell them.",
-    initials: "SK",
-  },
-  {
-    name: "Jason W.",
-    trade: "Builder, Tauranga",
-    quote: "Three new jobs in the first month that I would've missed before. The ROI is obvious.",
-    initials: "JW",
   },
 ];
 
@@ -335,40 +314,6 @@ export default function AIReceptionistPage() {
             </h2>
           </div>
           <DemoWidget />
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ── */}
-      <section className="py-24 px-4 bg-[hsl(215,25%,27%)]/20 border-y border-[hsl(215,27.9%,16.9%)]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[hsl(197,87%,43%)] text-xs font-semibold uppercase tracking-widest mb-3">What Tradies Say</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-              Real results. <span className="gradient-text">Real tradies.</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="glass-effect rounded-2xl p-7 flex flex-col">
-                <div className="flex mb-4 gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[hsl(43,96%,49%)] text-[hsl(43,96%,49%)]" />
-                  ))}
-                </div>
-                <p className="text-slate-300 text-sm leading-relaxed italic flex-1 mb-6">"{t.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-slate-100">{t.name}</div>
-                    <div className="text-xs text-slate-500">{t.trade}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
