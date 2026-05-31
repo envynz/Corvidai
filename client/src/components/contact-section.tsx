@@ -8,6 +8,12 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { Mail, Linkedin, FileText } from "lucide-react";
 
+const FacebookIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -63,6 +69,13 @@ export default function ContactSection() {
       link: "https://www.linkedin.com/in/alialsaffaf/"
     },
     {
+      icon: FacebookIcon,
+      title: "Facebook",
+      subtitle: "Corvid AI",
+      action: "Follow Us",
+      link: "https://www.facebook.com/CorvidAI"
+    },
+    {
       icon: FileText,
       title: "Substack",
       subtitle: "Intelligence Insights",
@@ -80,8 +93,8 @@ export default function ContactSection() {
             Ready to explore intelligent solutions together? Reach out through any of these channels.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+
+        <div className="grid md:grid-cols-4 gap-8 mb-16 max-w-5xl mx-auto">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             const gradients = [
@@ -90,7 +103,7 @@ export default function ContactSection() {
               "from-[hsl(327,73%,56%)] to-[hsl(43,96%,49%)]",
               "from-[hsl(43,96%,49%)] to-[hsl(197,87%,43%)]"
             ];
-            
+
             return (
               <Card key={index} className="glass-effect border-none hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-6 text-center">
@@ -99,7 +112,7 @@ export default function ContactSection() {
                   </div>
                   <h3 className="text-lg font-semibold text-[hsl(197,87%,43%)] mb-2">{method.title}</h3>
                   <p className="text-slate-300 text-sm mb-4">{method.subtitle}</p>
-                  <a 
+                  <a
                     href={method.link}
                     target={method.link.startsWith('http') ? '_blank' : undefined}
                     rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -112,7 +125,7 @@ export default function ContactSection() {
             );
           })}
         </div>
-        
+
         {/* Contact Form */}
         <div className="mt-16">
           <Card className="glass-effect border-none max-w-2xl mx-auto">
@@ -121,7 +134,7 @@ export default function ContactSection() {
               <p className="text-slate-300 leading-relaxed mb-6 text-center">
                 Whether you're looking for strategic consulting, technology solutions, or just want to discuss innovative ideas, I'm always open to meaningful conversations about intelligent problem-solving.
               </p>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -151,10 +164,10 @@ export default function ContactSection() {
                     className="bg-[hsl(222,84%,15%)] border-[hsl(197,87%,43%)]/20 text-white placeholder:text-slate-400"
                   />
                 </div>
-                
+
                 <div className="flex justify-center">
                   <div className="gradient-border">
-                    <Button 
+                    <Button
                       type="submit"
                       disabled={contactMutation.isPending}
                       className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
