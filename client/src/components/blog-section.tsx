@@ -75,21 +75,13 @@ function parseRSS(xml: string): BlogPost[] {
   return items;
 }
 
-async function fetchSubstackPosts(): Promise<BlogPost[]> {
-  const encodedUrl = encodeURIComponent(SUBSTACK_RSS_URL);
-
-  // Strategy 1: Direct fetch (works in production on Netlify)
-  try {
-    const response = await fetch(SUBSTACK_RSS_URL, {
-      headers: { Accept: "application/rss+xml, application/xml, text/xml" },
-    });
-    if (response.ok) {
-      const xml = await response.text();
-      const posts = parseRSS(xml);
-      if (posts.length > 0) return posts;
-    }
-  } catch {
-    console.log("Direct fetch failed, trying proxy...");
+  async function fetchSubstackPosts(): Promise<BlogPost[]> {
+    const response = await fetch("/.netlify/functions/rss-proxy");
+    if (!response.ok) throw new Error("Failed to fetch RSS feed");
+    const xml = await response.text();
+    const posts = parseRSS(xml);
+    if (posts.length === 0) throw new Error("No posts parsed");
+    return posts;
   }
 
   // Strategy 2: allorigins proxy
