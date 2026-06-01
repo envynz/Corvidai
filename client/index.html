@@ -3,12 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- ═══════════════════════════════════════════════
+         PRIMARY SEO META TAGS
+    ═══════════════════════════════════════════════ -->
+    <title>Corvid AI — AI-Powered Digital Receptionist for NZ Tradies</title>
+    <meta name="description" content="Corvid AI builds AI-powered tools for New Zealand businesses. Our Digital Receptionist answers missed calls 24/7, collects customer details, and texts you a summary — so you never lose a lead while you're on the job." />
+    <meta name="keywords" content="AI receptionist New Zealand, digital receptionist NZ, missed call service tradies, AI for tradies, automated receptionist NZ, Corvid AI, AI tools New Zealand small business" />
+    <meta name="author" content="Corvid AI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://corvidai.io/" />
+
+    <!-- ═══════════════════════════════════════════════
+         OPEN GRAPH (Facebook, LinkedIn)
+    ═══════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://corvidai.io/" />
+    <meta property="og:site_name" content="Corvid AI" />
+    <meta property="og:title" content="Corvid AI — Never Miss a Call. Never Lose a Lead." />
+    <meta property="og:description" content="AI-powered tools built for New Zealand businesses. Our Digital Receptionist answers missed calls 24/7, collects customer details, and texts you a summary — so you never lose a lead while you're on the job." />
+    <meta property="og:image" content="https://corvidai.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_NZ" />
+
+    <!-- ═══════════════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Corvid AI — Never Miss a Call. Never Lose a Lead." />
+    <meta name="twitter:description" content="AI-powered tools built for New Zealand businesses. Our Digital Receptionist answers your missed calls 24/7 and texts you a lead summary." />
+    <meta name="twitter:image" content="https://corvidai.io/og-image.png" />
+
+    <!-- ═══════════════════════════════════════════════
+         FAVICON
+    ═══════════════════════════════════════════════ -->
     <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- ═══════════════════════════════════════════════
+         JSON-LD STRUCTURED DATA (SEO + AEO)
+         Helps Google, ChatGPT, Perplexity & other AI
+         tools understand and surface Corvid AI
+    ═══════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://corvidai.io/#organization",
+          "name": "Corvid AI",
+          "url": "https://corvidai.io",
+          "logo": "https://corvidai.io/favicon.png",
+          "description": "Corvid AI builds AI-powered tools for New Zealand businesses. Built on intelligence. Designed for the people who build New Zealand.",
+          "foundingDate": "2026",
+          "founder": {
+            "@type": "Person",
+            "name": "Ali Alsaffaf"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@corvidai.io",
+            "contactType": "customer support",
+            "availableLanguage": "English",
+            "areaServed": "NZ"
+          },
+          "sameAs": [
+            "https://www.facebook.com/CorvidAI",
+            "https://www.linkedin.com/in/alialsaffaf/"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "NZ",
+            "addressRegion": "Waikato"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://corvidai.io/#website",
+          "url": "https://corvidai.io",
+          "name": "Corvid AI",
+          "description": "AI-powered tools for New Zealand businesses",
+          "publisher": {
+            "@id": "https://corvidai.io/#organization"
+          }
+        },
+        {
+          "@type": "Product",
+          "@id": "https://corvidai.io/receptionist#product",
+          "name": "Digital Receptionist",
+          "description": "An AI-powered receptionist that answers missed calls 24/7, greets callers in your business name, collects their details, and sends you an SMS summary — so you never lose a lead while you're on the job.",
+          "url": "https://corvidai.io/receptionist",
+          "brand": {
+            "@id": "https://corvidai.io/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "179",
+            "priceCurrency": "NZD",
+            "priceSpecification": {
+              "@type": "RecurringCharge",
+              "billingPeriod": "P1M"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@id": "https://corvidai.io/#organization"
+            }
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "New Zealand"
+          },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Tradespeople and small business owners in New Zealand"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://corvidai.io/receptionist#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Corvid AI's Digital Receptionist?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Digital Receptionist is an AI-powered service that answers missed calls for New Zealand trade businesses 24/7. When you can't pick up, it greets the caller in your business name, collects their name, number, and reason for calling, then sends you an SMS summary. The customer also receives a follow-up text confirming you'll be in touch."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does the Digital Receptionist cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Digital Receptionist costs $499 NZD to set up (one-time) and $179 NZD per month. There is no contract and you can cancel anytime."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to change my phone number to use the Digital Receptionist?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Your phone number stays exactly the same. We set up a simple carrier divert-on-no-answer so when you can't pick up, calls are routed to your Digital Receptionist. Your customers dial your normal number as usual."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there an AI receptionist service for tradies in New Zealand?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — Corvid AI offers New Zealand's first AI-powered Digital Receptionist designed specifically for tradies and small businesses. It answers missed calls, collects customer details, and sends an SMS summary to the business owner. It is available at corvidai.io/receptionist."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What trades does the Digital Receptionist work for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Digital Receptionist works for any trade business that receives calls — including electricians, plumbers, builders, painters, roofers, landscapers, HVAC technicians, hair stylists, barbers, and more."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>
 </html>
