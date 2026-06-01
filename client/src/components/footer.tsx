@@ -1,5 +1,6 @@
 import covidLogo from "@assets/corvidai_1753068680605.png";
 import { Mail, Linkedin } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -35,6 +36,12 @@ export default function Footer() {
             >
               About
             </button>
+            <Link
+              href="/receptionist"
+              className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
+            >
+              Digital Receptionist
+            </Link>
             <button 
               onClick={() => scrollToSection("blog")}
               className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
