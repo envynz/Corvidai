@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 
-const SUBSTACK_RSS_URL = "https://alitheaiguy.substack.com/feed";
 const SUBSTACK_URL = "https://alitheaiguy.substack.com";
 const FALLBACK_IMAGE = "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png";
 
@@ -75,34 +74,9 @@ function parseRSS(xml: string): BlogPost[] {
   return items;
 }
 
-  async function fetchSubstackPosts(): Promise<BlogPost[]> {
-    const response = await fetch("/.netlify/functions/rss-proxy");
-    if (!response.ok) throw new Error("Failed to fetch RSS feed");
-    const xml = await response.text();
-    const posts = parseRSS(xml);
-    if (posts.length === 0) throw new Error("No posts parsed");
-    return posts;
-  }
-
-  // Strategy 2: allorigins proxy
-  try {
-    const response = await fetch(
-      `https://api.allorigins.win/get?url=${encodedUrl}`
-    );
-    if (response.ok) {
-      const data = await response.json();
-      const posts = parseRSS(data.contents);
-      if (posts.length > 0) return posts;
-    }
-  } catch {
-    console.log("allorigins failed, trying codetabs...");
-  }
-
-  // Strategy 3: codetabs proxy
-  const response = await fetch(
-    `https://api.codetabs.com/v1/proxy/?quest=${encodedUrl}`
-  );
-  if (!response.ok) throw new Error("All fetch strategies failed");
+async function fetchSubstackPosts(): Promise<BlogPost[]> {
+  const response = await fetch("/.netlify/functions/rss-proxy");
+  if (!response.ok) throw new Error("Failed to fetch RSS feed");
   const xml = await response.text();
   const posts = parseRSS(xml);
   if (posts.length === 0) throw new Error("No posts parsed");
@@ -130,7 +104,7 @@ export default function BlogSection() {
   } = useQuery<BlogPost[]>({
     queryKey: ["substack-rss"],
     queryFn: fetchSubstackPosts,
-    staleTime: 1000 * 60 * 10, // Cache for 10 minutes
+    staleTime: 1000 * 60 * 10,
     retry: 1,
   });
 
