@@ -10,81 +10,22 @@ interface BlogPost {
   id: string;
   title: string;
   link: string;
-  publishedAt: Date;
+  pubDate: string;
   excerpt: string;
   content: string;
   imageUrl: string | null;
 }
 
-function extractTag(content: string, tag: string): string {
-  const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, "i");
-  const match = content.match(regex);
-  if (match) {
-    let result = match[1];
-    result = result.replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, "$1");
-    return result.trim();
-  }
-  return "";
-}
-
-function extractImage(description: string): string | null {
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/i;
-  const match = description.match(imgRegex);
-  return match ? match[1] : null;
-}
-
-function parseRSS(xml: string): BlogPost[] {
-  const items: BlogPost[] = [];
-  const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
-  let match;
-
-  while ((match = itemRegex.exec(xml)) !== null) {
-    const itemContent = match[1];
-    const title = extractTag(itemContent, "title");
-    const link = extractTag(itemContent, "link");
-    const guid = extractTag(itemContent, "guid") || link;
-    const pubDate = extractTag(itemContent, "pubDate");
-    const description = extractTag(itemContent, "description");
-
-    if (!title || !link || !pubDate) continue;
-
-    const publishedAt = new Date(pubDate);
-    if (isNaN(publishedAt.getTime())) continue;
-
-    const imageUrl = extractImage(description);
-
-    const excerpt =
-      description
-        .replace(/<[^>]*>/g, "")
-        .replace(/&[^;]+;/g, "")
-        .trim()
-        .substring(0, 200) + "...";
-
-    items.push({
-      id: guid,
-      title: title.trim(),
-      link: link.trim(),
-      publishedAt,
-      excerpt,
-      content: description,
-      imageUrl,
-    });
-  }
-
-  return items;
-}
-
 async function fetchSubstackPosts(): Promise<BlogPost[]> {
   const response = await fetch("/.netlify/functions/rss-proxy");
   if (!response.ok) throw new Error("Failed to fetch RSS feed");
-  const xml = await response.text();
-  const posts = parseRSS(xml);
-  if (posts.length === 0) throw new Error("No posts parsed");
-  return posts;
+  const items = await response.json();
+  if (!items || items.length === 0) throw new Error("No posts found");
+  return items.map((item: any) => ({ ...item, id: item.guid }));
 }
 
-const formatDate = (date: Date) =>
-  date.toLocaleDateString("en-US", {
+const formatDate = (dateStr: string) =>
+  new Date(dateStr).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
@@ -96,12 +37,7 @@ const getReadTime = (content: string) => {
 };
 
 export default function BlogSection() {
-  const {
-    data: blogPosts,
-    isLoading,
-    isError,
-    refetch,
-  } = useQuery<BlogPost[]>({
+  const { data: blogPosts, isLoading, isError, refetch } = useQuery<BlogPost[]>({
     queryKey: ["substack-rss"],
     queryFn: fetchSubstackPosts,
     staleTime: 1000 * 60 * 10,
@@ -112,12 +48,9 @@ export default function BlogSection() {
     <section id="blog" className="py-20 bg-[hsl(215,25%,27%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold gradient-text mb-4">
-            Latest Insights
-          </h2>
+          <h2 className="text-4xl font-bold gradient-text mb-4">Latest Insights</h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Thoughts on technology, innovation, and the intelligence that drives
-            progress.
+            Thoughts on technology, innovation, and the intelligence that drives progress.
           </p>
         </div>
 
@@ -156,7 +89,7 @@ export default function BlogSection() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {blogPosts.slice(0, 10).map((post) => (
+            {blogPosts.map((post) => (
               <article
                 key={post.id}
                 className="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
@@ -165,14 +98,12 @@ export default function BlogSection() {
                   src={post.imageUrl || FALLBACK_IMAGE}
                   alt={post.title}
                   className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = FALLBACK_IMAGE;
-                  }}
+                  onError={(e) => { e.currentTarget.src = FALLBACK_IMAGE; }}
                 />
                 <div className="p-6">
                   <div className="flex items-center space-x-2 mb-3">
                     <span className="text-[hsl(197,87%,43%)] text-sm font-medium">
-                      {formatDate(post.publishedAt)}
+                      {formatDate(post.pubDate)}
                     </span>
                     <span className="text-slate-500">•</span>
                     <span className="text-slate-400 text-sm">
