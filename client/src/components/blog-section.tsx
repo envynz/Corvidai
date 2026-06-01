@@ -1,44 +1,107 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { apiRequest, queryClient } from "@/lib/queryClient";
-import type { BlogPost } from "@shared/schema";
+import { Button } from "@/components/ui/button";
+
+const SUBSTACK_RSS_URL = "https://alitheaiguy.substack.com/feed";
+const SUBSTACK_URL = "https://alitheaiguy.substack.com";
+const CORS_PROXY = "https://api.allorigins.win/get?url=";
+const FALLBACK_IMAGE = "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png";
+
+interface BlogPost {
+  id: string;
+  title: string;
+  link: string;
+  publishedAt: Date;
+  excerpt: string;
+  content: string;
+  imageUrl: string | null;
+}
+
+function extractTag(content: string, tag: string): string {
+  const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, "i");
+  const match = content.match(regex);
+  if (match) {
+    let result = match[1];
+    result = result.replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, "$1");
+    return result.trim();
+  }
+  return "";
+}
+
+function extractImage(description: string): string | null {
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/i;
+  const match = description.match(imgRegex);
+  return match ? match[1] : null;
+}
+
+function parseRSS(xml: string): BlogPost[] {
+  const items: BlogPost[] = [];
+  const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+  let match;
+
+  while ((match = itemRegex.exec(xml)) !== null) {
+    const itemContent = match[1];
+    const title = extractTag(itemContent, "title");
+    const link = extractTag(itemContent, "link");
+    const guid = extractTag(itemContent, "guid") || link;
+    const pubDate = extractTag(itemContent, "pubDate");
+    const description = extractTag(itemContent, "description");
+
+    if (!title || !link || !pubDate) continue;
+
+    const publishedAt = new Date(pubDate);
+    if (isNaN(publishedAt.getTime())) continue;
+
+    const imageUrl = extractImage(description);
+
+    const excerpt = description
+      .replace(/<[^>]*>/g, "")
+      .replace(/&[^;]+;/g, "")
+      .trim()
+      .substring(0, 200) + "...";
+
+    items.push({
+      id: guid,
+      title: title.trim(),
+      link: link.trim(),
+      publishedAt,
+      excerpt,
+      content: description,
+      imageUrl,
+    });
+  }
+
+  return items;
+}
+
+async function fetchSubstackPosts(): Promise<BlogPost[]> {
+  const response = await fetch(
+    `${CORS_PROXY}${encodeURIComponent(SUBSTACK_RSS_URL)}`
+  );
+  if (!response.ok) throw new Error("Failed to fetch RSS feed");
+  const data = await response.json();
+  return parseRSS(data.contents);
+}
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+
+const getReadTime = (content: string) => {
+  const words = content.replace(/<[^>]*>/g, "").split(" ").length;
+  return `${Math.ceil(words / 200)} min read`;
+};
 
 export default function BlogSection() {
-  // Fetch blog posts
-  const { data: blogPosts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog-posts"],
+  const { data: blogPosts, isLoading, isError, refetch } = useQuery<BlogPost[]>({
+    queryKey: ["substack-rss"],
+    queryFn: fetchSubstackPosts,
+    staleTime: 1000 * 60 * 10, // Cache for 10 minutes
   });
-
-  // Sync Substack feed mutation
-  const syncMutation = useMutation({
-    mutationFn: () => apiRequest("POST", "/api/sync-substack"),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/blog-posts"] });
-    },
-  });
-
-  // Auto-sync on component mount
-  useEffect(() => {
-    syncMutation.mutate();
-  }, []);
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
-
-  const getReadTime = (content: string) => {
-    const wordsPerMinute = 200;
-    const words = content.replace(/<[^>]*>/g, '').split(' ').length;
-    const readTime = Math.ceil(words / wordsPerMinute);
-    return `${readTime} min read`;
-  };
 
   return (
     <section id="blog" className="py-20 bg-[hsl(215,25%,27%)]">
@@ -49,7 +112,7 @@ export default function BlogSection() {
             Thoughts on technology, innovation, and the intelligence that drives progress.
           </p>
         </div>
-        
+
         {isLoading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((i) => (
@@ -64,40 +127,44 @@ export default function BlogSection() {
               </Card>
             ))}
           </div>
-        ) : !blogPosts || blogPosts.length === 0 ? (
+        ) : isError || !blogPosts || blogPosts.length === 0 ? (
           <div className="text-center">
             <div className="glass-effect rounded-2xl p-12 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-semibold text-[hsl(197,87%,43%)] mb-4">Blog Coming Soon</h3>
+              <h3 className="text-2xl font-semibold text-[hsl(197,87%,43%)] mb-4">
+                {isError ? "Couldn't load posts" : "Blog Coming Soon"}
+              </h3>
               <p className="text-slate-300 mb-6">
-                I'm currently setting up my Substack blog. Check back soon for insights on technology, innovation, and intelligent problem-solving.
+                {isError
+                  ? "There was an issue loading the latest posts. Please try again."
+                  : "I'm currently setting up my Substack blog. Check back soon for insights on technology, innovation, and intelligent problem-solving."}
               </p>
-              <Button 
-                onClick={() => syncMutation.mutate()}
-                disabled={syncMutation.isPending}
+              <Button
+                onClick={() => refetch()}
                 className="bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] hover:from-[hsl(197,87%,50%)] hover:to-[hsl(217,91%,67%)] text-white"
               >
-                {syncMutation.isPending ? "Checking..." : "Check for Posts"}
+                Try Again
               </Button>
             </div>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {blogPosts.slice(0, 10).map((post) => (
-              <article key={post.id} className="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img 
-                  src={post.imageUrl || "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png"} 
-                  alt={post.title} 
+              <article
+                key={post.id}
+                className="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
+              >
+                <img
+                  src={post.imageUrl || FALLBACK_IMAGE}
+                  alt={post.title}
                   className="w-full h-48 object-cover"
                   onError={(e) => {
-                    // Fallback to default image if the post image fails to load
-                    e.currentTarget.src = "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png";
+                    e.currentTarget.src = FALLBACK_IMAGE;
                   }}
                 />
-                
                 <div className="p-6">
                   <div className="flex items-center space-x-2 mb-3">
                     <span className="text-[hsl(197,87%,43%)] text-sm font-medium">
-                      {formatDate(post.publishedAt.toString())}
+                      {formatDate(post.publishedAt)}
                     </span>
                     <span className="text-slate-500">•</span>
                     <span className="text-slate-400 text-sm">
@@ -110,9 +177,9 @@ export default function BlogSection() {
                   <p className="text-slate-300 text-sm leading-relaxed mb-4">
                     {post.excerpt}
                   </p>
-                  <a 
-                    href={post.link} 
-                    target="_blank" 
+                  <a
+                    href={post.link}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-[hsl(197,87%,43%)] hover:text-[hsl(217,91%,60%)] transition-colors font-medium text-sm"
                   >
@@ -123,12 +190,12 @@ export default function BlogSection() {
             ))}
           </div>
         )}
-        
+
         {blogPosts && blogPosts.length > 0 && (
           <div className="text-center mt-12">
             <div className="gradient-border inline-block">
-              <Button 
-                onClick={() => window.open(import.meta.env.VITE_SUBSTACK_URL || 'https://alitheaiguy.substack.com', '_blank')}
+              <Button
+                onClick={() => window.open(SUBSTACK_URL, "_blank")}
                 className="bg-[hsl(222,84%,15%)] text-white px-8 py-3 rounded-xl hover:bg-[hsl(215,25%,27%)] transition-all duration-300 font-medium"
               >
                 View All Posts
