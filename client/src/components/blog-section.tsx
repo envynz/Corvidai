@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 
 const SUBSTACK_RSS_URL = "https://alitheaiguy.substack.com/feed";
 const SUBSTACK_URL = "https://alitheaiguy.substack.com";
-const CORS_PROXY = "https://api.allorigins.win/get?url=";
 const FALLBACK_IMAGE = "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9633e180-6f67-4404-a4d6-03cabd6777ab_1024x1024.png";
 
 interface BlogPost {
@@ -55,11 +54,12 @@ function parseRSS(xml: string): BlogPost[] {
 
     const imageUrl = extractImage(description);
 
-    const excerpt = description
-      .replace(/<[^>]*>/g, "")
-      .replace(/&[^;]+;/g, "")
-      .trim()
-      .substring(0, 200) + "...";
+    const excerpt =
+      description
+        .replace(/<[^>]*>/g, "")
+        .replace(/&[^;]+;/g, "")
+        .trim()
+        .substring(0, 200) + "...";
 
     items.push({
       id: guid,
@@ -76,12 +76,45 @@ function parseRSS(xml: string): BlogPost[] {
 }
 
 async function fetchSubstackPosts(): Promise<BlogPost[]> {
+  const encodedUrl = encodeURIComponent(SUBSTACK_RSS_URL);
+
+  // Strategy 1: Direct fetch (works in production on Netlify)
+  try {
+    const response = await fetch(SUBSTACK_RSS_URL, {
+      headers: { Accept: "application/rss+xml, application/xml, text/xml" },
+    });
+    if (response.ok) {
+      const xml = await response.text();
+      const posts = parseRSS(xml);
+      if (posts.length > 0) return posts;
+    }
+  } catch {
+    console.log("Direct fetch failed, trying proxy...");
+  }
+
+  // Strategy 2: allorigins proxy
+  try {
+    const response = await fetch(
+      `https://api.allorigins.win/get?url=${encodedUrl}`
+    );
+    if (response.ok) {
+      const data = await response.json();
+      const posts = parseRSS(data.contents);
+      if (posts.length > 0) return posts;
+    }
+  } catch {
+    console.log("allorigins failed, trying codetabs...");
+  }
+
+  // Strategy 3: codetabs proxy
   const response = await fetch(
-    `${CORS_PROXY}${encodeURIComponent(SUBSTACK_RSS_URL)}`
+    `https://api.codetabs.com/v1/proxy/?quest=${encodedUrl}`
   );
-  if (!response.ok) throw new Error("Failed to fetch RSS feed");
-  const data = await response.json();
-  return parseRSS(data.contents);
+  if (!response.ok) throw new Error("All fetch strategies failed");
+  const xml = await response.text();
+  const posts = parseRSS(xml);
+  if (posts.length === 0) throw new Error("No posts parsed");
+  return posts;
 }
 
 const formatDate = (date: Date) =>
@@ -97,19 +130,28 @@ const getReadTime = (content: string) => {
 };
 
 export default function BlogSection() {
-  const { data: blogPosts, isLoading, isError, refetch } = useQuery<BlogPost[]>({
+  const {
+    data: blogPosts,
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery<BlogPost[]>({
     queryKey: ["substack-rss"],
     queryFn: fetchSubstackPosts,
     staleTime: 1000 * 60 * 10, // Cache for 10 minutes
+    retry: 1,
   });
 
   return (
     <section id="blog" className="py-20 bg-[hsl(215,25%,27%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold gradient-text mb-4">Latest Insights</h2>
+          <h2 className="text-4xl font-bold gradient-text mb-4">
+            Latest Insights
+          </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Thoughts on technology, innovation, and the intelligence that drives progress.
+            Thoughts on technology, innovation, and the intelligence that drives
+            progress.
           </p>
         </div>
 
