@@ -89,36 +89,65 @@
           }
         },
         {
-          "@type": "Product",
-          "@id": "https://corvidai.io/receptionist#product",
-          "name": "Digital Receptionist",
-          "description": "An AI-powered receptionist that answers missed calls 24/7, greets callers in your business name, collects their details, and sends you an SMS summary — so you never lose a lead while you're on the job.",
-          "url": "https://corvidai.io/receptionist",
-          "brand": {
-            "@id": "https://corvidai.io/#organization"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "179",
-            "priceCurrency": "NZD",
-            "priceSpecification": {
-              "@type": "RecurringCharge",
-              "billingPeriod": "P1M"
-            },
-            "availability": "https://schema.org/InStock",
-            "seller": {
-              "@id": "https://corvidai.io/#organization"
-            }
-          },
-          "areaServed": {
-            "@type": "Country",
-            "name": "New Zealand"
-          },
-          "audience": {
-            "@type": "Audience",
-            "audienceType": "Tradespeople and small business owners in New Zealand"
-          }
-        },
+  "@type": "Product",
+  "@id": "https://corvidai.io/receptionist#product",
+  "name": "Digital Receptionist",
+  "description": "An AI-powered receptionist that answers missed calls 24/7, greets callers in your business name, collects their details, and sends you an SMS summary — so you never lose a lead while you're on the job.",
+  "url": "https://corvidai.io/receptionist",
+  "image": "https://corvidai.io/og-image.png",
+  "brand": {
+    "@type": "Brand",
+    "name": "Corvid AI"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "179",
+    "priceCurrency": "NZD",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "179",
+      "priceCurrency": "NZD",
+      "billingDuration": 1,
+      "billingIncrement": 1,
+      "unitCode": "MON"
+    },
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@id": "https://corvidai.io/#organization"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "NZ",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "NZD"
+      },
+      "doesNotShip": true,
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "NZ"
+      }
+    }
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "New Zealand"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Tradespeople and small business owners in New Zealand",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 20
+    }
+  }
+},
         {
           "@type": "FAQPage",
           "@id": "https://corvidai.io/receptionist#faq",
