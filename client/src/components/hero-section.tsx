@@ -41,7 +41,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary CTA — Digital Receptionist */}
-            <Link href="/receptionist">
+            <Link href="/receptionist#demo">
               <a className="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-semibold text-[hsl(222,84%,15%)] bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[hsl(197,87%,43%)]/25 animate-glow">
                 Try a Live Demo
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
