@@ -305,7 +305,7 @@ export default function AIReceptionistPage() {
       </section>
 
       {/* ── LIVE DEMO ── */}
-      <section className="py-20 px-4">
+      <section id="demo" className="py-20 px-4">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
             <p className="text-[hsl(197,87%,43%)] text-xs font-semibold uppercase tracking-widest mb-3">Try It Now</p>
