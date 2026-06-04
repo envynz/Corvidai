@@ -210,6 +210,18 @@ function LeadForm() {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function AIReceptionistPage() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Wait for page to fully render before scrolling
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[hsl(222,84%,15%)] text-slate-100">
       <Navigation />
