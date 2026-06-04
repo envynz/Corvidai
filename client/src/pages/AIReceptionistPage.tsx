@@ -267,6 +267,12 @@ export default function AIReceptionistPage() {
             >
               See How It Works
             </a>
+            <a
+              href="#demo"
+              className="px-8 py-4 rounded-xl font-semibold text-[hsl(197,87%,43%)] border border-[hsl(197,87%,43%)]/40 hover:bg-[hsl(197,87%,43%)]/10 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+            >
+              Try a Live Demo
+            </a>
           </div>
 
           <p className="text-slate-500 text-sm">No contract · $179/month · Live in 24–48 hours</p>
