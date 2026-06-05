@@ -124,6 +124,18 @@
 
     footer { text-align: center; padding: 24px; font-size: 12px; color: var(--brand-muted); border-top: 1px solid var(--brand-border); }
     footer a { color: var(--brand-muted); }
+    .trade-search-wrap { margin-top: 14px; }
+    .trade-search-label { font-size: 13px; font-weight: 600; color: #555; margin: 0 0 6px; }
+    .trade-search-inner { position: relative; }
+    #tradeSearch { width: 100%; padding: 11px 14px; border: 1.5px solid var(--brand-border); border-radius: 10px; font-size: 14px; background: #f9fafc; box-sizing: border-box; }
+    #tradeSearch:focus { outline: none; border-color: var(--brand-accent); box-shadow: 0 0 0 3px var(--brand-accent-glow); }
+    .trade-dropdown { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: #fff; border: 1.5px solid var(--brand-border); border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.10); z-index: 100; max-height: 220px; overflow-y: auto; padding: 4px 0; margin: 0; list-style: none; }
+    .trade-dropdown li { padding: 10px 16px; font-size: 14px; cursor: pointer; transition: background 0.15s; }
+    .trade-dropdown li:hover { background: rgba(41,121,255,0.07); color: var(--brand-accent); }
+    .trade-dropdown li.no-match { color: #999; font-style: italic; cursor: default; }
+    .trade-search-selected { margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; background: rgba(41,121,255,0.07); border: 1.5px solid var(--brand-accent); border-radius: 8px; padding: 7px 12px; font-size: 13px; font-weight: 600; color: var(--brand-accent); }
+    .trade-search-selected button { background: none; border: none; cursor: pointer; font-size: 16px; color: var(--brand-accent); line-height: 1; padding: 0; margin: 0; }
+    #tradeFreeTextWrap { margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -186,14 +198,21 @@
           <div class="radio-tile"><input type="radio" name="trade" id="t9" value="Hair Stylist / Barber"/><label for="t9"><span class="tile-icon">&#9986;&#65039;</span>Hair Stylist / Barber</label></div>
           <div class="radio-tile"><input type="radio" name="trade" id="t10" value="Cleaner"/><label for="t10"><span class="tile-icon">&#129529;</span>Cleaner</label></div>
           <div class="radio-tile"><input type="radio" name="trade" id="t11" value="Real Estate"/><label for="t11"><span class="tile-icon">&#127968;</span>Real Estate</label></div>
-          <div class="radio-tile"><input type="radio" name="trade" id="t12" value="Other"/><label for="t12"><span class="tile-icon">&#128295;</span>Other</label></div>
+        </div>
+        <div class="trade-search-wrap">
+          <p class="trade-search-label">Don&#8217;t see your trade? Search below:</p>
+          <div class="trade-search-inner">
+            <input type="text" id="tradeSearch" placeholder="e.g. Heat Pump Installer, Gasfitter&#8230;" autocomplete="off" />
+            <ul id="tradeDropdown" class="trade-dropdown" style="display:none;"></ul>
+          </div>
+          <div id="tradeSearchSelected" class="trade-search-selected" style="display:none;"></div>
+        </div>
+        <div class="field" id="tradeFreeTextWrap" style="display:none;">
+          <label>Tell us your trade <span class="req">*</span></label>
+          <input type="text" id="tradeFreeText" placeholder="e.g. Sign Writer, Tow Truck Operator&#8230;" />
+          <div class="error-msg" id="err-tradeFreeText">Please enter your trade.</div>
         </div>
         <div class="error-msg" id="err-tradeType">Please select your trade.</div>
-      </div>
-      <div class="field" id="tradeOtherWrap" style="display:none;">
-        <label>Please specify your trade <span class="req">*</span></label>
-        <input type="text" id="tradeOther" placeholder="e.g. Gasfitter, Drainlayer..." />
-        <div class="error-msg" id="err-tradeOther">Please specify your trade.</div>
       </div>
       <div class="field">
         <label>Work type <span class="req">*</span></label>
@@ -367,9 +386,78 @@
     }
   }
 
-  document.querySelectorAll('input[name="trade"]').forEach(function(r) {
+  // ── Trade search dropdown ────────────────────────────────────────────────
+  var TRADE_LIST = [
+    "Accountant","Appliance Repairer","Arborist / Tree Surgeon","Auto Electrician",
+    "Chiropractor","Concreter","Data & Network Cabling","Drainlayer",
+    "EV Charger Installer","Fencer","Flooring Installer","Gasfitter",
+    "Glazier / Window Installer","Handyman","Heat Pump Installer","Insurance Adviser",
+    "Irrigation Specialist","Lawn Care","Locksmith","Mechanic","Mortgage Broker",
+    "Panel Beater","Pest Control","Physiotherapist","Plasterer / Gib Stopper",
+    "Pool & Spa Technician","Property Manager","Rubbish Removal","Scaffolder","Tiler",
+    "Not listed — I’ll type it"
+  ];
+
+  var tradeSearch = document.getElementById("tradeSearch");
+  var tradeDropdown = document.getElementById("tradeDropdown");
+  var tradeSearchSelected = document.getElementById("tradeSearchSelected");
+  var tradeFreeTextWrap = document.getElementById("tradeFreeTextWrap");
+  var selectedDropdownTrade = "";
+
+  function renderDropdown(filter) {
+    var filtered = filter === ""
+      ? TRADE_LIST
+      : TRADE_LIST.filter(function(t) { return t.toLowerCase().indexOf(filter.toLowerCase()) !== -1; });
+    tradeDropdown.innerHTML = "";
+    if (filtered.length === 0) {
+      var li = document.createElement("li");
+      li.className = "no-match";
+      li.textContent = "No match — use ‘Not listed’ or type below";
+      tradeDropdown.appendChild(li);
+    } else {
+      filtered.forEach(function(t) {
+        var li = document.createElement("li");
+        li.textContent = t;
+        li.addEventListener("mousedown", function(e) { e.preventDefault(); selectDropdownTrade(t); });
+        tradeDropdown.appendChild(li);
+      });
+    }
+    tradeDropdown.style.display = "block";
+  }
+
+  function selectDropdownTrade(val) {
+    selectedDropdownTrade = val;
+    tradeSearch.value = "";
+    tradeDropdown.style.display = "none";
+    tradeFreeTextWrap.style.display = (val === "Not listed — I’ll type it") ? "block" : "none";
+    if (val !== "Not listed — I’ll type it") {
+      tradeSearchSelected.style.display = "inline-flex";
+      tradeSearchSelected.innerHTML = "✓ " + val + " <button type=\"button\" onclick=\"clearDropdownTrade()\" title=\"Remove\">×</button>";
+    } else {
+      tradeSearchSelected.style.display = "none";
+    }
+    document.querySelectorAll("input[name=\"trade\"]").forEach(function(r) { r.checked = false; });
+    document.getElementById("err-tradeType").classList.remove("visible");
+  }
+
+  function clearDropdownTrade() {
+    selectedDropdownTrade = "";
+    tradeSearchSelected.style.display = "none";
+    tradeFreeTextWrap.style.display = "none";
+    document.getElementById("tradeFreeText").value = "";
+  }
+
+  tradeSearch.addEventListener("focus", function() { renderDropdown(tradeSearch.value); });
+  tradeSearch.addEventListener("input", function() {
+    selectedDropdownTrade = "";
+    tradeSearchSelected.style.display = "none";
+    tradeSearch.value.trim() === "" ? tradeDropdown.style.display = "none" : renderDropdown(tradeSearch.value);
+  });
+  tradeSearch.addEventListener("blur", function() { setTimeout(function() { tradeDropdown.style.display = "none"; }, 200); });
+
+  document.querySelectorAll("input[name=\"trade\"]").forEach(function(r) {
     r.addEventListener("change", function() {
-      document.getElementById("tradeOtherWrap").style.display = (r.value === "Other" && r.checked) ? "block" : "none";
+      if (r.checked) { clearDropdownTrade(); tradeSearch.value = ""; }
     });
   });
 
@@ -395,8 +483,15 @@
       if (!required("mobile","err-mobile")) ok = false;
       var trade = document.querySelector('input[name="trade"]:checked');
       var tradeErr = document.getElementById("err-tradeType");
-      if (!trade) { tradeErr.classList.add("visible"); ok = false; }
-      else { tradeErr.classList.remove("visible"); if (trade.value === "Other" && !required("tradeOther","err-tradeOther")) ok = false; }
+      var freeText = document.getElementById("tradeFreeText").value.trim();
+      var hasSelection = trade || (selectedDropdownTrade && selectedDropdownTrade !== "Not listed — I’ll type it") || freeText;
+      if (!hasSelection) { tradeErr.classList.add("visible"); ok = false; }
+      else {
+        tradeErr.classList.remove("visible");
+        if (selectedDropdownTrade === "Not listed — I’ll type it" && !freeText) {
+          document.getElementById("err-tradeFreeText").classList.add("visible"); ok = false;
+        } else { document.getElementById("err-tradeFreeText").classList.remove("visible"); }
+      }
       var workType = document.querySelector('input[name="workType"]:checked');
       var workTypeErr = document.getElementById("err-workType");
       if (!workType) { workTypeErr.classList.add("visible"); ok = false; }
@@ -460,7 +555,7 @@
       "Business Name": document.getElementById("businessName").value.trim(),
       "Owner Name": document.getElementById("ownerName").value.trim(),
       "Mobile": document.getElementById("mobile").value.trim(),
-      "Trade": trade ? (trade.value === "Other" ? document.getElementById("tradeOther").value.trim() : trade.value) : "",
+      "Trade": trade ? trade.value : (selectedDropdownTrade && selectedDropdownTrade !== "Not listed — I’ll type it") ? selectedDropdownTrade : document.getElementById("tradeFreeText").value.trim(),
       "Work Type": workType ? workType.value : "",
       "Service Area": document.getElementById("serviceArea").value.trim(),
       "Excluded Areas": document.getElementById("excludedArea").value.trim() || "Not specified",
