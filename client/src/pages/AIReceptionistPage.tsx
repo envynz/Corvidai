@@ -242,7 +242,7 @@ export default function AIReceptionistPage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[hsl(197,87%,43%)]/30 bg-[hsl(197,87%,43%)]/10 text-[hsl(197,87%,43%)] text-xs font-medium tracking-wider uppercase mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[hsl(197,87%,43%)] animate-pulse" />
-            AI Receptionist for Tradies
+            NZ's SMS-First AI Digital Receptionist
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
@@ -251,7 +251,7 @@ export default function AIReceptionistPage() {
           </h1>
 
           <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-            Digital receptionist answers your missed calls 24/7, collects the customer's details, and texts you a summary — so you never lose another lead while you're on the tools.
+            New Zealand's SMS-first AI Digital Receptionist. When you miss a call, it texts the caller within 60 seconds, collects their details, and sends you a qualified lead summary — automatically, 24/7, while you get on with the job.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
