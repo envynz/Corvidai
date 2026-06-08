@@ -15,4 +15,18 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://corvidai.io/blog</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://corvidai.io/blog/why-nz-tradies-are-switching-from-voicemail-to-ai-text-back</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
