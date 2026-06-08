@@ -42,12 +42,12 @@ export default function Footer() {
             >
               Digital Receptionist
             </Link>
-            <button 
-              onClick={() => scrollToSection("blog")}
+            <Link 
+              href="/blog"
               className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
             >
               Blog
-            </button>
+            </Link>
             <button 
               onClick={() => scrollToSection("contact")}
               className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
