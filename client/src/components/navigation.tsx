@@ -87,7 +87,7 @@ export default function Navigation() {
               )}
             </div>
 
-            <button onClick={() => handleNavClick("blog")} className={navLinkClass}>Blog</button>
+            <Link href="/blog" className={navLinkClass}>Blog</Link>
             <button onClick={() => handleNavClick("contact")} className={navLinkClass}>Contact</button>
           </div>
 
@@ -137,7 +137,7 @@ export default function Navigation() {
                 )}
               </div>
 
-              <button onClick={() => handleNavClick("blog")} className={`text-left ${navLinkClass}`}>Blog</button>
+              <Link href="/blog" onClick={() => setIsOpen(false)} className={`text-left ${navLinkClass}`}>Blog</Link>
               <button onClick={() => handleNavClick("contact")} className={`text-left ${navLinkClass}`}>Contact</button>
             </div>
           </div>
