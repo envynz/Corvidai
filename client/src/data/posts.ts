@@ -96,7 +96,6 @@ export const posts: BlogPost[] = [
       { type: "p", text: "Most tradies who run this calculation find the number is a lot bigger than $2,148. Which is usually the moment things click." },
     ],
   },
-,
   {
     slug: "why-nz-tradies-are-switching-from-voicemail-to-ai-text-back",
     title: "Why NZ Tradies Are Ditching Voicemail for AI Text-Back",
