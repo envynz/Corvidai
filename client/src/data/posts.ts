@@ -23,6 +23,81 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-much-is-a-missed-call-costing-your-trade-business",
+    title: "How Much Is a Missed Call Actually Costing Your Trade Business?",
+    metaTitle: "How Much Is a Missed Call Costing Your Trade Business? | Corvid AI",
+    metaDescription:
+      "Most NZ tradies have no idea how much missed calls are costing them. Here's how to work out the real number — and why it's probably bigger than you think.",
+    excerpt:
+      "Most tradies think missed calls are just part of the job. Run the numbers and you'll think differently. Here's how to work out exactly what they're costing you.",
+    date: "2026-06-15",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "Here's a question most tradies have never actually sat down and answered: how much money did you lose last week to missed calls?" },
+      { type: "p", text: "Not a rough guess. The actual number. Because most people, when they think about it properly, find it's a lot bigger than they expected — and once you see it, you can't unsee it." },
+      { type: "p", text: "So let's work through it together. Get a pen if you want, or just follow along. This'll take about two minutes and it might be the most useful two minutes you spend on your business this week." },
+
+      { type: "h2", text: "Step one: what's your average job worth?" },
+      { type: "p", text: "Think about the jobs you did last month. Not your biggest one, not your smallest — the typical one. A standard callout, a regular booking, a bread-and-butter job." },
+      { type: "p", text: "For a lot of NZ tradies, this number sits somewhere between $300 and $800. Electricians doing switchboard work or fault-finding, maybe $400–600. Plumbers on a standard callout, similar. Builders doing smaller renovation work, often higher. Hair stylists and barbers, maybe $60–100 per client but with higher repeat value." },
+      { type: "p", text: "Pick your number. Let's call it your Average Job Value, or AJV. Write it down." },
+
+      { type: "h2", text: "Step two: how many calls do you miss in a week?" },
+      { type: "p", text: "Be honest here. Think about a typical Tuesday. You're on-site, hands full, phone goes off. You let it ring. That's one." },
+      { type: "p", text: "Then there's the call that comes in at 7:15am before you've started. The one at lunchtime when you're talking to a customer. The one at 5:30pm on a Friday when you're loading the ute." },
+      { type: "p", text: "Most tradies, when they actually think about it, miss somewhere between 3 and 8 calls a week. Some miss more. If you've got missed calls sitting in your phone right now that you haven't returned, you already know your number." },
+      { type: "p", text: "Let's be conservative and say 5 missed calls a week. That's your Weekly Missed Calls, or WMC." },
+
+      { type: "h2", text: "Step three: how many of those were real leads?" },
+      { type: "p", text: "Not every missed call is a new customer — some are suppliers, some are existing clients, some are wrong numbers. A fair estimate is that about half of your missed calls are genuine new enquiries. Maybe a bit more if you're advertising or have good Google visibility." },
+      { type: "p", text: "So of your 5 missed calls per week, let's say 3 were potential new customers." },
+      { type: "quote", text: "Of those 3, how many do you think actually left a voicemail and waited for you to call back? Research suggests fewer than 20% of callers leave a voicemail when they don't get through. The rest just move on." },
+      { type: "p", text: "That means 2 or 3 of those potential customers rang off, found another tradie, and you never knew they existed." },
+
+      { type: "h2", text: "The maths" },
+      { type: "p", text: "Let's run the numbers with conservative estimates:" },
+      { type: "ul", items: [
+        "Average job value: $400",
+        "Missed calls per week: 5",
+        "Genuine new enquiries missed: 3",
+        "Enquiries lost (didn't leave voicemail, moved on): 2",
+        "Conversion rate (how many you'd have won if you'd answered): 60%",
+        "Jobs lost per week: 1.2",
+        "Revenue lost per week: $480",
+        "Revenue lost per month: $1,920",
+        "Revenue lost per year: $23,040"
+      ]},
+      { type: "p", text: "Twenty-three thousand dollars. Gone. Not because you did bad work. Not because your prices are wrong. Because the phone rang and you couldn't get to it." },
+      { type: "p", text: "And that's with conservative numbers. If your average job is worth $600, or you miss more calls, or you're in a competitive area where customers don't wait around — the number gets bigger fast." },
+
+      { type: "h2", text: "The hidden cost nobody talks about" },
+      { type: "p", text: "The revenue number is the obvious one. But there's a cost that doesn't show up in any calculation: the lifetime value of a customer you never got." },
+      { type: "p", text: "A tradie who does good work gets repeat business. A happy customer calls you back when the next job comes up. They refer their neighbours. They leave a Google review that brings in three more customers." },
+      { type: "p", text: "When you miss the first call, you don't just lose that one job. You potentially lose a relationship worth ten times the original job value over the next few years. That's the number that should really make you sit up." },
+
+      { type: "h2", text: "Why this is hard to see" },
+      { type: "p", text: "The cruel thing about missed calls is that they're invisible. A job you didn't get doesn't show up anywhere. There's no invoice, no reminder, no record. It just quietly doesn't happen." },
+      { type: "p", text: "Compare that to a tool that breaks down, or a supplier invoice that's wrong — those are obvious problems that demand to be fixed. A missed call just disappears. Which is exactly why most tradies underestimate how often it happens and what it costs." },
+      { type: "p", text: "The businesses that grow fastest are the ones that find and fix the invisible leaks. And for most trade businesses in New Zealand, the missed call is the biggest leak of all." },
+
+      { type: "h2", text: "What fixing it actually costs" },
+      { type: "p", text: "Here's the part that usually surprises people. Fixing the missed call problem doesn't require hiring a receptionist. It doesn't require being glued to your phone. And it doesn't require changing your number or your setup." },
+      { type: "p", text: "Corvid AI's Digital Receptionist costs $179 a month. Based on the numbers above — losing one job a week at $400 — you'd be spending $179 to recover $1,920. That's a return of more than ten to one, every single month." },
+      { type: "p", text: "Even if you're sceptical and cut that estimate in half, it's still a five-to-one return. There aren't many investments in a trade business that stack up like that." },
+
+      { type: "h2", text: "Run your own numbers" },
+      { type: "p", text: "You know your business better than anyone. Take five minutes and run the calculation with your own AJV and your own honest estimate of weekly missed calls. The formula is simple:" },
+      { type: "ul", items: [
+        "Weekly missed calls × 60% (genuine enquiries) × 80% (didn't leave voicemail) × your conversion rate × your AJV = weekly revenue lost",
+        "Multiply by 52 for the annual number"
+      ]},
+      { type: "p", text: "If the number you get is bigger than $2,148 a year (what Corvid AI costs annually), the maths already works in your favour." },
+      { type: "p", text: "Most tradies who run this calculation find the number is a lot bigger than $2,148. Which is usually the moment things click." },
+    ],
+  },
+,
+  {
     slug: "why-nz-tradies-are-switching-from-voicemail-to-ai-text-back",
     title: "Why NZ Tradies Are Ditching Voicemail for AI Text-Back",
     metaTitle: "Why NZ Tradies Are Switching from Voicemail to AI Text-Back | Corvid AI",
