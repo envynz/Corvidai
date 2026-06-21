@@ -23,6 +23,62 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "voice-ai-vs-sms-which-works-for-nz-tradies",
+    title: "Voice AI vs SMS: Which One Actually Works for NZ Tradies?",
+    metaTitle: "Voice AI vs SMS: Which AI Receptionist Works for NZ Tradies? | Corvid AI",
+    metaDescription:
+      "There are two types of AI receptionist out there — voice AI and SMS. Here's an honest breakdown of both, and why the difference matters for your trade business.",
+    excerpt:
+      "AI receptionists are having a moment. But not all of them work the same way — and the difference matters more than most people realise.",
+    date: "2026-06-22",
+    readTime: "6 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "AI receptionists are having a moment in New Zealand. If you've been looking into ways to stop losing leads to missed calls, you've probably come across a few options — and noticed they don't all work the same way." },
+      { type: "p", text: "The big split is this: some AI receptionists answer your calls with a voice. Others respond to missed calls with a text. Both solve the same surface-level problem — making sure customers get some kind of response when you can't pick up. But the experience they deliver, and the results they get, are pretty different." },
+      { type: "p", text: "Here's an honest breakdown of both." },
+
+      { type: "h2", text: "How voice AI works" },
+      { type: "p", text: "Voice AI answers your phone when you can't. The caller hears a voice — usually fairly natural-sounding these days — that greets them in your business name, asks what they need, and tries to collect their details through a spoken conversation." },
+      { type: "p", text: "At its best, it's a bit like a virtual receptionist who's always available. At its worst, it's a phone tree with a better accent." },
+      { type: "p", text: "The technology has come a long way. Modern voice AI can handle simple questions, recognise names, and transfer calls in some setups. For businesses that get a lot of structured, predictable enquiries — think booking confirmations or simple FAQ-type calls — it can work well." },
+
+      { type: "h2", text: "How SMS text-back works" },
+      { type: "p", text: "SMS text-back takes a different approach. Instead of answering the call, it lets the call divert and immediately sends the caller a text — usually within 60 seconds — greeting them in your business name and asking how it can help." },
+      { type: "p", text: "The conversation happens over SMS. The AI collects the caller's name, what they need, and any other relevant details through a back-and-forth text exchange. Once the conversation wraps up, the business owner gets a qualified lead summary sent straight to their phone." },
+      { type: "p", text: "No call answered. No voice involved. Just a fast, friendly text that makes the customer feel looked after — and a neat summary waiting for you when you're free." },
+
+      { type: "h2", text: "Where voice AI struggles" },
+      { type: "p", text: "Voice AI works in controlled environments. But trade businesses aren't controlled environments — your customers are stressed homeowners with a burst pipe, or landlords dealing with a tenant emergency, or people who've just noticed something wrong and picked up the phone on impulse." },
+      { type: "p", text: "When those people hear a robot voice, one of a few things happens. Some will play along. Some will hang up immediately. And some — especially older customers or people who are already frustrated — will feel like they're being fobbed off." },
+      { type: "p", text: "There's also the comprehension problem. Voice AI still struggles with strong accents, background noise, people who talk over each other, or callers who don't quite know how to describe what they need. A missed word in a voice conversation can mean a missed detail in your lead summary." },
+      { type: "p", text: "And then there's this: most people can tell within about three seconds that they're not talking to a real person. That moment of realisation changes how they engage. Some people shut down. Some give shorter answers. Some don't bother at all." },
+
+      { type: "h3", text: "The feedback is already coming in" },
+      { type: "p", text: "This isn't just theory. Look at how trade business owners talk about voice AI online, and a pattern shows up fast. Some report it working well for capturing missed calls. But just as many say the same thing: customers can tell within seconds they're talking to a robot — and some hang up the moment they realise it." },
+      { type: "p", text: "The technology has genuinely improved over the past year. But the core issue isn't the quality of the voice. It's the format. A spoken conversation with an AI puts the customer in an unfamiliar, slightly awkward position. A text message doesn't." },
+      { type: "p", text: "That's not a knock on voice AI — it's just a structural reality of how people respond to different formats. And it's exactly why SMS-first works as well as it does: there's no moment of \"wait, is this a robot?\" because nobody expects a text to come from a human typing it live anyway." },
+
+      { type: "h2", text: "Where SMS wins" },
+      { type: "p", text: "Text is the native language of modern customer service. Most people send dozens of texts a day — it's low pressure, familiar, and fits around whatever else they're doing. A customer who gets a text after a missed call doesn't feel like they've hit a wall. They feel like the business got back to them." },
+      { type: "p", text: "The response rates back this up. SMS open rates sit around 98%, and most texts are read within three minutes. Compare that to voicemail, where fewer than 20% of callers even leave a message — and of those, many never hear back." },
+      { type: "p", text: "There's also no comprehension problem with text. What someone types is what you get. No background noise, no accent issues, no half-heard details. The lead summary you receive is clean, accurate, and complete." },
+      { type: "p", text: "And crucially — nobody feels like they're talking to a robot. A friendly text from \"Spark Electrical\" asking what they need feels like a real business reaching out. The AI is invisible. The experience is human." },
+
+      { type: "h2", text: "The honest truth about both" },
+      { type: "p", text: "Voice AI has its place. For high-volume businesses with predictable call types — medical practices, large service centres, businesses with multiple staff — it can handle real load and save real time." },
+      { type: "p", text: "But for a trade business run by one person or a small team? Where every customer call is a potential job, every job is worth hundreds of dollars, and your reputation is built on showing up and being easy to deal with? SMS wins. Every time." },
+      { type: "p", text: "It meets customers where they already are. It works around their schedule, not yours. It doesn't ask them to talk to a robot. And it gives you everything you need to follow up properly — without interrupting your day." },
+
+      { type: "h2", text: "What this means for your business" },
+      { type: "p", text: "If you're weighing up AI receptionist options, the question to ask isn't just \"does it answer my calls?\" It's \"does it make my customers feel looked after?\" Because that's what turns an enquiry into a job." },
+      { type: "p", text: "A customer who gets a fast, friendly text after a missed call stays warm. They've had contact, they feel acknowledged, and they're more likely to still be available when you ring them back." },
+      { type: "p", text: "A customer who gets a voice robot — or worse, voicemail — is already dialling the next tradie." },
+      { type: "p", text: "That's the difference. And in a market as competitive as New Zealand's trades sector, it matters." },
+    ],
+  },
+
+  {
     slug: "how-much-is-a-missed-call-costing-your-trade-business",
     title: "How Much Is a Missed Call Actually Costing Your Trade Business?",
     metaTitle: "How Much Is a Missed Call Costing Your Trade Business? | Corvid AI",
