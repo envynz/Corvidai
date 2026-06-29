@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link, useRoute } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { getPostBySlug } from "@/data/posts";
+import { posts, getPostBySlug, type BlogBlock } from "@/data/posts";
 
 const formatDate = (dateStr: string) =>
   new Date(dateStr).toLocaleDateString("en-NZ", {
@@ -11,15 +11,37 @@ const formatDate = (dateStr: string) =>
     day: "numeric",
   });
 
+// Renders a block array to plain text/HTML for the noscript fallback.
+// Kept simple and semantic so Googlebot gets real content even without JS.
+const renderBlocksAsHtml = (body: BlogBlock[]): string =>
+  body
+    .map((block) => {
+      switch (block.type) {
+        case "h2":
+          return `<h2>${block.text}</h2>`;
+        case "h3":
+          return `<h3>${block.text}</h3>`;
+        case "quote":
+          return `<blockquote>${block.text}</blockquote>`;
+        case "ul":
+          return `<ul>${block.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+        default:
+          return `<p>${block.text}</p>`;
+      }
+    })
+    .join("\n");
+
 export default function BlogPostPage() {
   const [, params] = useRoute("/blog/:slug");
   const post = params?.slug ? getPostBySlug(params.slug) : undefined;
+
+  // Up to 2 other posts, newest first, excluding the current one.
+  const relatedPosts = post ? posts.filter((p) => p.slug !== post.slug).slice(0, 2) : [];
 
   useEffect(() => {
     window.scrollTo(0, 0);
     if (post) {
       document.title = post.metaTitle;
-      // Update meta description
       let meta = document.querySelector('meta[name="description"]');
       if (!meta) {
         meta = document.createElement("meta");
@@ -28,7 +50,6 @@ export default function BlogPostPage() {
       }
       meta.setAttribute("content", post.metaDescription);
 
-      // Inject Article JSON-LD
       const existing = document.getElementById("article-jsonld");
       if (existing) existing.remove();
       const script = document.createElement("script");
@@ -138,8 +159,59 @@ export default function BlogPostPage() {
               Try a Live Demo
             </Link>
           </div>
+
+          {/* Related reading — internal linking for SEO + reader value */}
+          {relatedPosts.length > 0 && (
+            <div className="mt-16 pt-10 border-t border-[hsl(215,27.9%,16.9%)]">
+              <h3 className="text-xl font-bold text-white mb-6">Related reading</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {relatedPosts.map((rp) => (
+                  <Link key={rp.slug} href={`/blog/${rp.slug}`}>
+                    <div className="glass-effect rounded-xl p-5 hover:scale-[1.02] transition-transform duration-300 cursor-pointer border border-[hsl(215,27.9%,16.9%)] h-full">
+                      <span className="text-[hsl(197,87%,43%)] text-xs font-medium">{formatDate(rp.date)}</span>
+                      <h4 className="text-white font-semibold mt-1 mb-2 leading-snug">{rp.title}</h4>
+                      <span className="text-slate-400 text-sm">{rp.readTime}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </article>
+
+      {/* Noscript fallback — ensures Googlebot and non-JS clients see full
+          article content immediately without depending on JS execution.
+          Mirrors the homepage noscript pattern used for the same reason. */}
+      <noscript>
+        <main style={{ fontFamily: "sans-serif", maxWidth: "800px", margin: "0 auto", padding: "2rem", color: "#1a1a1a" }}>
+          <h1>{post.title}</h1>
+          <p>
+            <em>
+              {formatDate(post.date)} · {post.readTime} · {post.author}
+            </em>
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: renderBlocksAsHtml(post.body) }} />
+          <p>
+            <a href="/receptionist#demo">Try a Live Demo of Corvid AI's Digital Receptionist</a>
+          </p>
+          {relatedPosts.length > 0 && (
+            <>
+              <h2>Related reading</h2>
+              <ul>
+                {relatedPosts.map((rp) => (
+                  <li key={rp.slug}>
+                    <a href={`/blog/${rp.slug}`}>{rp.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          <p>
+            <a href="/blog">← Back to the blog</a>
+          </p>
+        </main>
+      </noscript>
 
       <Footer />
     </div>
