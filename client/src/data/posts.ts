@@ -23,6 +23,47 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "human-receptionist-or-safety-net",
+    title: "Do You Need a Human Receptionist or a Safety Net? (Probably Both, Eventually)",
+    metaTitle: "AI Receptionist vs Human Receptionist NZ: Safety Net, Not Replacement | Corvid AI",
+    metaDescription:
+      "AI receptionists aren't here to replace your receptionist. Here's how Corvid AI's Digital Receptionist works as a safety net for solo tradies and growing businesses alike.",
+    excerpt:
+      "This isn't AI vs human. It's about what happens to the calls nobody catches — whether you have a receptionist or not.",
+    date: "2026-06-29",
+    readTime: "6 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "Here's a question worth asking before any AI vs human comparison: what happens to the calls that get missed even when someone IS answering the phone?" },
+      { type: "p", text: "Because someone always misses calls. The receptionist on lunch. The one already on another line. The one who's out sick, or on leave, or it's 9pm on a Sunday and nobody's rostered on at all. Even the best receptionist in the country is still one person, and one person can't be everywhere." },
+      { type: "p", text: "That's the real problem worth solving — and it's bigger than the \"should I hire someone or get AI\" question most people start with." },
+
+      { type: "h2", text: "If you're a solo tradie right now" },
+      { type: "p", text: "For a lot of trade businesses, there's no receptionist yet. It's just you — answering calls between jobs, on the tools, under a house, up a ladder. Every missed call is a customer who might've moved on to the next name on Google." },
+      { type: "p", text: "Hiring a part-time receptionist to cover this properly is a real cost. Wages alone run $25–30 an hour in New Zealand, and once you add holiday pay, KiwiSaver, ACC levies and the time spent training someone, a part-time hire covering 20 hours a week typically lands around $2,800–$3,200 a month, all in." },
+      { type: "p", text: "That's a serious commitment for a business that might only need a few extra hours of phone coverage a week. It's not that the receptionist isn't worth it eventually — it's that for a solo operator, it's often too much, too soon." },
+      { type: "p", text: "This is where a Digital Receptionist earns its place. At $179 a month, it catches every missed call, texts the customer back within 60 seconds, and sends you a qualified lead summary — without asking you to make a $3,000-a-month commitment before you're ready for it." },
+      { type: "p", text: "It's not pretending to be a receptionist. It's the safety net underneath the gap where one would eventually go." },
+
+      { type: "h2", text: "If you already have a receptionist" },
+      { type: "p", text: "This is the part that often gets missed in these comparisons: businesses that already have a great receptionist still lose calls." },
+      { type: "p", text: "They're on the phone with someone else when a new enquiry comes in. They've stepped away for lunch. They're out sick for two days and nobody's covering. It's after hours, or a public holiday, and the office is closed — but customers don't know that, and they call anyway." },
+      { type: "p", text: "None of that is the receptionist's fault. It's just the reality of being one person in one place. And every one of those missed windows is a potential job slipping through, exactly the same way it would for a solo tradie without anyone answering at all." },
+      { type: "p", text: "This is where Corvid AI works alongside a human receptionist rather than instead of one. When a call comes through and nobody's available — whatever the reason — the Digital Receptionist catches it, gets the details by text, and logs a clean lead summary. When your receptionist is back, the lead is sitting there ready to follow up and book in. Nothing forgotten, nothing chasing a voicemail nobody left." },
+      { type: "p", text: "The receptionist still does what they do best — building the relationship, managing the diary, handling the judgement calls that genuinely need a person. The AI just makes sure nothing falls through the cracks in between." },
+
+      { type: "h2", text: "Why this matters more than the cost comparison" },
+      { type: "p", text: "It would be easy to write this post as \"$179 vs $2,800 — AI wins.\" But that's not really the point, and it's not what Corvid AI is about." },
+      { type: "p", text: "AI should make the people around it more capable, not replace them. A receptionist with a safety net underneath them can take their lunch break without worrying about what they'll miss. A solo tradie can grow toward hiring someone, instead of either drowning in missed calls or rushing into a hire before the business can support it." },
+      { type: "p", text: "The $179 a month isn't really \"an AI instead of a person.\" It's the thing that makes sure no lead disappears, no matter who is or isn't available to answer the phone that day." },
+
+      { type: "h2", text: "The bottom line" },
+      { type: "p", text: "Whether you're a solo operator weighing up your first hire, or a growing business with a receptionist who's brilliant but human, the question is the same: what happens to the calls that get missed?" },
+      { type: "p", text: "For most NZ trade businesses, the honest answer right now is \"nothing — they're just gone.\" Corvid AI exists to change that answer, for $179 a month, without asking anyone to be replaced." },
+    ],
+  },
+
+  {
     slug: "voice-ai-vs-sms-which-works-for-nz-tradies",
     title: "Voice AI vs SMS: Which One Actually Works for NZ Tradies?",
     metaTitle: "Voice AI vs SMS: Which AI Receptionist Works for NZ Tradies? | Corvid AI",
