@@ -15,6 +15,16 @@ export default function BlogIndexPage() {
   useEffect(() => {
     document.title = "Blog — Corvid AI | AI Insights for NZ Tradies & Small Business";
     window.scrollTo(0, 0);
+    // Set canonical URL for this page
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', 'https://corvidai.io/blog');
+    } else {
+      const link = document.createElement('link');
+      link.rel = 'canonical';
+      link.href = 'https://corvidai.io/blog';
+      document.head.appendChild(link);
+    }
   }, []);
 
   return (
