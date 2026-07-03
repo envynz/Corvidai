@@ -50,6 +50,17 @@ export default function BlogPostPage() {
       }
       meta.setAttribute("content", post.metaDescription);
 
+      // Set canonical to this specific post's URL
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        canonical.setAttribute('href', `https://corvidai.io/blog/${post.slug}`);
+      } else {
+        const link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = `https://corvidai.io/blog/${post.slug}`;
+        document.head.appendChild(link);
+      }
+
       const existing = document.getElementById("article-jsonld");
       if (existing) existing.remove();
       const script = document.createElement("script");
@@ -79,6 +90,17 @@ export default function BlogPostPage() {
       document.head.appendChild(script);
     }
     return () => {
+      // Set canonical to this specific post's URL
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        canonical.setAttribute('href', `https://corvidai.io/blog/${post.slug}`);
+      } else {
+        const link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = `https://corvidai.io/blog/${post.slug}`;
+        document.head.appendChild(link);
+      }
+
       const existing = document.getElementById("article-jsonld");
       if (existing) existing.remove();
     };
