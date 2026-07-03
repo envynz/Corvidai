@@ -211,6 +211,17 @@ function LeadForm() {
 
 export default function AIReceptionistPage() {
   useEffect(() => {
+    document.title = "Digital Receptionist — AI-Powered Missed Call Handler for NZ Tradies | Corvid AI";
+    // Set canonical URL for this page
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', 'https://corvidai.io/receptionist');
+    } else {
+      const link = document.createElement('link');
+      link.rel = 'canonical';
+      link.href = 'https://corvidai.io/receptionist';
+      document.head.appendChild(link);
+    }
     const hash = window.location.hash;
     if (hash) {
       // Wait for page to fully render before scrolling
