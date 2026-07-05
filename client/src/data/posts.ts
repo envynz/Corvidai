@@ -23,6 +23,55 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "what-its-like-running-corvid-ai-for-30-days",
+    title: "Set It and Forget It: What It's Actually Like Running Corvid AI for 30 Days",
+    metaTitle: "What It's Actually Like Running an AI Digital Receptionist for 30 Days | Corvid AI",
+    metaDescription:
+      "Wondering what it's actually like to use an AI Digital Receptionist day-to-day? Here's an honest founder's account of what happens when a missed call hits Corvid AI — and what 30 days of real use looks like.",
+    excerpt:
+      "Most software promises to be 'set and forget.' Here's what that actually looks like in practice — from the setup call to the first real lead coming through by text.",
+    date: "2026-07-07",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "There's a version of this post I could write that's basically a sales brochure. Every feature highlighted, every outcome polished, everything presented in the best possible light." },
+      { type: "p", text: "This isn't that version." },
+      { type: "p", text: "What follows is an honest account of what it's actually like to run Corvid AI's Digital Receptionist — the setup, the day-to-day reality, and what it looks and feels like when it works. Because the best way to know if something is right for your business is to understand what it's genuinely like to use it, not just what it promises." },
+
+      { type: "h2", text: "The setup" },
+      { type: "p", text: "The first thing most people expect is a big technical lift. Setting up an AI anything usually sounds like it involves logins, integrations, configuration panels, and a few hours you weren't planning to spend." },
+      { type: "p", text: "The Corvid AI setup is deliberately not that. There are two moving parts: a carrier divert on your existing phone number, and a brief intake form that tells the AI about your business — your name, your trade, your usual hours, how you'd like the AI to greet callers, what services you offer." },
+      { type: "p", text: "The carrier divert is the key bit. When you can't pick up, your phone quietly routes missed calls to the Digital Receptionist rather than voicemail. Your number stays the same. Nothing changes for your customers. The only difference is what happens when the call doesn't get answered." },
+      { type: "p", text: "The intake form takes about ten minutes to fill in. Once it's done, the AI knows who it's representing — and it represents you by name, in your business name, from the first message it sends." },
+      { type: "p", text: "That's the setup. Most people are surprised by how little there is to it." },
+
+      { type: "h2", text: "The first missed call" },
+      { type: "p", text: "The moment that makes it real is the first time a missed call comes through and you watch it work." },
+      { type: "p", text: "The call hits, you can't get to it, and within 60 seconds your phone buzzes — not with the caller's details, but with a notification that the AI has already reached out to them. A minute or two later, if the customer replies, another buzz: the conversation in progress. And when it wraps up, a clean summary: their name, their number, what they need, when they're available." },
+      { type: "p", text: "The whole thing takes less time to read than it took to ring you." },
+      { type: "quote", text: "For a lot of business owners, this is the moment the penny drops. Not during the demo, not during the sales conversation — when it happens for real, on their actual phone, with a customer who came in off their actual number." },
+      { type: "p", text: "That's when it stops being a product and starts being part of how the business runs." },
+
+      { type: "h2", text: "What the day-to-day actually looks like" },
+      { type: "p", text: "After the first week, it stops being something you notice. That's the point." },
+      { type: "p", text: "You're on a job. Your phone rings, you can't get to it. Somewhere in the background, a customer gets a text, has a quick conversation, and gets added to your lead queue. You finish the job, check your phone, and there's a summary waiting." },
+      { type: "p", text: "There's no extra app to open. No dashboard to check. No system to manage. The summaries come through as SMS messages to whatever number you specified during setup — the same way any other text would arrive." },
+      { type: "p", text: "What changes, gradually, is that you stop losing leads without knowing it. Jobs that would've just quietly disappeared — the call you missed at 7pm on a Tuesday, the one that came in while you were on the roof — start showing up in your queue instead. The invisible leak starts to close." },
+
+      { type: "h2", text: "What it doesn't do" },
+      { type: "p", text: "Honesty requires this section." },
+      { type: "p", text: "The Digital Receptionist is very good at one thing: catching a missed call, having a natural conversation by text, and getting you a qualified lead. That's the job it does, and it does it well." },
+      { type: "p", text: "It doesn't manage your diary. It doesn't book jobs into a calendar. It doesn't chase up quotes you've sent or follow up on invoices. It doesn't answer complex technical questions about your specific services or give pricing estimates. Those things still need you, or a person you've employed to help run the business." },
+      { type: "p", text: "The way to think about it is this: it handles the front door, so nothing falls through the cracks before it reaches you. Everything behind the front door still runs the way it always has." },
+
+      { type: "h2", text: "What 30 days looks like" },
+      { type: "p", text: "By the end of the first month, most business owners have a cleaner sense of what they were actually missing before. Not because the AI tells them — but because they can see it. The leads that came in after hours. The enquiries on weekends. The customer who rang on a public holiday and actually got a response." },
+      { type: "p", text: "Some of those leads will have converted. Some won't. That's true of every enquiry, with or without AI. The difference is that they had the chance to convert at all, instead of disappearing into a missed call list nobody ever worked through." },
+      { type: "p", text: "Thirty days in, the question most people stop asking is 'is this working?' The question they start asking is 'how did I manage without it?'" },
+    ],
+  },
+
+  {
     slug: "human-receptionist-or-safety-net",
     title: "Do You Need a Human Receptionist or a Safety Net? (Probably Both, Eventually)",
     metaTitle: "AI Receptionist vs Human Receptionist NZ: Safety Net, Not Replacement | Corvid AI",
