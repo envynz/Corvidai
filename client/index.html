@@ -79,8 +79,11 @@
           ],
           "address": {
             "@type": "PostalAddress",
-            "addressCountry": "NZ",
-            "addressRegion": "Waikato"
+            "streetAddress": "Seddon Street",
+            "addressLocality": "Waihi",
+            "addressRegion": "Waikato",
+            "postalCode": "3610",
+            "addressCountry": "NZ"
           }
         },
         {
@@ -125,20 +128,19 @@
               "@type": "MerchantReturnPolicy",
               "applicableCountry": "NZ",
               "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "doesNotShip": true,
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "NZ"
+              }
             }
           },
           "areaServed": {
             "@type": "Country",
             "name": "New Zealand"
-          },
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Tradespeople and small business owners in New Zealand",
-            "numberOfEmployees": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 20
-            }
           }
         },
         {
