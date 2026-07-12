@@ -88,6 +88,7 @@ export default function Navigation() {
             </div>
 
             <Link href="/blog" className={navLinkClass}>Blog</Link>
+            <Link href="/calculator" className={navLinkClass}>Calculator</Link>
             <button onClick={() => handleNavClick("contact")} className={navLinkClass}>Contact</button>
           </div>
 
@@ -138,6 +139,7 @@ export default function Navigation() {
               </div>
 
               <Link href="/blog" onClick={() => setIsOpen(false)} className={`text-left ${navLinkClass}`}>Blog</Link>
+              <Link href="/calculator" onClick={() => setIsOpen(false)} className={`text-left ${navLinkClass}`}>Calculator</Link>
               <button onClick={() => handleNavClick("contact")} className={`text-left ${navLinkClass}`}>Contact</button>
             </div>
           </div>
