@@ -23,6 +23,46 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "5-types-of-nz-tradespeople-who-should-never-miss-a-call",
+    title: "5 Types of NZ Tradespeople Who Should Never Miss Another Call",
+    metaTitle: "5 Types of NZ Tradespeople Who Can't Afford to Miss a Call | Corvid AI",
+    metaDescription:
+      "Some trades lose more from a missed call than others. Here are 5 types of NZ tradespeople who can't afford to let the phone go to voicemail — and why.",
+    excerpt:
+      "Every trade loses something when a call goes unanswered. For these five, the cost is especially high.",
+    date: "2026-07-13",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "Every tradie loses something when they miss a call. But for some trades, the cost is sharper, faster, and harder to recover from. If you're in one of the five categories below, a missed call isn't just an inconvenience — it's often a job walking straight to your competitor." },
+
+      { type: "h2", text: "1. Electricians" },
+      { type: "p", text: "Electrical work splits into two very different customer types: the planned job and the emergency. A power outage, a sparking outlet, or a tripped board that won't reset doesn't wait for business hours — and the customer ringing about it isn't in a browsing mood. They want someone now." },
+      { type: "p", text: "When that call goes to voicemail, most people don't leave a message and wait. They ring the next electrician on Google, and whoever answers first usually wins the job. For electricians, a missed call isn't just a lost quote — it's often a lost emergency callout, which tend to be the most profitable jobs of the week." },
+
+      { type: "h2", text: "2. Plumbers" },
+      { type: "p", text: "Nobody rings a plumber to chat. By the time someone's dialling, there's usually water where it shouldn't be, a blocked drain backing up, or a hot water cylinder that's stopped working entirely. Plumbing enquiries are urgency-driven almost by default." },
+      { type: "p", text: "That urgency cuts both ways. A customer with an active leak isn't going to wait around for a call back — they're ringing down the list until someone answers. Missing that first call doesn't just lose the job, it loses it to whichever plumber picks up their phone thirty seconds sooner." },
+
+      { type: "h2", text: "3. HVAC Technicians" },
+      { type: "p", text: "Heating and cooling has a seasonal rhythm that makes missed calls especially costly. When a heat pump dies in the middle of a cold snap, or an air conditioning unit fails during a heatwave, HVAC technicians get flooded with calls all at once — exactly when they're already flat out on-site." },
+      { type: "p", text: "The irony is that the busiest period for missed calls is also the period with the most jobs on offer. Every unanswered call during a cold snap is a customer who'll ring three other HVAC technicians before the day is out, and whoever answers first gets the work — and often the follow-up maintenance contract too." },
+
+      { type: "h2", text: "4. Solar Installers" },
+      { type: "p", text: "Solar is a considered purchase — customers research, compare quotes, and think it over before committing. But the first phone call is usually the moment they've decided to take it seriously. If that call isn't answered, many customers simply move to the next solar company on their shortlist rather than waiting for a call back." },
+      { type: "p", text: "For solar installers, a missed call isn't a small missed job — it's a missed shot at a full system installation, often worth many thousands of dollars. Losing that lead because the phone rang during a job on someone's roof is an expensive way to lose a sale that was already halfway won." },
+
+      { type: "h2", text: "5. Builders" },
+      { type: "p", text: "Building enquiries range from small repair jobs to full renovations, but they share one thing: builders are almost always on-site, hands full, and unable to get to their phone. A missed call from a potential client with a renovation in mind can be worth tens of thousands of dollars — and builders are precisely the trade least able to answer immediately." },
+      { type: "p", text: "The building industry is also heavily driven by referrals and reputation. A customer who can't get through often assumes the builder is either too busy or not interested, and moves on to someone who responds. That first response — or lack of one — quietly shapes how the business is perceived before any work has even started." },
+
+      { type: "h2", text: "Why this matters for every trade, not just these five" },
+      { type: "p", text: "These five are highlighted because the cost of a missed call is especially visible in their line of work — urgency, seasonality, and job value all compound the problem. But the underlying issue is universal: any trade business that can't answer the phone while working is leaving money on the table." },
+      { type: "p", text: "The fix isn't complicated. It's making sure that when the phone can't be answered, something better than silence happens instead." },
+    ],
+  },
+
+  {
     slug: "what-its-like-running-corvid-ai-for-30-days",
     title: "Set It and Forget It: What It's Actually Like Running Corvid AI for 30 Days",
     metaTitle: "What It's Actually Like Running an AI Digital Receptionist for 30 Days | Corvid AI",
