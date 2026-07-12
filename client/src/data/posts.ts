@@ -280,6 +280,7 @@ export const posts: BlogPost[] = [
       ]},
       { type: "p", text: "If the number you get is bigger than $2,148 a year (what Corvid AI costs annually), the maths already works in your favour." },
       { type: "p", text: "Most tradies who run this calculation find the number is a lot bigger than $2,148. Which is usually the moment things click." },
+      { type: "p", text: "Don't want to do the maths by hand? We built a free calculator that does it for you — just move a couple of sliders and see your number instantly." },
     ],
   },
   {
