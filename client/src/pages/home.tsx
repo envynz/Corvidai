@@ -19,6 +19,17 @@ export default function Home() {
       link.href = 'https://corvidai.io/';
       document.head.appendChild(link);
     }
+
+    // Scroll to a section (e.g. #about, #contact) if arriving via a link
+    // from another page — mirrors the same fix used on the receptionist page.
+    const hash = window.location.hash;
+    if (hash) {
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
