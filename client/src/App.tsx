@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import AIReceptionistPage from "@/pages/AIReceptionistPage";
 import BlogIndexPage from "@/pages/BlogIndexPage";
 import BlogPostPage from "@/pages/BlogPostPage";
+import CalculatorPage from "@/pages/CalculatorPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/receptionist" component={AIReceptionistPage} />
       <Route path="/blog" component={BlogIndexPage} />
       <Route path="/blog/:slug" component={BlogPostPage} />
+      <Route path="/calculator" component={CalculatorPage} />
       <Route component={NotFound} />
     </Switch>
   );
