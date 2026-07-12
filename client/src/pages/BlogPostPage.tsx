@@ -25,6 +25,8 @@ const renderBlocksAsHtml = (body: BlogBlock[]): string =>
           return `<blockquote>${block.text}</blockquote>`;
         case "ul":
           return `<ul>${block.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+        case "link":
+          return `<p><a href="${block.href}">${block.text}</a></p>`;
         default:
           return `<p>${block.text}</p>`;
       }
