@@ -48,6 +48,12 @@ export default function Footer() {
             >
               Blog
             </Link>
+            <Link 
+              href="/calculator"
+              className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
+            >
+              Calculator
+            </Link>
             <button 
               onClick={() => scrollToSection("contact")}
               className="text-slate-400 hover:text-[hsl(197,87%,43%)] transition-colors"
