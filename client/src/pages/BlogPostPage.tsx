@@ -162,6 +162,12 @@ export default function BlogPostPage() {
                       {block.items.map((item, j) => <li key={j}>{item}</li>)}
                     </ul>
                   );
+                case "link":
+                  return (
+                    <Link key={i} href={block.href} className="block bg-[hsl(197,87%,43%)]/10 border border-[hsl(197,87%,43%)]/30 rounded-xl px-5 py-4 my-6 text-[hsl(197,87%,60%)] hover:bg-[hsl(197,87%,43%)]/15 transition-colors font-medium">
+                      {block.text}
+                    </Link>
+                  );
                 default:
                   return <p key={i} className="text-slate-300 leading-relaxed mb-5 text-lg">{block.text}</p>;
               }
