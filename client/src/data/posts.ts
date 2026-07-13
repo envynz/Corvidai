@@ -20,7 +20,8 @@ export type BlogBlock =
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "quote"; text: string }
-  | { type: "link"; text: string; href: string };
+  | { type: "link"; text: string; href: string }
+  | { type: "table"; headers: string[]; rows: string[][] };
 
 export const posts: BlogPost[] = [
   {
