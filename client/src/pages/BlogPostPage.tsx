@@ -27,6 +27,8 @@ const renderBlocksAsHtml = (body: BlogBlock[]): string =>
           return `<ul>${block.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
         case "link":
           return `<p><a href="${block.href}">${block.text}</a></p>`;
+        case "table":
+          return `<table><thead><tr>${block.headers.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${block.rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
         default:
           return `<p>${block.text}</p>`;
       }
@@ -169,6 +171,29 @@ export default function BlogPostPage() {
                     <Link key={i} href={block.href} className="block bg-[hsl(197,87%,43%)]/10 border border-[hsl(197,87%,43%)]/30 rounded-xl px-5 py-4 my-6 text-[hsl(197,87%,60%)] hover:bg-[hsl(197,87%,43%)]/15 transition-colors font-medium">
                       {block.text}
                     </Link>
+                  );
+                case "table":
+                  return (
+                    <div key={i} className="overflow-x-auto my-8 rounded-xl border border-[hsl(215,27.9%,16.9%)]">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="bg-[hsl(215,25%,27%)]/50">
+                            {block.headers.map((h, hi) => (
+                              <th key={hi} className="text-left px-4 py-3 font-semibold text-white whitespace-nowrap">{h}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {block.rows.map((row, ri) => (
+                            <tr key={ri} className="border-t border-[hsl(215,27.9%,16.9%)]">
+                              {row.map((cell, ci) => (
+                                <td key={ci} className="px-4 py-3 text-slate-300 whitespace-nowrap">{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   );
                 default:
                   return <p key={i} className="text-slate-300 leading-relaxed mb-5 text-lg">{block.text}</p>;
