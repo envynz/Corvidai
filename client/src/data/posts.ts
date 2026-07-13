@@ -240,7 +240,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "Step three: how many of those were real leads?" },
       { type: "p", text: "Not every missed call is a new customer — some are suppliers, some are existing clients, some are wrong numbers. A fair estimate is that about half of your missed calls are genuine new enquiries. Maybe a bit more if you're advertising or have good Google visibility." },
       { type: "p", text: "So of your 5 missed calls per week, let's say 3 were potential new customers." },
-      { type: "quote", text: "Of those 3, how many do you think actually left a voicemail and waited for you to call back? Research suggests fewer than 20% of callers leave a voicemail when they don't get through. The rest just move on." },
+      { type: "quote", text: "Of those 3, how many do you think actually left a voicemail and waited for you to call back? Independent research from firms including Hiya, Invoca, and BIA Advisory Services consistently puts voicemail abandonment between 75% and 90% — meaning as few as 1 in 10 callers ever leave a message. The rest just move on." },
       { type: "p", text: "That means 2 or 3 of those potential customers rang off, found another tradie, and you never knew they existed." },
 
       { type: "h2", text: "The maths" },
@@ -258,6 +258,20 @@ export const posts: BlogPost[] = [
       ]},
       { type: "p", text: "Twenty-three thousand dollars. Gone. Not because you did bad work. Not because your prices are wrong. Because the phone rang and you couldn't get to it." },
       { type: "p", text: "And that's with conservative numbers. If your average job is worth $600, or you miss more calls, or you're in a competitive area where customers don't wait around — the number gets bigger fast." },
+      { type: "p", text: "This isn't unique to NZ, either. Industry data on home services businesses — plumbers, electricians, HVAC technicians — consistently shows they miss somewhere between 27% and 62% of inbound calls, almost entirely because technicians are physically on job sites and can't get to the phone. If anything, the conservative example above understates what a lot of trade businesses are actually losing." },
+
+      { type: "h2", text: "How this plays out across different trades" },
+      { type: "p", text: "The exact number depends heavily on your trade — average job value and typical missed-call volume both vary a lot. Here's how the maths looks using typical NZ figures for a few common trades (same assumptions as above: ~60% genuine enquiries, ~80% voicemail abandonment, 60% close rate):" },
+      { type: "table", headers: ["Trade", "Typical job value", "Missed calls/week", "Est. cost per year"], rows: [
+        ["Electrician", "$500", "6", "~$45,000"],
+        ["Plumber", "$450", "6", "~$40,000"],
+        ["HVAC Technician", "$550", "5", "~$41,000"],
+        ["Builder", "$1,200", "3", "~$54,000"],
+        ["Solar Installer", "$6,000", "1", "~$90,000"],
+        ["Hair Stylist / Barber", "$80", "8", "~$9,600"]
+      ]},
+      { type: "p", text: "The pattern holds across every trade: higher job value trades lose more per missed call, higher call volume trades lose more often. Either way, the number is rarely small." },
+      { type: "link", text: "Want your own number instead of an example? Try the free Missed Call Cost Calculator →", href: "/calculator" },
 
       { type: "h2", text: "The hidden cost nobody talks about" },
       { type: "p", text: "The revenue number is the obvious one. But there's a cost that doesn't show up in any calculation: the lifetime value of a customer you never got." },
