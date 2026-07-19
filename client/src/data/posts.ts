@@ -25,6 +25,54 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "what-happens-when-a-tradie-misses-a-call-at-7pm-friday",
+    title: "What Happens When a Tradie Misses a Call at 7pm on a Friday?",
+    metaTitle: "What Happens When a Tradie Misses a Call at 7pm Friday? | Corvid AI",
+    metaDescription:
+      "It's Friday, 7pm. Your phone rings. You're packing up the ute and can't get to it. Here's exactly what happens next — and why the next ten minutes decide whether you get the job.",
+    excerpt:
+      "It's the end of a long week. The phone rings. You can't get to it. Here's what actually happens next — from the customer's side.",
+    date: "2026-07-20",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "It's 7pm on a Friday. You've just finished loading the last of the gear into the ute. Your phone buzzes in your pocket. By the time you've wiped your hands and pulled it out, it's stopped ringing. Missed call, no name, number you don't recognise." },
+      { type: "p", text: "You think about it for a second. Probably nothing urgent. You'll deal with it Monday." },
+      { type: "p", text: "Here's what actually happened on the other end of that call — and why Monday might already be too late." },
+
+      { type: "h2", text: "7:00pm — The call" },
+      { type: "p", text: "Somewhere across town, someone's just noticed their hot water cylinder isn't working. Or their switchboard's tripped and won't reset. Or there's water pooling somewhere it shouldn't be. It's Friday evening, which means it's been building all week and they've finally had enough time to actually do something about it." },
+      { type: "p", text: "They Google \"electrician near me\" or \"plumber [suburb]\", find your business, and call. The phone rings. Nobody answers. It goes to voicemail." },
+
+      { type: "h2", text: "7:01pm — The decision" },
+      { type: "p", text: "This is the moment that actually matters. Not the missed call itself — what happens in the sixty seconds after it." },
+      { type: "p", text: "Research on caller behaviour consistently shows the same pattern: somewhere between 75% and 90% of people who reach a business voicemail simply hang up without leaving a message. They don't sit and wait. They don't trust that you'll call back. They make a decision, right there, in real time." },
+      { type: "p", text: "For most people, that decision is simple: back to Google, call the next name on the list." },
+
+      { type: "h2", text: "7:02pm — The next call" },
+      { type: "p", text: "The customer rings the next tradie on the list. Maybe that one answers. Maybe it goes to voicemail too, and they try a third. Eventually, someone picks up, or texts back, or responds in a way that feels like their problem is actually being taken seriously." },
+      { type: "p", text: "That tradie gets the job. Not because they were better, cheaper, or more qualified. Because they were reachable in the two minutes right after the first business didn't answer." },
+
+      { type: "h2", text: "7:05pm — Gone, and you don't even know it" },
+      { type: "p", text: "Here's the part that makes this genuinely painful: you never find out any of this happened. There's no notification, no missed opportunity report, no record anywhere that says \"you lost a job tonight.\" The missed call just sits in your call log, indistinguishable from a wrong number or a spam call." },
+      { type: "p", text: "By the time you check your phone on Monday morning, the customer has already had their hot water fixed, their switchboard sorted, their leak stopped — by somebody else. If you do call back, the most likely response is a slightly awkward \"oh, we've already sorted it, thanks anyway.\"" },
+
+      { type: "h2", text: "Why Friday evening is especially brutal" },
+      { type: "p", text: "Weekday missed calls are bad enough. But there's something particular about a Friday night call. The customer has often been putting up with the problem all week, telling themselves they'll deal with it eventually — and Friday evening, with the weekend stretching ahead, is often the moment they finally act; the deadline pressure of \"I don't want to deal with this all weekend\" pushes them to make the call right then." },
+      { type: "p", text: "That's exactly the moment your business is least likely to be reachable. You're packing up, heading home, mentally clocking off for the week. Totally reasonable — you've earned the weekend. But it means the highest-urgency calls of the week often land in the lowest-availability window." },
+
+      { type: "h2", text: "What it would take to change the ending" },
+      { type: "p", text: "Imagine the same scenario, but the missed call gets a text back within 60 seconds instead of silence. \"Hey, sorry we missed your call — what can we help with?\" The customer, who was already anxious and already dialling around, gets an immediate response. They reply. They explain the problem. They get a message back confirming someone will be in touch." },
+      { type: "p", text: "They're not rushing to call the next name on the list anymore, because they've already had contact. The urgency that was about to send them elsewhere has been defused — not by someone answering the phone, but by someone (or something) simply responding fast enough to matter." },
+      { type: "p", text: "That's the entire difference between losing the job and winning it. Not better work. Not better pricing. Just being reachable in the two minutes that actually count." },
+
+      { type: "h2", text: "The bottom line" },
+      { type: "p", text: "Every trade business loses jobs this way, week after week, without ever seeing it happen. It's not a failure of the business or the person running it — it's just what happens when a phone can't be answered and nothing steps in to fill the gap." },
+      { type: "p", text: "Friday at 7pm is one particularly sharp example, but the same thing happens every day, at every hour nobody's available to pick up. The fix isn't working more hours or being glued to a phone on a Friday night. It's making sure the two minutes that decide whether a job is won or lost don't depend on whether you happened to hear your phone ring." },
+    ],
+  },
+
+  {
     slug: "5-types-of-nz-tradespeople-who-should-never-miss-a-call",
     title: "5 Types of NZ Tradespeople Who Should Never Miss Another Call",
     metaTitle: "5 Types of NZ Tradespeople Who Can't Afford to Miss a Call | Corvid AI",
