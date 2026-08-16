@@ -25,6 +25,52 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "is-ai-right-for-my-trade-business-5-questions",
+    title: "Is AI Right for My Trade Business? 5 Questions to Ask Before You Sign Up",
+    metaTitle: "Is an AI Receptionist Worth It for Your Trade Business? 5 Questions | Corvid AI",
+    metaDescription:
+      "Not sure if an AI receptionist is worth it for your trade business? Answer these 5 honest questions and find out — no sales pitch, just a straight answer.",
+    excerpt:
+      "AI receptionists aren't right for everyone. Here's an honest way to work out whether Corvid AI is actually a fit for your business.",
+    date: "2026-08-16",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "There's a lot of noise right now about AI receptionists — every trade Facebook group has someone posting about one, every second ad seems to be selling one. It's genuinely hard to tell whether this is something your business actually needs, or just this year's version of a tool nobody really uses after month two." },
+      { type: "p", text: "So instead of trying to convince you, here are five honest questions. Answer them for yourself, and you'll have a clearer read on whether this is worth your time than any sales pitch could give you." },
+
+      { type: "h2", text: "1. Are you often unreachable when the phone rings?" },
+      { type: "p", text: "If you're up a ladder, under a house, mid-installation, or driving between jobs, you already know the answer. Most trades spend the bulk of the working day physically unable to safely answer a call. If that's you most days, this question is a yes." },
+      { type: "p", text: "If you're mostly desk-based or have someone already answering for you, this whole conversation might not apply — and that's a completely fair place to land." },
+
+      { type: "h2", text: "2. Would a single missed call actually cost you money?" },
+      { type: "p", text: "Not \"annoy you\" — actually cost you. If your average job is worth a few hundred dollars or more, and a missed call sometimes means a missed job, then yes, the maths matters here. If your work comes almost entirely through repeat clients or long-term contracts rather than new inbound enquiries, a missed call might not carry the same weight." },
+      { type: "p", text: "Worth being honest with yourself on this one — it's the difference between \"would be nice\" and \"actually matters.\"" },
+
+      { type: "h2", text: "3. Are you currently relying on voicemail as your backup?" },
+      { type: "p", text: "If your phone rings out and goes to standard voicemail, that's the exact gap this kind of tool exists to close. Most callers don't leave a message when they hit voicemail — they just try the next name on the list. If voicemail is your current safety net, it's probably not catching much." },
+      { type: "p", text: "If you've already got a receptionist, an answering service, or a system that reliably gets back to people fast, you may already have this covered." },
+
+      { type: "h2", text: "4. Do you want to look responsive without hiring someone yet?" },
+      { type: "p", text: "This is the solo-tradie and small-crew question. Hiring a receptionist is a real financial commitment — often $2,500 to $3,000+ a month once you account for wages, KiwiSaver, and everything else. If you're not at the point where that makes sense, but you still want every customer to feel looked after, that's a genuine gap worth filling." },
+      { type: "p", text: "If you're already at the size where a full-time hire makes sense, this becomes more of a \"safety net alongside a person\" question than a \"replace nobody\" one — and it can still be worth it, just for a different reason." },
+
+      { type: "h2", text: "5. Are you comfortable with customers getting a text instead of hearing a voice?" },
+      { type: "p", text: "This one's specific to how Corvid AI actually works. We're SMS-first, not voice AI — when you miss a call, the customer gets a text, not a robot voice answering the phone. Most people prefer this. It feels less intrusive, and customers respond to a friendly text more naturally than to an automated voice." },
+      { type: "p", text: "But if you specifically want your missed calls answered by a voice — even an AI one — this isn't the right product for you. There are voice AI options out there, and that's a genuinely different approach, not a worse one. It's just not what we do." },
+
+      { type: "h2", text: "Add up your yeses" },
+      { type: "p", text: "If you answered yes to three or more of the first four questions, and you're comfortable with question five, an AI Digital Receptionist is very likely worth trying. The maths tends to work out clearly once you're in that territory." },
+      { type: "p", text: "If you answered yes to one or two, it might still be worth a look — particularly if question two (the cost of a missed call) was a strong yes on its own. A high-value missed call can justify this on its own, even if the other questions are more borderline." },
+      { type: "p", text: "If you answered no to most of these, honestly, you probably don't need this right now — and that's a fine answer too. Not every tool is right for every business, and there's no benefit to either of us pretending otherwise." },
+
+      { type: "h2", text: "The bottom line" },
+      { type: "p", text: "The best way to know for sure isn't reading another comparison article — it's testing it against your own real situation. Try asking it something messy, the way an actual customer would: a burst pipe at 8pm, a job you don't normally do, a customer asking for a rough price on the spot. See how it actually handles it before deciding." },
+      { type: "p", text: "If most of your answers above landed on yes, that's worth five minutes of your time to find out." },
+    ],
+  },
+
+  {
     slug: "what-happens-when-a-tradie-misses-a-call-at-7pm-friday",
     title: "What Happens When a Tradie Misses a Call at 7pm on a Friday?",
     metaTitle: "What Happens When a Tradie Misses a Call at 7pm Friday? | Corvid AI",
