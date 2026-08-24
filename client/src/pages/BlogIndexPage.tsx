@@ -15,6 +15,19 @@ export default function BlogIndexPage() {
   useEffect(() => {
     document.title = "Blog — Corvid AI | AI Insights for NZ Tradies & Small Business";
     window.scrollTo(0, 0);
+
+    // Set meta description for this page (was never set at all)
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "Straight-up thoughts on AI, missed calls, and growing a trade business in Aotearoa. Practical insights for NZ tradies and small business owners from the team at Corvid AI."
+    );
+
     // Set canonical URL for this page
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
