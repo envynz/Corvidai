@@ -25,6 +25,53 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-much-are-missed-calls-really-costing-nz-businesses",
+    title: "How Much Are Missed Calls Really Costing NZ Businesses? (Free Calculator Inside)",
+    metaTitle: "How Much Do Missed Calls Cost NZ Businesses? Free Calculator | Corvid AI",
+    metaDescription:
+      "New research shows small businesses miss more calls than they think — and it's costing more than most owners realise. See the numbers, then calculate your own with our free tool.",
+    excerpt:
+      "Most business owners think they answer most of their calls. The research says otherwise — and the gap between what you think and what's actually happening is where the money disappears.",
+    date: "2026-08-24",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "Ask most business owners how many calls they miss, and they'll guess low. A few a week, maybe. Nothing serious. Then you look at the actual research, and the picture looks very different." },
+
+      { type: "h2", text: "What the research actually shows" },
+      { type: "p", text: "A widely-cited 2024 study by 411 Locals tested call answer rates across 85 businesses in 58 industries. The finding: only 37.8% of calls were answered by a live person. That means roughly 6 in every 10 calls to a small business go completely unanswered." },
+      { type: "p", text: "Home service businesses — trades, tradies, anyone working with their hands rather than at a desk — sit at the harder end of that range, with missed-call rates reported anywhere from 27% to over 60% depending on the study and the trade." },
+
+      { type: "table", headers: ["Metric", "Figure", "Source"], rows: [
+        ["Calls answered by a live person", "37.8%", "411 Locals (2024)"],
+        ["Calls that go completely unanswered", "~62%", "411 Locals (2024)"],
+        ["Home services calls missed", "27–62%", "Aggregated industry data"],
+        ["Callers who never call back after voicemail", "~85%", "Multiple industry studies"],
+        ["Phone leads vs web form leads, conversion rate", "10–15x higher", "BIA/Kelsey research"]
+      ]},
+
+      { type: "p", text: "That last line matters more than it might seem. Phone calls aren't just another lead source — research from BIA/Kelsey has found they convert at a dramatically higher rate than web form enquiries. A missed call isn't a missed contact form. It's a missed high-intent customer who was ready to talk." },
+
+      { type: "h2", text: "Why this doesn't feel true" },
+      { type: "p", text: "Here's the disconnect: most business owners genuinely believe they're more reachable than they are. You remember the calls you took. You don't remember the ones you didn't, because by definition, you never saw them happen. There's no missed-opportunity report waiting in your inbox. The call just goes quiet, and the customer moves on." },
+      { type: "p", text: "That's what makes this the most expensive problem most small businesses never actually measure. It's invisible by design." },
+
+      { type: "h2", text: "What a missed call is actually worth" },
+      { type: "p", text: "Estimates vary by industry, but general research puts the average missed call at $100–$200 in lost potential revenue for typical small businesses. For trades specifically, where job values run higher, some industry data puts the average missed call closer to $1,200 — and a missed call for something like a full HVAC replacement can represent several thousand dollars in one gone conversation." },
+      { type: "p", text: "And once that call is missed, the odds of recovering it aren't good. Somewhere around 85% of callers who reach voicemail simply never call back. They ring the next name on the list instead." },
+
+      { type: "h2", text: "Stop estimating. Calculate your actual number." },
+      { type: "p", text: "General statistics are useful for understanding the scale of the problem — but they're not your number. Your average job value, your call volume, and your close rate are all different from the businesses in these studies." },
+      { type: "p", text: "That's exactly why we built a free calculator. Enter your own numbers and see, in real terms, what missed calls are actually costing your business every year — not an industry average, your number." },
+      { type: "link", text: "Try the free Missed Call Cost Calculator →", href: "/calculator" },
+
+      { type: "h2", text: "The bottom line" },
+      { type: "p", text: "The research is consistent across every study: most small businesses miss more calls than they realise, most of those calls are gone for good, and the cost adds up fast — especially for trades, where a single missed job can be worth thousands." },
+      { type: "p", text: "The good news is that fixing this doesn't require becoming perfectly reachable. It just requires making sure that when you can't answer, something better than silence happens instead." },
+    ],
+  },
+
+  {
     slug: "is-ai-right-for-my-trade-business-5-questions",
     title: "Is AI Right for My Trade Business? 5 Questions to Ask Before You Sign Up",
     metaTitle: "Is an AI Receptionist Worth It for Your Trade Business? 5 Questions | Corvid AI",
