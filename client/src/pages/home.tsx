@@ -10,6 +10,20 @@ import Footer from "@/components/footer";
 export default function Home() {
   useEffect(() => {
     document.title = "Corvid AI — AI-Powered Digital Receptionist for NZ Tradies";
+
+    // Reset meta description to homepage default (in case another page's
+    // useEffect overwrote it during client-side navigation)
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "Corvid AI builds AI-powered tools for New Zealand businesses. Our Digital Receptionist answers missed calls 24/7, collects customer details, and texts you a summary — so you never lose a lead while you're on the job."
+    );
+
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
       canonical.setAttribute('href', 'https://corvidai.io/');
