@@ -212,6 +212,19 @@ function LeadForm() {
 export default function AIReceptionistPage() {
   useEffect(() => {
     document.title = "Digital Receptionist — AI-Powered Missed Call Handler for NZ Tradies | Corvid AI";
+
+    // Set meta description for this page (was inheriting the homepage's)
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "New Zealand's SMS-first AI Digital Receptionist. Never miss another job — when you miss a call, it texts the caller within 60 seconds, collects their details, and sends you a qualified lead summary. $499 setup, $179/month, no contract."
+    );
+
     // Set canonical URL for this page
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
