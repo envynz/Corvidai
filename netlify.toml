@@ -1,5 +1,5 @@
 [build]
-  command = "vite build"
+  command = "vite build && npx playwright install --with-deps chromium && node scripts/prerender.mjs"
   publish = "dist/public"
   functions = "netlify/functions"
 
