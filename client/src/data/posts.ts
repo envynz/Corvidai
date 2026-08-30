@@ -25,6 +25,47 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "auckland-hairdresser-stops-missing-calls-with-ai-receptionist",
+    title: "How One Auckland Hairdresser Stopped Losing Clients to Missed Calls",
+    metaTitle: "Real Client Story: AI Receptionist for an Auckland Hairdresser | Corvid AI",
+    metaDescription:
+      "Levi runs Cuts & Curios, a busy Auckland barbershop. Here's what happened after 5 months of using an AI Digital Receptionist to handle the calls he couldn't answer mid-cut.",
+    excerpt:
+      "Five months in, one real client, real feedback, and zero missed calls falling through the cracks. Here's Levi's story, in his own words.",
+    date: "2026-08-30",
+    readTime: "4 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "If you've ever tried running a business with scissors in one hand and a ringing phone in the other, you already know the problem." },
+      { type: "p", text: "Levi owns Cuts & Curios, a barbershop in Auckland. Like most hairdressers, his day is built around being fully present with the client in the chair — which means every call that comes in while he's mid-cut goes unanswered. No callback until he can clean his hands or after he finishes the haircut." },
+      { type: "p", text: "Five months ago, Levi became the first person to trial Corvid AI's Digital Receptionist — the AI-powered assistant that answers missed calls by text, has a real conversation with the caller, and sends the business owner a summary they can act on." },
+      { type: "p", text: "Here's what he had to say, unprompted, after using it for five months:" },
+
+      { type: "quote", text: "I have been using my Digital Assistant for over 5 months now and it saves me so much time. I am a hairdresser and my clients call me often while I am working, and having this assistant has streamlined all those missed calls. It took some time for my clients to get used to, but once they did it was so easy. I pick up my phone and I have a message with all the info I need to book their appointment. All I do is message them back with a time and it's done. Cheapest receptionist ever!" },
+
+      { type: "h2", text: "The honest bit worth calling out" },
+      { type: "p", text: "Levi's existing clients needed a little time to adjust — they were used to ringing out or leaving it to voicemail, not getting a text back instead. That's a normal, real transition. Interestingly, new clients never noticed any adjustment at all — a text conversation was simply how it worked from their very first call, and Levi was able to secure their business without ever missing a beat." },
+
+      { type: "h2", text: "What actually changed for him" },
+      { type: "ul", items: [
+        "No more chasing missed calls between clients",
+        "Every caller gets a response within seconds, not hours",
+        "Levi gets a clean summary with exactly what he needs to book the appointment",
+        "He replies with a time when he's ready — not mid-cut, not stressed, not losing the customer to someone who picked up first"
+      ]},
+
+      { type: "h2", text: "Why this matters beyond one barbershop" },
+      { type: "p", text: "Levi's situation isn't unique to hairdressers. Electricians up a ladder, plumbers under a sink, builders on-site — anyone whose hands are full when the phone rings faces the same problem. The customer on the other end doesn't wait around. Most don't leave a voicemail. They just call the next name on Google." },
+      { type: "p", text: "A Digital Receptionist doesn't replace the relationship — it just makes sure nobody gets missed while you're doing the job you're actually good at." },
+
+      { type: "h2", text: "Curious what it'd look like for your business?" },
+      { type: "p", text: "Start with the free calculator to see roughly what missed calls might already be costing you — or go straight to how the Digital Receptionist actually works." },
+      { type: "link", text: "Try the free Missed Call Cost Calculator →", href: "/calculator" },
+      { type: "link", text: "See how the Digital Receptionist works →", href: "/receptionist" },
+    ],
+  },
+
+  {
     slug: "how-much-are-missed-calls-really-costing-nz-businesses",
     title: "How Much Are Missed Calls Really Costing NZ Businesses? (Free Calculator Inside)",
     metaTitle: "How Much Do Missed Calls Cost NZ Businesses? Free Calculator | Corvid AI",
