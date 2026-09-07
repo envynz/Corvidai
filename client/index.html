@@ -108,20 +108,31 @@
             "name": "Corvid AI"
           },
           "offers": {
-            "@type": "Offer",
-            "price": "179",
+            "@type": "AggregateOffer",
+            "lowPrice": "29",
+            "highPrice": "179",
             "priceCurrency": "NZD",
-            "priceValidUntil": "2027-06-01",
-            "validFrom": "2026-05-30",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "179",
-              "priceCurrency": "NZD",
-              "billingDuration": 1,
-              "billingIncrement": 1,
-              "unitCode": "MON"
-            },
-            "availability": "https://schema.org/InStock",
+            "offerCount": "2",
+            "priceValidUntil": "2027-09-01",
+            "validFrom": "2026-09-03",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Standard Plan",
+                "price": "99",
+                "priceCurrency": "NZD",
+                "description": "$99 one-time setup, then $99 NZD/month for the first 3 months (50 conversations included), rising to $179 NZD/month (100 conversations included). Intro rate is for new customers only.",
+                "availability": "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                "name": "Pay As You Go",
+                "price": "29",
+                "priceCurrency": "NZD",
+                "description": "No setup fee. $29 NZD/month base plus $2.50 NZD per conversation, uncapped.",
+                "availability": "https://schema.org/InStock"
+              }
+            ],
             "seller": {
               "@id": "https://corvidai.io/#organization"
             },
@@ -161,7 +172,7 @@
               "name": "How much does the Digital Receptionist cost?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The Digital Receptionist costs $499 NZD to set up (one-time) and $179 NZD per month. There is no contract and you can cancel anytime."
+                "text": "Corvid AI offers two plans. The Standard Plan is $99 NZD to set up, then $99 NZD per month for your first 3 months, rising to $179 NZD per month after that. The Pay As You Go plan has no setup fee — just $29 NZD per month plus $2.50 per conversation, with no cap. Both plans have no contract and you can cancel anytime."
               }
             },
             {
@@ -249,7 +260,7 @@
               "name": "How much does it cost compared to a human receptionist?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "A full-time receptionist in New Zealand costs $45,000–$60,000 per year. Corvid AI's Digital Receptionist costs $499 to set up and $179 per month — that's under $2,200 per year. It works 24/7, never takes a sick day, and delivers qualified lead summaries directly to your phone."
+                "text": "A full-time receptionist in New Zealand costs $45,000–$60,000 per year. Corvid AI's Digital Receptionist starts from $29 a month on the Pay As You Go plan, or $99 a month to start on the Standard Plan (rising to $179/month) — a fraction of the cost of a human receptionist. It works 24/7, never takes a sick day, and delivers qualified lead summaries directly to your phone."
               }
             }
           ]
@@ -269,7 +280,7 @@
 
         <h2>Digital Receptionist</h2>
         <p>New Zealand's only SMS-first AI Digital Receptionist. When you miss a call, the Digital Receptionist automatically texts the caller, holds a natural conversation to collect their name, number and reason for calling, and delivers a qualified lead summary to your phone. No voice bot. No hold music. Just fast, friendly texts that get results.</p>
-        <p>Setup: $499 NZD (one-time). Monthly: $179 NZD. No contract. Cancel anytime.</p>
+        <p>Two plans: Standard Plan ($99 setup, from $99/month) or Pay As You Go ($0 setup, $29/month + $2.50/conversation). No contract. Cancel anytime.</p>
         <p>Works for: electricians, plumbers, builders, painters, roofers, landscapers, HVAC technicians, solar installers, hair stylists, barbers, cleaners, and any NZ trade or small business that receives phone calls.</p>
 
         <h2>Why SMS and not voice AI?</h2>
