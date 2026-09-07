@@ -222,7 +222,7 @@ export default function AIReceptionistPage() {
     }
     meta.setAttribute(
       "content",
-      "New Zealand's SMS-first AI Digital Receptionist. Never miss another job — when you miss a call, it texts the caller within 60 seconds, collects their details, and sends you a qualified lead summary. $499 setup, $179/month, no contract."
+      "New Zealand's SMS-first AI Digital Receptionist. Never miss another job — when you miss a call, it texts the caller within 60 seconds, collects their details, and sends you a qualified lead summary. Two plans from $29/month, no contract."
     );
 
     // Set canonical URL for this page
@@ -283,7 +283,7 @@ export default function AIReceptionistPage() {
               href="#get-started"
               className="px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[hsl(197,87%,43%)]/25 flex items-center gap-2"
             >
-              Get Started — $499 Setup <ArrowRight className="w-4 h-4" />
+              Get Started <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#how-it-works"
@@ -299,7 +299,7 @@ export default function AIReceptionistPage() {
             </a>
           </div>
 
-          <p className="text-slate-500 text-sm">No contract · $179/month · Live in 24–48 hours</p>
+          <p className="text-slate-500 text-sm">No contract · Two plans from $29/month · Live in 24–48 hours</p>
         </div>
       </section>
 
@@ -361,49 +361,106 @@ export default function AIReceptionistPage() {
 
       {/* ── PRICING ── */}
       <section id="pricing" className="py-24 px-4">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[hsl(197,87%,43%)] text-xs font-semibold uppercase tracking-widest mb-3">Pricing</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-              Straightforward. <span className="gradient-text">No surprises.</span>
+              Two ways to <span className="gradient-text">get started.</span>
             </h2>
           </div>
 
-          <div className="gradient-border">
-            <div className="bg-[hsl(222,84%,15%)] rounded-[calc(1rem-2px)] overflow-hidden">
-              {/* Pricing header */}
-              <div className="bg-gradient-to-br from-[hsl(197,87%,43%)]/15 to-[hsl(217,91%,60%)]/5 p-8 border-b border-[hsl(215,27.9%,16.9%)]">
-                <p className="text-[hsl(197,87%,43%)] text-xs font-semibold uppercase tracking-widest mb-4">AI Receptionist</p>
-                <div className="flex items-end flex-wrap gap-2">
-                  <span className="text-5xl font-bold text-slate-100">$499</span>
-                  <span className="text-slate-400 text-sm mb-2">one-time setup</span>
-                  <span className="text-slate-600 text-sm mb-2 mx-1">+</span>
-                  <span className="text-4xl font-bold text-slate-100">$179</span>
-                  <span className="text-slate-400 text-sm mb-2">/month</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* Standard Plan */}
+            <div className="gradient-border">
+              <div className="bg-[hsl(222,84%,15%)] rounded-[calc(1rem-2px)] overflow-hidden h-full flex flex-col">
+                <div className="bg-gradient-to-br from-[hsl(197,87%,43%)]/15 to-[hsl(217,91%,60%)]/5 p-8 border-b border-[hsl(215,27.9%,16.9%)]">
+                  <p className="text-[hsl(197,87%,43%)] text-xs font-semibold uppercase tracking-widest mb-1">Standard Plan</p>
+                  <p className="text-slate-400 text-sm italic mb-4">Perch first. Soar later.</p>
+                  <div className="flex items-end flex-wrap gap-2">
+                    <span className="text-4xl font-bold text-slate-100">$99</span>
+                    <span className="text-slate-400 text-sm mb-1.5">setup</span>
+                  </div>
+                  <div className="flex items-end flex-wrap gap-2 mt-1">
+                    <span className="text-4xl font-bold text-slate-100">$99</span>
+                    <span className="text-slate-400 text-sm mb-1.5">/mo for 3 months</span>
+                  </div>
+                  <p className="text-slate-500 text-xs mt-3">Then $179/month ongoing</p>
                 </div>
-                <p className="text-slate-500 text-xs mt-3">No contract. Cancel anytime.</p>
-              </div>
-
-              {/* Features */}
-              <div className="p-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {FEATURES.map((f) => (
-                    <div key={f} className="flex items-start gap-3">
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex flex-col gap-3 mb-6">
+                    <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[hsl(197,87%,43%)]/15 border border-[hsl(197,87%,43%)]/25 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle className="w-3 h-3 text-[hsl(197,87%,43%)]" />
                       </div>
-                      <span className="text-slate-300 text-sm leading-snug">{f}</span>
+                      <span className="text-slate-300 text-sm leading-snug">50 conversations/month, then 100/month</span>
                     </div>
-                  ))}
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[hsl(197,87%,43%)]/15 border border-[hsl(197,87%,43%)]/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[hsl(197,87%,43%)]" />
+                      </div>
+                      <span className="text-slate-300 text-sm leading-snug">Extra conversations $1.50 each</span>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 text-xs mt-auto">Intro rate is for new customers only — not reactivated on re-signup.</p>
                 </div>
-                <a
-                  href="#get-started"
-                  className="block w-full py-4 rounded-xl text-center font-semibold text-white bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[hsl(197,87%,43%)]/25"
-                >
-                  Get Started Today
-                </a>
               </div>
             </div>
+
+            {/* Pay As You Go */}
+            <div className="rounded-2xl border border-[hsl(215,27.9%,16.9%)]">
+              <div className="bg-[hsl(222,84%,15%)] rounded-2xl overflow-hidden h-full flex flex-col">
+                <div className="p-8 border-b border-[hsl(215,27.9%,16.9%)]">
+                  <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-1">Pay As You Go</p>
+                  <p className="text-slate-500 text-sm italic mb-4">Only pay for what you use.</p>
+                  <div className="flex items-end flex-wrap gap-2">
+                    <span className="text-4xl font-bold text-slate-100">$0</span>
+                    <span className="text-slate-400 text-sm mb-1.5">setup</span>
+                  </div>
+                  <div className="flex items-end flex-wrap gap-2 mt-1">
+                    <span className="text-4xl font-bold text-slate-100">$29</span>
+                    <span className="text-slate-400 text-sm mb-1.5">/mo base</span>
+                  </div>
+                  <p className="text-slate-500 text-xs mt-3">+ $2.50 per conversation</p>
+                </div>
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex flex-col gap-3 mb-6">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-slate-500/15 border border-slate-500/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-slate-400" />
+                      </div>
+                      <span className="text-slate-300 text-sm leading-snug">No conversation cap, ever</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-slate-500/15 border border-slate-500/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-slate-400" />
+                      </div>
+                      <span className="text-slate-300 text-sm leading-snug">Ideal if your call volume varies</span>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 text-xs mt-auto">If your usage grows, the Standard Plan may end up cheaper — switch anytime.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <p className="text-center text-slate-500 text-xs uppercase tracking-widest font-semibold mb-6">Both plans include</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+              {FEATURES.map((f) => (
+                <div key={f} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[hsl(197,87%,43%)]/15 border border-[hsl(197,87%,43%)]/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle className="w-3 h-3 text-[hsl(197,87%,43%)]" />
+                  </div>
+                  <span className="text-slate-300 text-sm leading-snug">{f}</span>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#get-started"
+              className="block w-full py-4 rounded-xl text-center font-semibold text-white bg-gradient-to-r from-[hsl(197,87%,43%)] to-[hsl(217,91%,60%)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[hsl(197,87%,43%)]/25"
+            >
+              Get Started Today
+            </a>
           </div>
         </div>
       </section>
