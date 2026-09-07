@@ -315,7 +315,7 @@ export const posts: BlogPost[] = [
       { type: "p", text: "For a lot of trade businesses, there's no receptionist yet. It's just you — answering calls between jobs, on the tools, under a house, up a ladder. Every missed call is a customer who might've moved on to the next name on Google." },
       { type: "p", text: "Hiring a part-time receptionist to cover this properly is a real cost. Wages alone run $25–30 an hour in New Zealand, and once you add holiday pay, KiwiSaver, ACC levies and the time spent training someone, a part-time hire covering 20 hours a week typically lands around $2,800–$3,200 a month, all in." },
       { type: "p", text: "That's a serious commitment for a business that might only need a few extra hours of phone coverage a week. It's not that the receptionist isn't worth it eventually — it's that for a solo operator, it's often too much, too soon." },
-      { type: "p", text: "This is where a Digital Receptionist earns its place. At $179 a month, it catches every missed call, texts the customer back within 60 seconds, and sends you a qualified lead summary — without asking you to make a $3,000-a-month commitment before you're ready for it." },
+      { type: "p", text: "This is where a Digital Receptionist earns its place. Plans start from as little as $29 a month, and it catches every missed call, texts the customer back within 60 seconds, and sends you a qualified lead summary — without asking you to make a $3,000-a-month commitment before you're ready for it." },
       { type: "p", text: "It's not pretending to be a receptionist. It's the safety net underneath the gap where one would eventually go." },
 
       { type: "h2", text: "If you already have a receptionist" },
@@ -326,13 +326,13 @@ export const posts: BlogPost[] = [
       { type: "p", text: "The receptionist still does what they do best — building the relationship, managing the diary, handling the judgement calls that genuinely need a person. The AI just makes sure nothing falls through the cracks in between." },
 
       { type: "h2", text: "Why this matters more than the cost comparison" },
-      { type: "p", text: "It would be easy to write this post as \"$179 vs $2,800 — AI wins.\" But that's not really the point, and it's not what Corvid AI is about." },
+      { type: "p", text: "It would be easy to write this post as \"$29 vs $2,800 — AI wins.\" But that's not really the point, and it's not what Corvid AI is about." },
       { type: "p", text: "AI should make the people around it more capable, not replace them. A receptionist with a safety net underneath them can take their lunch break without worrying about what they'll miss. A solo tradie can grow toward hiring someone, instead of either drowning in missed calls or rushing into a hire before the business can support it." },
-      { type: "p", text: "The $179 a month isn't really \"an AI instead of a person.\" It's the thing that makes sure no lead disappears, no matter who is or isn't available to answer the phone that day." },
+      { type: "p", text: "The monthly cost isn't really \"an AI instead of a person.\" It's the thing that makes sure no lead disappears, no matter who is or isn't available to answer the phone that day." },
 
       { type: "h2", text: "The bottom line" },
       { type: "p", text: "Whether you're a solo operator weighing up your first hire, or a growing business with a receptionist who's brilliant but human, the question is the same: what happens to the calls that get missed?" },
-      { type: "p", text: "For most NZ trade businesses, the honest answer right now is \"nothing — they're just gone.\" Corvid AI exists to change that answer, for $179 a month, without asking anyone to be replaced." },
+      { type: "p", text: "For most NZ trade businesses, the honest answer right now is \"nothing — they're just gone.\" Corvid AI exists to change that answer, for as little as $29 a month, without asking anyone to be replaced." },
     ],
   },
 
@@ -467,7 +467,7 @@ export const posts: BlogPost[] = [
 
       { type: "h2", text: "What fixing it actually costs" },
       { type: "p", text: "Here's the part that usually surprises people. Fixing the missed call problem doesn't require hiring a receptionist. It doesn't require being glued to your phone. And it doesn't require changing your number or your setup." },
-      { type: "p", text: "Corvid AI's Digital Receptionist costs $179 a month. Based on the numbers above — losing one job a week at $400 — you'd be spending $179 to recover $1,920. That's a return of more than ten to one, every single month." },
+      { type: "p", text: "Corvid AI's Digital Receptionist costs from $29 a month, or $179 a month on the standard ongoing rate. Based on the numbers above — losing one job a week at $400 — you'd be spending $179 to recover $1,920. That's a return of more than ten to one, every single month." },
       { type: "p", text: "Even if you're sceptical and cut that estimate in half, it's still a five-to-one return. There aren't many investments in a trade business that stack up like that." },
 
       { type: "h2", text: "Run your own numbers" },
@@ -476,8 +476,8 @@ export const posts: BlogPost[] = [
         "Weekly missed calls × 60% (genuine enquiries) × 80% (didn't leave voicemail) × your conversion rate × your AJV = weekly revenue lost",
         "Multiply by 52 for the annual number"
       ]},
-      { type: "p", text: "If the number you get is bigger than $2,148 a year (what Corvid AI costs annually), the maths already works in your favour." },
-      { type: "p", text: "Most tradies who run this calculation find the number is a lot bigger than $2,148. Which is usually the moment things click." },
+      { type: "p", text: "If the number you get is bigger than $2,007 a year (what Corvid AI's Standard Plan costs in your first year, including the lower introductory rate), the maths already works in your favour." },
+      { type: "p", text: "Most tradies who run this calculation find the number is a lot bigger than $2,007. Which is usually the moment things click." },
       { type: "link", text: "Don't want to do the maths by hand? Try our free Missed Call Cost Calculator →", href: "/calculator" },
     ],
   },
