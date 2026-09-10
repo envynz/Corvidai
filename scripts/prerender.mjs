@@ -79,9 +79,14 @@ async function serveStatic(req, res) {
   if (urlPath.endsWith("/")) filePath = path.join(filePath, "index.html");
 
   if (!existsSync(filePath)) {
-    // Try appending /index.html (directory route with no trailing slash)
+    // Try a flat .html sibling first (matches Netlify's own "pretty URL"
+    // resolution order and what outputPathForRoute() now writes), then
+    // fall back to a directory index for anything written the old way.
+    const asHtml = `${filePath}.html`;
     const asDir = path.join(DIST_DIR, urlPath, "index.html");
-    if (existsSync(asDir)) {
+    if (existsSync(asHtml)) {
+      filePath = asHtml;
+    } else if (existsSync(asDir)) {
       filePath = asDir;
     } else {
       // SPA fallback — same as the netlify.toml redirect rule
@@ -104,7 +109,17 @@ async function serveStatic(req, res) {
 
 function outputPathForRoute(route) {
   if (route === "/") return path.join(DIST_DIR, "index.html");
-  return path.join(DIST_DIR, route.replace(/^\//, ""), "index.html");
+  // Write a flat sibling .html file (e.g. blog/some-slug.html), NOT a
+  // subdirectory with index.html. Netlify serves a .html sibling file
+  // directly at the extension-less path with no redirect. A folder+
+  // index.html, by contrast, triggers Netlify's automatic "pretty
+  // directory" 301 redirect from the no-slash path to a trailing-slash
+  // path — which directly contradicts the no-slash canonical tag every
+  // page sets via React, and was confirmed (10 Sep 2026) to be causing
+  // Google Search Console "Duplicate without user-selected canonical" /
+  // "Alternate page with proper canonical tag" / "Page with redirect"
+  // errors across every prerendered route.
+  return path.join(DIST_DIR, route.replace(/^\//, "") + ".html");
 }
 
 // ── 4. Run it ───────────────────────────────────────────────────────
