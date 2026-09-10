@@ -3,6 +3,34 @@
   publish = "dist/public"
   functions = "netlify/functions"
 
+# Consolidate trailing-slash duplicates onto the canonical no-slash URL.
+# Netlify's own default directory+index.html behaviour previously created
+# these (see scripts/prerender.mjs for the underlying fix, 10 Sep 2026) —
+# these 301s clean up anything Google already indexed with a trailing slash.
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/receptionist/"
+  to = "/receptionist"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculator/"
+  to = "/calculator"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
