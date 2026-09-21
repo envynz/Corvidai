@@ -140,7 +140,7 @@ async function main() {
       // Make sure React has actually rendered something, not just loaded
       await page.waitForSelector("#root > *", { timeout: 15000 });
 
-      const html = await page.content();
+      const html = (await page.content()) + `\n<!-- prerendered ${new Date().toISOString()} -->\n`;
       const outPath = outputPathForRoute(route);
 
       await mkdir(path.dirname(outPath), { recursive: true });
