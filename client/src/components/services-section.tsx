@@ -29,8 +29,8 @@ export default function ServicesSection() {
     },
     {
   icon: Landmark,
-  title: "Tender Bid Support",
-  description: "We scan every government tender in the country daily, match the right ones to your trade, and hand you a draft response already started — so you can bid on work you'd otherwise never see.",
+  title: "Tender Scout",
+  description: "We scan New Zealand government tenders daily, match the right ones to your trade, and hand you a draft response already started — so you can bid on work you'd otherwise never see.",
   gradient: "from-[hsl(43,96%,49%)] to-[hsl(142,71%,45%)]",
   cta: { label: "Get in touch", href: "contact", external: false, scroll: true },
   badge: null,
