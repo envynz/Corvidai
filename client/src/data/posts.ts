@@ -25,6 +25,72 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "missed-call-text-back-nz-how-it-works",
+    title: "Missed Call Text Back in NZ: How It Works and What to Look For",
+    metaTitle: "Missed Call Text Back NZ: How It Works & What to Look For | Corvid AI",
+    metaDescription:
+      "How missed call text back actually works in New Zealand, from the carrier divert to the first message, plus a plain-English checklist for choosing one that suits your trade business.",
+    excerpt:
+      "Missed call text back sounds simple, and the idea is. But the details decide whether it wins you jobs or annoys your customers. Here's how it works in NZ and what to check before you sign up.",
+    date: "2026-10-05",
+    readTime: "6 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      { type: "p", text: "You're on a roof, under a sink, or halfway through a haircut. The phone rings, you can't get to it, and by the time you can, the caller has already moved on to the next name on Google." },
+      { type: "p", text: "Missed call text back is the simple fix for that moment. When a call goes unanswered, the caller gets a text from your business within about a minute, instead of silence or a voicemail they were never going to leave." },
+      { type: "p", text: "The idea is easy. The details are where services differ, and where it's worth knowing what you're actually buying. Here's how it works in New Zealand, step by step, and what to look for if you're comparing options." },
+
+      { type: "h2", text: "What missed call text back actually is" },
+      { type: "p", text: "It's an automatic text message sent to a caller when you don't answer. That's the whole definition. What happens after that first text is where the services split into two camps:" },
+      { type: "ul", items: [
+        "Basic auto-reply: one fixed message, something like \"Sorry we missed you, we'll call you back.\" The caller can reply, but nothing is there to answer them.",
+        "Conversational text back: the first message starts a real back-and-forth, asks what the caller needs, and passes you a summary you can act on."
+      ]},
+      { type: "p", text: "Both are better than voicemail. But a basic auto-reply still leaves you doing the chasing, and the whole point is to stop losing jobs while your hands are full." },
+
+      { type: "h2", text: "How it works behind the scenes" },
+      { type: "p", text: "Most people assume this needs a new phone number or a new app. It usually doesn't. Here's the typical flow:" },
+      { type: "h3", text: "1. A carrier divert on your existing number" },
+      { type: "p", text: "Your phone company (Spark, One NZ, 2degrees and so on) lets you set a divert for calls you don't answer. Instead of going to voicemail, an unanswered call gets routed to the text back service. Your number stays the same, and customers still ring the number on your van, your website and your Google listing." },
+      { type: "h3", text: "2. The caller gets a text within about a minute" },
+      { type: "p", text: "The service sees the missed call and sends a text in your business name. Speed matters here. Someone with a leaking tap or a dead hot water cylinder is ringing around, and the business that responds first has a big head start." },
+      { type: "h3", text: "3. The conversation happens while you carry on working" },
+      { type: "p", text: "With a conversational service, the caller replies, and the receptionist asks the useful questions: what's the job, where is it, how urgent is it. You're not interrupted, and nobody's left waiting." },
+      { type: "h3", text: "4. You get a summary you can act on" },
+      { type: "p", text: "When you're ready, you get the details as a text: who called, what they need, and how to reach them. You reply with a time or a price, and the job is progressed without you having stopped what you were doing." },
+
+      { type: "h2", text: "Does it work with a mobile, a landline or a business line?" },
+      { type: "p", text: "In most cases, yes. Unanswered-call diverts are available on NZ mobile plans, and many landlines and VoIP lines support them too. Setup differs a little between providers, so a good service will walk you through your specific carrier rather than leaving you to work it out from a help page." },
+
+      { type: "h2", text: "What about the rules? Is it okay to text people who rang you?" },
+      { type: "p", text: "It's a fair question, and worth asking any provider. In New Zealand, the Unsolicited Electronic Messages Act 2007 sets the rules for commercial electronic messages: the sender needs to be clearly identified, and there has to be an easy way to opt out." },
+      { type: "p", text: "A reply to someone who has just rung you about a job is a different situation from a marketing blast to a purchased list. Even so, a good provider should identify your business clearly in the first message, respect a STOP reply straight away, and be happy to explain how they handle it. This isn't legal advice, so if you have specific questions, check with a lawyer or the Department of Internal Affairs." },
+
+      { type: "h2", text: "A buyer's checklist: what to look for" },
+      { type: "p", text: "Whichever service you're considering, these are the questions that separate a tool that wins jobs from one that just ticks a box:" },
+      { type: "table", headers: ["Ask this", "Why it matters"], rows: [
+        ["Is the first text sent in my business name?", "Callers respond to a business they recognise, not a random number or a generic message."],
+        ["Does it just send one message, or hold a conversation?", "A single auto-reply still leaves you chasing. A conversation qualifies the lead for you."],
+        ["How fast does the text go out?", "Under a minute is the target. After that, the caller is probably dialling the next business."],
+        ["Do I need to change my phone number?", "You shouldn't have to. Your number is on your van, your signage and your Google listing."],
+        ["What do I actually receive?", "A clear summary with the caller's details and what they need is far more useful than a raw message thread."],
+        ["How is it priced?", "Look for clear pricing: setup fees, monthly fees and any per-conversation charges, in writing and in NZ dollars."],
+        ["Is there a long contract?", "You should be able to see it working for your business before committing long term."],
+        ["Does it understand how NZ trades talk?", "Kiwi language, local suburbs and trade jargon matter. Overseas tools can feel off."]
+      ]},
+
+      { type: "h2", text: "Where text back doesn't fit" },
+      { type: "p", text: "Text back is built for businesses where the owner is hands-on and can't answer mid-job: trades, hairdressers, mobile services, small clinics. If you'd rather have your calls answered live by a human, a real receptionist or an answering service may suit you better, and that's a fair choice." },
+      { type: "p", text: "Text back works best as a safety net for the calls you can't take, not as a replacement for the relationships you've built. You still reply, you still do the work, and you still turn up. It just means fewer jobs quietly walk away." },
+
+      { type: "h2", text: "How Corvid AI does it" },
+      { type: "p", text: "Corvid AI's Digital Receptionist is a conversational text back service built for NZ tradespeople. Setup is a carrier divert on your existing number and a short intake form (about ten minutes) so it knows your business, your trade and how you like to work. When you miss a call, the caller gets a text in your business name within about 60 seconds, the conversation runs by itself, and you get a summary you can act on." },
+      { type: "p", text: "Plans start from $29 a month with Pay As You Go, or you can go with the Standard Plan if you want a higher volume of conversations included. Not sure whether it's worth it for your business? Start with the numbers." },
+      { type: "link", text: "Try the free Missed Call Cost Calculator →", href: "/calculator" },
+      { type: "link", text: "See how the Digital Receptionist works →", href: "/receptionist" },
+    ],
+  },
+  {
     slug: "auckland-hairdresser-stops-missing-calls-with-ai-receptionist",
     title: "How One Auckland Hairdresser Stopped Losing Clients to Missed Calls",
     metaTitle: "Real Client Story: AI Receptionist for an Auckland Hairdresser | Corvid AI",
