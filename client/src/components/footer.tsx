@@ -95,11 +95,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-600 mt-8 pt-8 text-center">
-          <p className="text-slate-400 text-sm">
-            © 2026 Corvid.ai. Built on intelligence. Designed for the people who build New Zealand.
-          </p>
-        </div>
+       <div className="border-t border-slate-600 mt-8 pt-8 text-center">
+  <p className="text-slate-400 text-sm">
+    © 2026 Corvid.ai. Built on intelligence. Designed for the people who build New Zealand.
+  </p>
+  <p className="text-slate-400 text-sm mt-2">
+    Member of{" "}
+    <a
+      href="https://www.waihi.org.nz/businesses/corvid-ai/"
+      target="_blank"
+      rel="noopener"
+      className="underline hover:text-[hsl(197,87%,43%)] transition-colors"
+    >
+      GO Waihi
+    </a>
+  </p>
+</div>
       </div>
     </footer>
   );
