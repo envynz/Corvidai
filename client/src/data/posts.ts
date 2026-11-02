@@ -25,6 +25,160 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "missed-call-text-back-cost-nz",
+    title: "What Does Missed Call Text Back Cost in NZ? Real Prices, Checked November 2026",
+    metaTitle: "Missed Call Text Back Cost NZ: Real 2026 Prices | Corvid AI",
+    metaDescription:
+      "Missed call text back in NZ costs from about $49 to $70 a month. Real NZ prices, checked 2 November 2026, and what each one includes.",
+    excerpt:
+      "Missed call text back prices in NZ run from about $49 to $70 a month, but the monthly fee isn't the whole story. Here are the real prices, what each one includes, and how to work out what you'd actually pay.",
+    date: "2026-11-02",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      {
+        type: "p",
+        text: "You're up a ladder, your phone rings in your pocket, and you can't answer it. By the time you climb down, the caller has already rung somebody else.",
+      },
+      {
+        type: "p",
+        text: "Missed call text back is the fix for that moment, and plenty of NZ businesses now sell it. The question most tradies ask next is a fair one: what does it actually cost?",
+      },
+      {
+        type: "p",
+        text: "The short answer is that the basics run from about $49 to $70 a month, or from $29 plus a small fee per conversation. The longer answer is that the monthly price isn't the whole story, because the services charge in different ways and include different things. We checked the published prices on 2 November 2026 so you don't have to.",
+      },
+      { type: "h2", text: "Three ways it's priced" },
+      {
+        type: "p",
+        text: "Before the numbers, it helps to know what you're comparing. Text back services in NZ generally fall into three groups:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A single automatic text. The caller gets one message, usually with a link to a form. Cheapest, but you still do the chasing.",
+          "A text conversation. The caller gets a message that asks what they need, and you get a summary.",
+          "A voice receptionist. An AI answers the call itself. It costs more, and it's a different product.",
+        ],
+      },
+      {
+        type: "link",
+        href: "/blog/missed-call-text-back-nz-how-it-works",
+        text: "What to ask any provider before you sign: read the buyer's checklist →",
+      },
+      { type: "h2", text: "What NZ providers charge for text back" },
+      {
+        type: "p",
+        text: "We checked the published prices of NZ text back providers on 2 November 2026. Where a provider adds GST on top, we've kept it that way. Corvid AI's prices have no GST added.",
+      },
+      {
+        type: "table",
+        headers: ["Type of service", "What you get", "Price", "Setup"],
+        rows: [
+          ["Single automatic text", "One text with a link to a contact form", "$70/mo", "None"],
+          [
+            "Text conversation",
+            "Text conversation and summary",
+            "From $49/mo + GST, 50 calls included, then $0.18 per SMS",
+            "None",
+          ],
+          ["Instant text back", "Text back on your existing number", "From $69/mo + GST", "$149 + GST"],
+          [
+            "Corvid AI, Pay As You Go",
+            "Text conversation and summary",
+            "$29/mo plus $2.50 per conversation",
+            "$0",
+          ],
+          [
+            "Corvid AI, Standard",
+            "Text conversation and summary",
+            "$99/mo for 3 months, then $179/mo",
+            "$99",
+          ],
+        ],
+      },
+      {
+        type: "p",
+        text: "Two things stand out. First, a simple text costs less than a conversation. At $49 to $70 a month, the single-text services are the cheapest way in, and they're a perfectly good choice if you're happy to follow up every lead yourself. Second, we're not the cheapest, and we won't pretend to be. We charge for the conversation.",
+      },
+      { type: "h2", text: "Why the sticker price isn't the whole story" },
+      { type: "p", text: "Four things change what you actually pay:" },
+      {
+        type: "ul",
+        items: [
+          "How it counts. Some charge per missed call, some per text, some per conversation. They aren't the same unit, so a \"cheaper\" plan can end up costing more if you miss a lot of calls.",
+          "GST. Some prices above exclude it. Add 15% before you compare.",
+          "Setup fees. Anything from $0 to $149, and sometimes more.",
+          "What you get back. One text with a link means you chase the lead. A conversation means you get the name, suburb and job already sorted.",
+        ],
+      },
+      { type: "h3", text: "A worked example" },
+      {
+        type: "p",
+        text: "Say you miss 40 calls a month and every one turns into a text exchange.",
+      },
+      {
+        type: "ul",
+        items: [
+          "A text plan with 50 calls included at $49 + GST: 40 calls sit inside the allowance, so about $56 with GST.",
+          "Corvid AI Pay As You Go: $29 plus 40 conversations at $2.50, which comes to $129.",
+          "Corvid AI Standard, first three months: $99.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Those are different services, so the cheapest line isn't automatically the best one. But it's worth doing this sum with your own call volume before you pick.",
+      },
+      { type: "h2", text: "If you'd rather have the call answered" },
+      {
+        type: "p",
+        text: "Some people would rather talk than text. Voice AI receptionists answer the call itself, and they cost more. Across three NZ voice providers we checked, monthly plans looked like this (some prices include GST and some don't, so check before you compare):",
+      },
+      {
+        type: "table",
+        headers: ["Plan level", "Typical NZ price per month"],
+        rows: [
+          ["Entry", "$99 to $129 (one provider charges $129 for the first 3 months, then $199)"],
+          ["Mid", "$199 to $249"],
+          ["Top", "$399 to $449"],
+        ],
+      },
+      {
+        type: "p",
+        text: "Corvid AI doesn't answer by voice. If a spoken conversation matters more to you than speed and price, those are worth a look.",
+      },
+      { type: "h2", text: "Is it worth paying for?" },
+      {
+        type: "p",
+        text: "Work it out with your own numbers. How many calls do you miss in a week? What's an average job worth? If you miss ten calls a week and even one in ten would have become a $400 job, a text back service pays for itself several times over, whichever one you pick.",
+      },
+      {
+        type: "link",
+        href: "/calculator",
+        text: "Try the free Missed Call Cost Calculator →",
+      },
+      { type: "h2", text: "Where the cheapest option is the right one" },
+      {
+        type: "p",
+        text: "If you only want to acknowledge the caller and you're happy to follow up every lead yourself, a single automatic text for $50 to $70 a month does the job. You don't need to pay for a conversation you won't use. It's worth paying more when you're too busy to chase, and when the caller's job details matter before you ring back.",
+      },
+      { type: "h2", text: "How Corvid AI does it" },
+      {
+        type: "p",
+        text: "Corvid AI's Digital Receptionist is a text conversation service built for NZ tradespeople. A carrier divert on your existing number sends missed calls to us, the caller gets a text in your business name within about 60 seconds, the conversation runs by itself, and you get a summary you can act on. There's no contract, and it goes live in 24 to 48 hours.",
+      },
+      {
+        type: "p",
+        text: "Pay As You Go starts at $29 a month. The Standard Plan includes 50 conversations a month while the intro rate lasts and 100 a month after that, so you know your bill in advance. Extra conversations are $1.50 each.",
+      },
+      {
+        type: "link",
+        href: "/receptionist",
+        text: "See how the Digital Receptionist works →",
+      },
+    ],
+  },
+  {
     slug: "missed-call-text-back-nz-how-it-works",
     title: "Missed Call Text Back in NZ: How It Works and What to Look For",
     metaTitle: "Missed Call Text Back NZ: How It Works & What to Look For | Corvid AI",
