@@ -175,22 +175,38 @@ export default function BlogPostPage() {
                 case "table":
                   return (
                     <div key={i} className="overflow-x-auto my-8 rounded-xl border border-[hsl(215,27.9%,16.9%)]">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="bg-[hsl(215,25%,27%)]/50">
+                      <table className="w-full text-sm block sm:table">
+                        <thead className="hidden sm:table-header-group">
+                          <tr className="bg-[hsl(215,25%,27%)]/50 border-b border-[hsl(197,87%,43%)]/40">
                             {block.headers.map((h, hi) => (
-                              <th key={hi} className="text-left px-4 py-3 font-semibold text-white whitespace-nowrap">{h}</th>
+                              <th key={hi} className="text-left px-4 py-3 font-semibold text-white">{h}</th>
                             ))}
                           </tr>
                         </thead>
-                        <tbody>
-                          {block.rows.map((row, ri) => (
-                            <tr key={ri} className="border-t border-[hsl(215,27.9%,16.9%)]">
-                              {row.map((cell, ci) => (
-                                <td key={ci} className="px-4 py-3 text-slate-300 whitespace-nowrap">{cell}</td>
-                              ))}
-                            </tr>
-                          ))}
+                        <tbody className="block sm:table-row-group">
+                          {block.rows.map((row, ri) => {
+                            const ours = /^Corvid AI/.test(row[0]);
+                            return (
+                              <tr
+                                key={ri}
+                                className={`block sm:table-row px-4 py-3 sm:p-0 border-t first:border-t-0 border-[hsl(215,27.9%,16.9%)] ${
+                                  ours ? "bg-[hsl(197,87%,43%)]/10 border-l-2 border-l-[hsl(197,87%,43%)]" : ""
+                                }`}
+                              >
+                                {row.map((cell, ci) => (
+                                  <td
+                                    key={ci}
+                                    data-label={block.headers[ci]}
+                                    className={`block sm:table-cell py-1 sm:px-4 sm:py-3 sm:align-top before:content-[attr(data-label)] before:block before:text-xs before:font-semibold before:uppercase before:tracking-wide before:text-slate-500 before:mb-0.5 sm:before:hidden ${
+                                      ci === 0 ? "before:hidden font-semibold text-white" : "text-slate-300"
+                                    }`}
+                                  >
+                                    {cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            );
+                          })}
                         </tbody>
                       </table>
                     </div>
