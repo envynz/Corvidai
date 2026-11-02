@@ -175,7 +175,7 @@ export default function BlogPostPage() {
                 case "table":
                   return (
                     <div key={i} className="overflow-x-auto my-8 rounded-xl border border-[hsl(215,27.9%,16.9%)]">
-                      <table className="w-full text-sm block sm:table">
+                      <table className="w-full text-sm block sm:table my-0">
                         <thead className="hidden sm:table-header-group">
                           <tr className="bg-[hsl(215,25%,27%)]/50 border-b border-[hsl(197,87%,43%)]/40">
                             {block.headers.map((h, hi) => (
