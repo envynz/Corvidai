@@ -178,9 +178,9 @@ export const posts: BlogPost[] = [
     title: "What Does Missed Call Text Back Cost in NZ? Real Prices, Checked November 2026",
     metaTitle: "Missed Call Text Back Cost NZ: Real 2026 Prices | Corvid AI",
     metaDescription:
-      "Missed call text back in NZ costs from about $49 to $70 a month. Real NZ prices, checked 2 November 2026, and what each one includes.",
+      "Missed call text back in NZ costs from about $49 to $149 a month. Real NZ prices, checked in November 2026, and what each one includes.",
     excerpt:
-      "Missed call text back prices in NZ run from about $49 to $70 a month, but the monthly fee isn't the whole story. Here are the real prices, what each one includes, and how to work out what you'd actually pay.",
+      "Missed call text back prices in NZ run from about $49 to $149 a month, but the monthly fee isn't the whole story. Here are the real prices, what each one includes, and how to work out what you'd actually pay.",
     date: "2026-11-02",
     readTime: "5 min read",
     author: "Ali Alsaffaf",
@@ -195,7 +195,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The short answer is that the basics run from about $49 to $70 a month, or from $29 plus a small fee per conversation. The longer answer is that the monthly price isn't the whole story, because the services charge in different ways and include different things. We checked the published prices on 2 November 2026 so you don't have to.",
+        text: "The short answer is that the basics run from about $49 to $149 a month, or from $29 plus a small fee per conversation. The longer answer is that the monthly price isn't the whole story, because the services charge in different ways and include different things. We checked the published prices between 2 and 16 November 2026 so you don't have to.",
       },
       { type: "h2", text: "Three ways it's priced" },
       {
@@ -218,7 +218,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "What NZ providers charge for text back" },
       {
         type: "p",
-        text: "We checked the published prices of NZ text back providers on 2 November 2026. Where a provider adds GST on top, we've kept it that way. Corvid AI's prices have no GST added.",
+        text: "We checked the published prices of NZ text back providers between 2 and 16 November 2026. Where a provider adds GST on top, we've kept it that way. Corvid AI's prices have no GST added.",
       },
       {
         type: "table",
@@ -231,7 +231,7 @@ export const posts: BlogPost[] = [
             "From $49/mo + GST, 50 calls included, then $0.18 per SMS",
             "None",
           ],
-          ["Instant text back", "Text back on your existing number", "From $69/mo + GST", "$149 + GST"],
+          ["Instant text back", "Text back on your existing number", "From $69/mo + GST", "$149 + GST"], ["Text conversation, bigger allowance", "Text conversation, unused texts roll over", "$99/mo for 80 texts, $149/mo for 250 texts, no GST", "None listed"],
           [
             "Corvid AI, Pay As You Go",
             "Text conversation and summary",
@@ -248,14 +248,14 @@ export const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Two things stand out. First, a simple text costs less than a conversation. At $49 to $70 a month, the single-text services are the cheapest way in, and they're a perfectly good choice if you're happy to follow up every lead yourself. Second, we're not the cheapest, and we won't pretend to be. We charge for the conversation.",
+        text: "Two things stand out. First, a simple text is the cheapest way in, at about $70 a month, and it's a perfectly good choice if you're happy to follow up every lead yourself. Text conversations cost more and vary a lot, from about $49 to $149 a month depending on how many texts are included. Second, we're not the cheapest, and we won't pretend to be. We charge for the conversation.",
       },
       { type: "h2", text: "Why the sticker price isn't the whole story" },
       { type: "p", text: "Four things change what you actually pay:" },
       {
         type: "ul",
         items: [
-          "How it counts. Some charge per missed call, some per text, some per conversation. They aren't the same unit, so a \"cheaper\" plan can end up costing more if you miss a lot of calls.",
+          "How it counts. Some charge per missed call, some per text, some per conversation. They aren't the same unit (and one conversation can use several texts), so a \"cheaper\" plan can end up costing more if you miss a lot of calls.",
           "GST. Some prices above exclude it. Add 15% before you compare.",
           "Setup fees. Anything from $0 to $149, and sometimes more.",
           "What you get back. One text with a link means you chase the lead. A conversation means you get the name, suburb and job already sorted.",
