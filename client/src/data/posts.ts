@@ -381,6 +381,7 @@ export const posts: BlogPost[] = [
         ["Is there a long contract?", "You should be able to see it working for your business before committing long term."],
         ["Does it understand how NZ trades talk?", "Kiwi language, local suburbs and trade jargon matter. Overseas tools can feel off."]
       ]},
+      { type: "link", text: "See what missed call text back costs in NZ, with real prices →", href: "/blog/missed-call-text-back-cost-nz" },
 
       { type: "h2", text: "Where text back doesn't fit" },
       { type: "p", text: "Text back is built for businesses where the owner is hands-on and can't answer mid-job: trades, hairdressers, mobile services, small clinics. If you'd rather have your calls answered live by a human, a real receptionist or an answering service may suit you better, and that's a fair choice." },
@@ -391,6 +392,7 @@ export const posts: BlogPost[] = [
       { type: "p", text: "Plans start from $29 a month with Pay As You Go, or you can go with the Standard Plan if you want a higher volume of conversations included. Not sure whether it's worth it for your business? Start with the numbers." },
       { type: "link", text: "Try the free Missed Call Cost Calculator →", href: "/calculator" },
       { type: "link", text: "See how the Digital Receptionist works →", href: "/receptionist" },
+      { type: "link", text: "Test any AI receptionist before you pay: 3 test calls →", href: "/blog/test-ai-receptionist-before-you-pay-nz" },
     ],
   },
   {
