@@ -25,6 +25,155 @@ export type BlogBlock =
 
 export const posts: BlogPost[] = [
   {
+    slug: "test-ai-receptionist-before-you-pay-nz",
+    title: "How to Test an AI Receptionist Before You Pay: 3 Test Calls for NZ Tradies",
+    metaTitle: "Test an AI Receptionist Before You Pay: 3 Calls | Corvid AI",
+    metaDescription:
+      "Before you pay for an AI receptionist in NZ, run three test calls: a quote request, an emergency and an after-hours call. Here's what to check on each.",
+    excerpt:
+      "Every AI receptionist looks good on its own website. Here are three test calls any NZ tradie can run in twenty minutes to see how one really handles your customers, and what to check on each.",
+    date: "2026-11-16",
+    readTime: "5 min read",
+    author: "Ali Alsaffaf",
+    body: [
+      {
+        type: "p",
+        text: "Every AI receptionist looks good on its own website. The demo is polished, the testimonials are glowing, and the sales page says it handles everything. None of that tells you how it will treat your customers.",
+      },
+      {
+        type: "p",
+        text: "The only way to know is to be a customer yourself. You don't need a trial period or a tech background. You need a second phone, a mate or a partner willing to play the caller, and about twenty minutes.",
+      },
+      {
+        type: "p",
+        text: "Here are the three test calls we'd run before paying for any AI receptionist or missed call text back service in NZ, and what to look for on each.",
+      },
+      { type: "h2", text: "Before you start" },
+      {
+        type: "ul",
+        items: [
+          "Use a different phone from the one you're testing, ideally someone else's. You want the system to see a stranger's number, just like a real customer.",
+          "Let the call go unanswered, the way a real missed call would. Don't pick up and then hang up.",
+          "Write down the time at each step. Speed is one of the things you're testing.",
+          "Ask your caller to play a real customer with a real job in mind, not to read a script.",
+        ],
+      },
+      { type: "h2", text: "Test 1: the ordinary quote request" },
+      {
+        type: "p",
+        text: "This is the call you'll get most often, so it has to be good. Ring your business number from the other phone and play a customer who wants a price: a heat pump install, a switchboard upgrade, a leaking tap, a haircut booking, whatever your trade does.",
+      },
+      { type: "p", text: "Check these:" },
+      {
+        type: "ul",
+        items: [
+          "How fast did the first reply arrive? A call should be answered within a few rings. A text should land within a couple of minutes.",
+          "Does it use your business name, so the caller knows who they're dealing with?",
+          "Does it ask what the job is, where it is and when the customer wants it done, without feeling like a form?",
+          "Does it stay in its lane? It shouldn't quote a price, promise a time or agree to anything you wouldn't.",
+        ],
+      },
+      { type: "h2", text: "Test 2: the emergency" },
+      {
+        type: "p",
+        text: "Now ring as someone with a real problem. Water pouring through the ceiling. A power board that's sparking. A gas smell in the kitchen. Make it sound urgent.",
+      },
+      { type: "p", text: "This is where cheap tools and good ones part ways. Check these:" },
+      {
+        type: "ul",
+        items: [
+          "Does it recognise that this call is different from a routine quote?",
+          "Does it tell you straight away, by text or call, or does the news sit in a summary at the end of the day?",
+          "Does it point the caller to 111 when someone could be in danger, rather than pretending a message to you is enough?",
+          "Does it avoid giving advice that could get someone hurt?",
+        ],
+      },
+      {
+        type: "p",
+        text: "A reply that says \"Thanks for calling, we'll be in touch\" to someone standing in a flooded kitchen is worse than no reply at all.",
+      },
+      { type: "h2", text: "Test 3: after hours, and the awkward caller" },
+      {
+        type: "p",
+        text: "Ring at 9pm on a Sunday. Real customers don't call at convenient times, and some systems behave differently out of hours. This time, make your caller a bit difficult: half answers, a change of mind, a question that has nothing to do with the job, then go quiet halfway through.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does it respond just as well out of hours?",
+          "When your caller goes quiet, does it send a gentle nudge, or give up? Either way, do you still get what it collected so far?",
+          "When it's asked something it can't know, like an exact price, does it say so and hand over to you, or does it make something up?",
+          "If your caller asks \"am I talking to a real person?\", does it tell the truth?",
+        ],
+      },
+      { type: "h2", text: "What to check on your side" },
+      {
+        type: "p",
+        text: "Within a few minutes of each test, a summary should land on your phone. Judge it the way you'd read it from the ute or the roof. Can you see the name, number, job, location and how urgent it is in the first few lines? Could you ring back without asking the customer to repeat themselves? Is the number right?",
+      },
+      {
+        type: "p",
+        text: "Also check what your customers experienced. Your phone should still ring first. The service should only step in when you miss the call.",
+      },
+      {
+        type: "table",
+        headers: ["Test", "What good looks like", "Walk away if"],
+        rows: [
+          [
+            "1. Quote request",
+            "Quick reply in your business name, asks the right questions, doesn't quote or promise",
+            "It's slow, generic, or agrees to things for you",
+          ],
+          [
+            "2. Emergency",
+            "Spots the urgency, tells you straight away, points to 111 if there's danger",
+            "It treats a burst pipe like a routine enquiry",
+          ],
+          [
+            "3. After hours and awkward caller",
+            "Same quality at 9pm, copes with messy answers, admits what it doesn't know",
+            "It makes things up, goes silent, or won't say it's an AI",
+          ],
+        ],
+      },
+      { type: "h2", text: "Questions to ask the provider as well" },
+      {
+        type: "ul",
+        items: [
+          "Can I keep my existing number?",
+          "What happens if the system goes down?",
+          "Can I read the whole conversation, not just the summary?",
+          "Is there a contract, and what does leaving cost?",
+          "How is it charged? Per call, per text or per conversation?",
+        ],
+      },
+      {
+        type: "link",
+        href: "/blog/missed-call-text-back-cost-nz",
+        text: "See how NZ providers charge and what the prices really mean →",
+      },
+      {
+        type: "link",
+        href: "/blog/missed-call-text-back-nz-how-it-works",
+        text: "Read the full buyer's checklist for missed call text back →",
+      },
+      { type: "h2", text: "Run the same three tests on us" },
+      {
+        type: "p",
+        text: "We'd rather you tested Corvid AI than took our word for it. A carrier divert on your existing number sends missed calls to us, the caller gets a text in your business name within about 60 seconds, and the conversation runs by text. Expect a short pause between messages rather than a live chat.",
+      },
+      {
+        type: "p",
+        text: "We don't answer calls by voice. If hearing a voice matters more to you than getting a text, test a voice provider with the same three calls. A good provider will be happy for you to see how it handles all three.",
+      },
+      {
+        type: "link",
+        href: "/receptionist",
+        text: "Try the live demo on the Digital Receptionist page →",
+      },
+    ],
+  },
+  {
     slug: "missed-call-text-back-cost-nz",
     title: "What Does Missed Call Text Back Cost in NZ? Real Prices, Checked November 2026",
     metaTitle: "Missed Call Text Back Cost NZ: Real 2026 Prices | Corvid AI",
